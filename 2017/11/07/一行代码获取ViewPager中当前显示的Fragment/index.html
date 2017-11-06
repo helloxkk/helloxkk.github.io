@@ -43,7 +43,7 @@
     
     <title>
         
-            归档: 2017/9 | 
+            一行代码获取ViewPager中当前显示的Fragment | 
         
         肖坤的博客
     </title>
@@ -237,15 +237,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://hellokk.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/9 | 肖坤的博客">
+    <meta property="og:title" content="一行代码获取ViewPager中当前显示的Fragment | 肖坤的博客">
     <meta property="og:image" content="http://hellokk.cc/img/favicon.png" />
     <meta property="og:description" content="Welcome to xiao kun&#39;s blog">
     
 
     
+        <meta property="article:published_time" content="Tue Nov 07 2017 00:22:46 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Nov 07 2017 00:25:23 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017/9 | 肖坤的博客">
+    <meta name="twitter:title" content="一行代码获取ViewPager中当前显示的Fragment | 肖坤的博客">
     <meta name="twitter:description" content="Welcome to xiao kun&#39;s blog">
     <meta name="twitter:image" content="http://hellokk.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -253,13 +256,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://hellokk.cc/archives/2017/09/index.html" />
+        <link rel="canonical" href="http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html",
+    "headline": "一行代码获取ViewPager中当前显示的Fragment",
+    "datePublished": "Tue Nov 07 2017 00:22:46 GMT+0800",
+    "dateModified": "Tue Nov 07 2017 00:25:23 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "青宁",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "肖坤的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "Welcome to xiao kun&#39;s blog",
+}
+</script>
 
 
     
@@ -293,161 +326,285 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 前言</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/11/关于 Kotlin 的一些小知识的总结/">关于 Kotlin 的一些小知识的总结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/11/关于 Kotlin 的一些小知识的总结/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>9月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/09/11/关于 Kotlin 的一些小知识的总结/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/11/hello-world/">Hello World</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to Hexo
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/11/hello-world/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>9月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/09/11/hello-world/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                一行代码获取ViewPager中当前显示的Fragment
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>青宁</strong>
+        <span>11月 07, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/" class="leancloud-views_num" data-flag-title="一行代码获取ViewPager中当前显示的Fragment">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=一行代码获取ViewPager中当前显示的Fragment&url=http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html&pic=http://hellokk.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=一行代码获取ViewPager中当前显示的Fragment&url=http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html&via=青宁" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html&title=一行代码获取ViewPager中当前显示的Fragment" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=肖坤的博客&title=一行代码获取ViewPager中当前显示的Fragment&summary=Welcome to xiao kun&#39;s blog&pics=http://hellokk.cc/img/favicon.png&url=http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/index.html&text=一行代码获取ViewPager中当前显示的Fragment" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><blockquote>
+<p>我不知道网上的那些答案为什么写的那么复杂, 明明一行代码可以搞定的事情, 写的这么麻烦</p>
+</blockquote>
+<p> <strong>方式一 :</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mFragment = (MyFragment) mAdapter.instantiateItem(mPager, mPager.getCurrentItem());</div></pre></td></tr></table></figure>
+<p><strong>方式二 :</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mFragment = (MyFragment) getSupportFragmentManager().findFragmentByTag(&quot;android:switcher:&quot; + viewpager + &quot;:&quot; + mViewPager.getCurrentItem());</div></pre></td></tr></table></figure>
+
+        
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/11/07/一行代码获取ViewPager中当前显示的Fragment/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytd5KKdQ';
+var conf = 'prod_66ed9198e35913ff237d1d23a65e4061';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/11/07/仿QQ空间打赏功能实现/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
