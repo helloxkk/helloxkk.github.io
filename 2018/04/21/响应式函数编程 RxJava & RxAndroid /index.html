@@ -43,7 +43,7 @@
     
     <title>
         
-            归档: 2018 | 
+            响应式函数编程`RxJava` &amp; `RxAndroid` | 
         
         肖坤的博客
     </title>
@@ -237,15 +237,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://hellokk.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018 | 肖坤的博客">
+    <meta property="og:title" content="响应式函数编程`RxJava` &amp; `RxAndroid` | 肖坤的博客">
     <meta property="og:image" content="http://hellokk.cc/img/favicon.png" />
     <meta property="og:description" content="Welcome to xiao kun&#39;s blog">
     
 
     
+        <meta property="article:published_time" content="Sat Apr 21 2018 16:08:04 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Apr 21 2018 16:08:04 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018 | 肖坤的博客">
+    <meta name="twitter:title" content="响应式函数编程`RxJava` &amp; `RxAndroid` | 肖坤的博客">
     <meta name="twitter:description" content="Welcome to xiao kun&#39;s blog">
     <meta name="twitter:image" content="http://hellokk.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -253,13 +256,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://hellokk.cc/archives/2018/index.html" />
+        <link rel="canonical" href="http://hellokk.cc/2018/04/21/响应式函数编程 RxJava & RxAndroid /index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://hellokk.cc/2018/04/21/响应式函数编程 RxJava & RxAndroid /index.html",
+    "headline": "响应式函数编程`RxJava` & `RxAndroid`",
+    "datePublished": "Sat Apr 21 2018 16:08:04 GMT+0800",
+    "dateModified": "Sat Apr 21 2018 16:08:04 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "青宁",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "肖坤的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "Welcome to xiao kun&#39;s blog",
+}
+</script>
 
 
     
@@ -293,410 +326,423 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-被观察者-Observable"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 被观察者: Observable</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-观察者-Observer"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 观察者: Observer</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-订阅-subscribe"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 订阅: subscribe</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-事件"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 事件:</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-案例"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. 案例:</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /">响应式函数编程`RxJava` &amp; `RxAndroid`</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-Github: 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>4月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/21/使用观察者模式进行订单管理/">使用观察者模式进行订单管理</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            概念：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。观察者模式定...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/21/使用观察者模式进行订单管理/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>4月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/04/21/使用观察者模式进行订单管理/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/21/关于 Kotlin 的一些小知识的总结/">关于 Kotlin 的一些小知识的总结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/21/关于 Kotlin 的一些小知识的总结/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>4月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/04/21/关于 Kotlin 的一些小知识的总结/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/21/仿QQ空间打赏功能实现/">仿QQ空间打赏功能实现</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/21/仿QQ空间打赏功能实现/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>4月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/04/21/仿QQ空间打赏功能实现/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/21/一行代码获取ViewPager中当前显示的Fragment/">一行代码获取ViewPager中当前显示的Fragment</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1. 前言...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/21/一行代码获取ViewPager中当前显示的Fragment/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>4月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/04/21/一行代码获取ViewPager中当前显示的Fragment/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/21/hello-world/">Hello World</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to Hexo
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/21/hello-world/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>4月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/04/21/hello-world/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                响应式函数编程`RxJava` & `RxAndroid`
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>青宁</strong>
+        <span>4月 21, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://hellokk.cc/2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /" class="leancloud-views_num" data-flag-title="响应式函数编程`RxJava` &amp; `RxAndroid`">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=响应式函数编程`RxJava` &amp; `RxAndroid`&url=http://hellokk.cc/2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /index.html&pic=http://hellokk.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=响应式函数编程`RxJava` &amp; `RxAndroid`&url=http://hellokk.cc/2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /index.html&via=青宁" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://hellokk.cc/2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://hellokk.cc/2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://hellokk.cc/2018/04/21/响应式函数编程 RxJava & RxAndroid /index.html&title=响应式函数编程`RxJava` &amp; `RxAndroid`" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=肖坤的博客&title=响应式函数编程`RxJava` &amp; `RxAndroid`&summary=Welcome to xiao kun&#39;s blog&pics=http://hellokk.cc/img/favicon.png&url=http://hellokk.cc/2018/04/21/响应式函数编程 RxJava & RxAndroid /index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://hellokk.cc/2018/04/21/响应式函数编程 RxJava & RxAndroid /index.html&text=响应式函数编程`RxJava` &amp; `RxAndroid`" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <ul>
+<li>Github: <a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">https://github.com/ReactiveX/RxJava</a></li>
+<li>中文资料: <ul>
+<li><a href="https://github.com/lzyzsd/Awesome-RxJava" target="_blank" rel="external">https://github.com/lzyzsd/Awesome-RxJava</a></li>
+<li><a href="https://www.zhihu.com/question/35511144" target="_blank" rel="external">https://www.zhihu.com/question/35511144</a></li>
+</ul>
+</li>
+<li>用途:<ul>
+<li>异步操作</li>
+<li>在程序逻辑异常复杂的情况下,仍然可以让代码的逻辑保持简洁</li>
+</ul>
+</li>
+<li><p>配置: 添加依赖: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">compile &apos;io.reactivex:rxjava:1.1.3&apos;</div><div class="line">compile &apos;io.reactivex:rxandroid:1.1.0&apos;</div><div class="line"></div><div class="line">//如果结合Retrofit使用,需要添加以下依赖</div><div class="line">	</div><div class="line">compile &apos;com.squareup.retrofit2:retrofit:2.0.1&apos;</div><div class="line">compile &apos;com.squareup.retrofit2:converter-gson:2.0.1&apos;</div><div class="line">compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>基本概念:</p>
+</li>
+</ul>
+<h2 id="1-被观察者-Observable"><a href="#1-被观察者-Observable" class="headerlink" title="1. 被观察者: Observable"></a>1. 被观察者: Observable</h2><ul>
+<li>作用: 决定什么时候触发事件以及触发怎样的事件</li>
+<li>创建方法:<ul>
+<li>Observable.just(T…) 参数为单个的</li>
+<li>Observable.from(T[]) / Observable.from(Iterable&lt;? extends T&gt;)  参数为数组或Iterable</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-观察者-Observer"><a href="#2-观察者-Observer" class="headerlink" title="2. 观察者: Observer"></a>2. 观察者: Observer</h2><ul>
+<li>作用: 当事件触发的时候将有怎样的行为</li>
+<li>实现类有Observer / Subscriber </li>
+</ul>
+<h2 id="3-订阅-subscribe"><a href="#3-订阅-subscribe" class="headerlink" title="3. 订阅: subscribe"></a>3. 订阅: subscribe</h2><ul>
+<li>作用: 把Observable和Observer关联起来</li>
+<li>方法:<ul>
+<li>observable.subscribe(observer);</li>
+<li>observable.subscribe(subscriber);<h2 id="4-事件"><a href="#4-事件" class="headerlink" title="4. 事件:"></a>4. 事件:</h2></li>
+</ul>
+</li>
+<li>onNext()：普通事件</li>
+<li>onCompleted():事件队列完结</li>
+<li>onError(): 事件队列异常</li>
+<li>需要注意的是onCompleted()和onError()是互斥的.调用了其中一个就不应该触发另一个.<h2 id="5-案例"><a href="#5-案例" class="headerlink" title="5. 案例:"></a>5. 案例:</h2></li>
+<li><p>现有一个数组 String[] arr ={“afdsa”, “bfdsa”, “cfda”}, 把其中以字母”a”开头的字符串找出来并加上”from Alpha”,最后打印出新的字符串的长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> private void simpleDemo() &#123;</div><div class="line"></div><div class="line">      String[] arr = &#123;&quot;afdsa&quot;, &quot;bfdsa&quot;, &quot;cfda&quot;&#125;;</div><div class="line"></div><div class="line">      Observable</div><div class="line">              .from(arr)</div><div class="line">              .filter(new Func1&lt;String, Boolean&gt;() &#123;</div><div class="line">                  @Override</div><div class="line">                  public Boolean call(String s) &#123;</div><div class="line">                      return s.startsWith(&quot;a&quot;);</div><div class="line">                  &#125;</div><div class="line">              &#125;)</div><div class="line">              .map(new Func1&lt;String, String&gt;() &#123;</div><div class="line">                  @Override</div><div class="line">                  public String call(String s) &#123;</div><div class="line">                      return s + &quot; from Alpha&quot;;</div><div class="line">                  &#125;</div><div class="line">              &#125;)</div><div class="line">              .subscribe(new Action1&lt;String&gt;() &#123;</div><div class="line">                  @Override</div><div class="line">                  public void call(String s) &#123;</div><div class="line">                      System.out.println(&quot;Rxjava:&quot; + s.length());</div><div class="line">                  &#125;</div><div class="line">              &#125;);</div><div class="line"></div><div class="line"></div><div class="line">      for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">          String temp = arr[i];</div><div class="line">          if (temp.startsWith(&quot;a&quot;)) &#123;</div><div class="line">              temp += &quot; from Alpha&quot;;</div><div class="line">              System.out.println(&quot;Normal:&quot; + temp.length());</div><div class="line">          &#125;</div><div class="line"></div><div class="line">      &#125;</div><div class="line">```	</div><div class="line"></div><div class="line">* 由指定的一个 drawable 文件 id 取得图片，并显示在 ImageView 中，并在出现异常的时候打印 Toast 报错：</div></pre></td></tr></table></figure>
+<p>  private void simpleDemo() {</p>
+<pre><code>final int drawID = R.mipmap.ic_launcher;
+Observable
+        .create(new Observable.OnSubscribe&lt;Drawable&gt;() {
+            @Override
+            public void call(Subscriber&lt;? super Drawable&gt; subscriber) {
+                Drawable drawable = getResources().getDrawable(drawID);
+                subscriber.onNext(drawable);
+                subscriber.onCompleted();
+            }
+        })
+        .subscribe(new Observer&lt;Drawable&gt;() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Toast.makeText(MainActivity.this, &quot;Error&quot;, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNext(Drawable drawable) {
+                imageView.setImageDrawable(drawable);
+            }
+        });
+</code></pre></li>
+</ul>
+<pre><code>}
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">## 6. Scheduler </div><div class="line">* 作用: 控制线程.指定某一段代码在那个线程里运行.</div><div class="line">* 内置的Scheduler:</div><div class="line">	* Schedulers.immediate(): 直接在当前线程运行，相当于不指定线程。这是默认的 Scheduler。</div><div class="line">	* Schedulers.newThread(): 总是启用新线程，并在新线程执行操作。</div><div class="line">	* Schedulers.io(): I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的 Scheduler。行为模式和 newThread() 差不多，区别在于 io() 的内部实现是是用一个无数量上限的线程池，可以重用空闲的线程，因此多数情况下 io() 比 newThread() 更有效率。不要把计算工作放在 io() 中，可以避免创建不必要的线程。</div><div class="line">	* Schedulers.computation(): 计算所使用的 Scheduler。这个计算指的是 CPU 密集型计算，即不会被 I/O 等操作限制性能的操作，例如图形的计算。这个 Scheduler 使用的固定的线程池，大小为 CPU 核数。不要把 I/O 操作放在 computation() 中，否则 I/O 操作的等待时间会浪费 CPU。</div><div class="line">	* AndroidSchedulers.mainThread(): Android专用,它指定的操作将在 Android 主线程运行。</div><div class="line"></div><div class="line">* 指定线程的方法:</div><div class="line">	* Observable.subscribeOn():指定 subscribe() 所发生的线程，即 Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程</div><div class="line">	* Observable.observeOn():指定 Subscriber 所运行在的线程。或者叫做事件消费的线程。</div><div class="line"></div><div class="line">## 7. 数据变换:</div><div class="line">* 作用: 就是将事件序列中的对象或整个序列进行加工处理，转换成不同的事件或事件序列</div><div class="line">* Observable.map:  一对一的转换</div></pre></td></tr></table></figure>
+<p> private void simpleDemo() {<br>      Observable<br>              .just(R.mipmap.ic_launcher)<br>              .map(new Func1<integer, drawable="">() {<br>                  @Override<br>                  public Drawable call(Integer integer) {<br>                      return getResources().getDrawable(integer);<br>                  }<br>              })<br>              .subscribe(new Action1<drawable>() {<br>                  @Override<br>                  public void call(Drawable drawable) {<br>                      imageView.setImageDrawable(drawable);<br>                  }<br>              });<br>  }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* Observable.flatMap: 一对多的转换</div></pre></td></tr></table></figure></drawable></integer,></p>
+<p>public class Course {<br> private String name;<br> private int id;</p>
+<p> public Course(String name, int id) {<br>     this.name = name;<br>     this.id = id;<br> }</p>
+<p> public String getName() {<br>     return name;<br> }</p>
+<p> public void setName(String name) {<br>     this.name = name;<br> }</p>
+<p> public int getId() {<br>     return id;<br> }</p>
+<p> public void setId(int id) {<br>     this.id = id;<br> }<br>}</p>
+<p>public class Student {<br> private String name;</p>
+<p> private ArrayList<course> courses;</course></p>
+<p> public Student(String name, ArrayList<course> courses) {<br>     this.name = name;<br>     this.courses = courses;<br> }</course></p>
+<p> public String getName() {<br>     return name;<br> }</p>
+<p> public void setName(String name) {<br>     this.name = name;<br> }</p>
+<p> public ArrayList<course> getCourses() {<br>     return courses;<br> }</course></p>
+<p> public void setCourses(ArrayList<course> courses) {<br>     this.courses = courses;<br> }<br>}</course></p>
+<p>private void student() {</p>
+<pre><code>Course yuwen = new Course(&quot;语文&quot;, 1);
+Course shuxue = new Course(&quot;数学&quot;, 2);
+Course yingyu = new Course(&quot;英文&quot;, 3);
+Course lishi = new Course(&quot;历史&quot;, 4);
+Course zhengzhi = new Course(&quot;政治&quot;, 5);
+Course xila = new Course(&quot;希腊语&quot;, 6);
+
+ArrayList&lt;Course&gt; course1 = new ArrayList&lt;&gt;();
+course1.add(yuwen);
+course1.add(shuxue);
+course1.add(yingyu);
+         course1.add(lishi);
+         course1.add(zhengzhi);
+         course1.add(xila);
+Student zhangsan = new Student(&quot;zhangsan&quot;, course1);
+
+Observable.just(zhangsan)
+        .flatMap(new Func1&lt;Student, Observable&lt;Course&gt;&gt;() {
+            @Override
+            public Observable&lt;Course&gt; call(Student student) {
+                return Observable.from(student.getCourses());
+            }
+        }).subscribe(new Action1&lt;Course&gt;() {
+    @Override
+    public void call(Course course) {
+        System.out.println(course.getName());
+    }
+});
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 8. 和Retrofit一起使用</div><div class="line">		</div><div class="line">1. 添加依赖:</div></pre></td></tr></table></figure></p>
+<pre><code>    compile &apos;com.squareup.retrofit2:retrofit:2.0.1&apos;
+compile &apos;com.squareup.retrofit2:converter-gson:2.0.1&apos;
+compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 利用[http://www.jsonschema2pojo.org/](http://www.jsonschema2pojo.org/)创建数据模型</div><div class="line"></div><div class="line">3. 创建REST API 接口.注意此时返回的不能是Call而是Observable.示例代码:</div></pre></td></tr></table></figure>
+
+public interface LocationInterface {
+    // http://ip.taobao.com/service/getIpInfo.php?ip=202.178.10.23
+    @GET(&quot;/service/getIpInfo.php&quot;)
+    public Observable&lt;Location&gt; getLocation(@Query(&quot;ip&quot;) String ip);
+
+}
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4.  创建Retrofit对象,发起请求.注意此时Retrofit需要添加addCallAdapterFactory.示例代码:</div></pre></td></tr></table></figure>
+</code></pre><p> Retrofit retrofit = new Retrofit.Builder()<br>          .baseUrl(BASE2)<br>          .addConverterFactory(GsonConverterFactory.create())<br>          .addCallAdapterFactory(RxJavaCallAdapterFactory.create())<br>          .build();</p>
+<p>  LocationInterface locationInterface = retrofit.create(LocationInterface.class);<br>  Observable<location> location = locationInterface.getLocation(“8.8.8.8”);<br>  location<br>          .subscribeOn(Schedulers.io())<br>          .map(new Func1<location, string="">() {</location,></location></p>
+<pre><code>         @Override
+         public String call(Location location) {
+             return location.getData().getCountry();
+         }
+     })
+     .observeOn(AndroidSchedulers.mainThread())
+     .subscribe(new Action1&lt;String&gt;() {
+         @Override
+         public void call(String s) {
+             textView.setText(s);
+         }
+});
+</code></pre><p>```</p>
+
+        
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/04/21/响应式函数编程 RxJava &amp; RxAndroid /"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytd5KKdQ';
+var conf = 'prod_66ed9198e35913ff237d1d23a65e4061';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/21/使用观察者模式进行订单管理/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
