@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Mon May 21 2018 21:07:22 GMT+0800" />
-        <meta property="article:modified_time" content="Mon May 21 2018 21:14:21 GMT+0800" />
+        <meta property="article:modified_time" content="Mon May 21 2018 21:37:10 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://hellokk.cc/2018/05/21/Kotlin 中使用 Anko 编写布局/index.html",
     "headline": "Kotlin 中使用 Anko 编写布局",
     "datePublished": "Mon May 21 2018 21:07:22 GMT+0800",
-    "dateModified": "Mon May 21 2018 21:14:21 GMT+0800",
+    "dateModified": "Mon May 21 2018 21:37:10 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "青宁",
@@ -541,8 +541,25 @@
 <p>来一个例子看一下：</p>
 <ol>
 <li><p>使用 XML </p>
- <relativelayout><br><br>     <textview android:id="@+id/sample_text_view" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignparenttop="true" android:text="Sample text view" android:textsize="25sp"><br><br>     <button android:id="@+id/sample_button" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/sample_text_view" android:text="Sample button"><br><br> </button></textview></relativelayout>
-</li>
+<pre><code>&lt;RelativeLayout&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/sample_text_view&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_alignParentTop=&quot;true&quot;
+        android:text=&quot;Sample text view&quot;
+        android:textSize=&quot;25sp&quot; /&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/sample_button&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_below=&quot;@+id/sample_text_view&quot;
+        android:text=&quot;Sample button&quot; /&gt;
+
+&lt;/RelativeLayout&gt;
+</code></pre></li>
 <li><p>使用 Anko</p>
 <pre><code>relativeLayout {
     val textView = textView(&quot;Sample text view&quot;) {
