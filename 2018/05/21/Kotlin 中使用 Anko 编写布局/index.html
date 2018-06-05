@@ -54,7 +54,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="青宁">
-    <meta name="description" itemprop="description" content="Welcome to xiao kun&#39;s blog">
+    <meta name="description" itemprop="description" content="Welcome to Kun blog">
     <meta name="keywords" content="">
 
     <!-- Import lsloader -->
@@ -239,17 +239,17 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Kotlin 中使用 Anko 编写布局 | 肖坤的博客">
     <meta property="og:image" content="http://hellokk.cc/img/favicon.png" />
-    <meta property="og:description" content="Welcome to xiao kun&#39;s blog">
+    <meta property="og:description" content="Welcome to Kun blog">
     
 
     
         <meta property="article:published_time" content="Mon May 21 2018 21:07:22 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Jun 05 2018 20:26:13 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Jun 05 2018 20:32:12 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="Kotlin 中使用 Anko 编写布局 | 肖坤的博客">
-    <meta name="twitter:description" content="Welcome to xiao kun&#39;s blog">
+    <meta name="twitter:description" content="Welcome to Kun blog">
     <meta name="twitter:image" content="http://hellokk.cc/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://hellokk.cc" />
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://hellokk.cc/2018/05/21/Kotlin 中使用 Anko 编写布局/index.html",
     "headline": "Kotlin 中使用 Anko 编写布局",
     "datePublished": "Mon May 21 2018 21:07:22 GMT+0800",
-    "dateModified": "Tue Jun 05 2018 20:26:13 GMT+0800",
+    "dateModified": "Tue Jun 05 2018 20:32:12 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "青宁",
@@ -290,7 +290,7 @@
         }
     },
     "keywords": "",
-    "description": "Welcome to xiao kun&#39;s blog",
+    "description": "Welcome to Kun blog",
 }
 </script>
 
@@ -506,7 +506,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=肖坤的博客&title=Kotlin 中使用 Anko 编写布局&summary=Welcome to xiao kun&#39;s blog&pics=http://hellokk.cc/img/favicon.png&url=http://hellokk.cc/2018/05/21/Kotlin 中使用 Anko 编写布局/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=肖坤的博客&title=Kotlin 中使用 Anko 编写布局&summary=Welcome to Kun blog&pics=http://hellokk.cc/img/favicon.png&url=http://hellokk.cc/2018/05/21/Kotlin 中使用 Anko 编写布局/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -540,27 +540,28 @@
 </ul>
 <p>来一个例子看一下：</p>
 <ol>
-<li>使用 XML :</li>
+<li>使用 XML </li>
 </ol>
-<pre><code>&lt;RelativeLayout&gt;
+<pre><code class="xml"><span class="tag">&lt;<span class="name">RelativeLayout</span>&gt;</span>
 
-    &lt;TextView
-        android:id=&quot;@+id/sample_text_view&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_alignParentTop=&quot;true&quot;
-        android:text=&quot;Sample text view&quot;
-        android:textSize=&quot;25sp&quot; /&gt;
+    <span class="tag">&lt;<span class="name">TextView</span></span>
+<span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/sample_text_view"</span></span>
+<span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
+<span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
+<span class="tag">        <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span>
+<span class="tag">        <span class="attr">android:text</span>=<span class="string">"Sample text view"</span></span>
+<span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"25sp"</span> /&gt;</span>
 
-    &lt;Button
-        android:id=&quot;@+id/sample_button&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_below=&quot;@+id/sample_text_view&quot;
-        android:text=&quot;Sample button&quot; /&gt;
+    <span class="tag">&lt;<span class="name">Button</span></span>
+<span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/sample_button"</span></span>
+<span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
+<span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
+<span class="tag">        <span class="attr">android:layout_below</span>=<span class="string">"@+id/sample_text_view"</span></span>
+<span class="tag">        <span class="attr">android:text</span>=<span class="string">"Sample button"</span> /&gt;</span>
 
-&lt;/RelativeLayout&gt;
-</code></pre><ol>
+<span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span>
+</code></pre>
+<ol>
 <li><p>使用 Anko</p>
 <pre><code>relativeLayout {
     val textView = textView(&quot;Sample text view&quot;) {
