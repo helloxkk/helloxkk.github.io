@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Mon May 21 2018 21:07:22 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Jun 05 2018 19:36:26 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Jun 05 2018 20:26:13 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://hellokk.cc/2018/05/21/Kotlin 中使用 Anko 编写布局/index.html",
     "headline": "Kotlin 中使用 Anko 编写布局",
     "datePublished": "Mon May 21 2018 21:07:22 GMT+0800",
-    "dateModified": "Tue Jun 05 2018 19:36:26 GMT+0800",
+    "dateModified": "Tue Jun 05 2018 20:26:13 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "青宁",
@@ -542,26 +542,25 @@
 <ol>
 <li>使用 XML :</li>
 </ol>
-<pre><code class="xml"><span class="tag">&lt;<span class="name">RelativeLayout</span>&gt;</span>
+<pre><code>&lt;RelativeLayout&gt;
 
-            <span class="tag">&lt;<span class="name">TextView</span></span>
-<span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/sample_text_view"</span></span>
-<span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
-<span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
-<span class="tag">                <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span>
-<span class="tag">                <span class="attr">android:text</span>=<span class="string">"Sample text view"</span></span>
-<span class="tag">                <span class="attr">android:textSize</span>=<span class="string">"25sp"</span> /&gt;</span>
+    &lt;TextView
+        android:id=&quot;@+id/sample_text_view&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_alignParentTop=&quot;true&quot;
+        android:text=&quot;Sample text view&quot;
+        android:textSize=&quot;25sp&quot; /&gt;
 
-            <span class="tag">&lt;<span class="name">Button</span></span>
-<span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/sample_button"</span></span>
-<span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
-<span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
-<span class="tag">                <span class="attr">android:layout_below</span>=<span class="string">"@+id/sample_text_view"</span></span>
-<span class="tag">                <span class="attr">android:text</span>=<span class="string">"Sample button"</span> /&gt;</span>
+    &lt;Button
+        android:id=&quot;@+id/sample_button&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_below=&quot;@+id/sample_text_view&quot;
+        android:text=&quot;Sample button&quot; /&gt;
 
-        <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span>
-</code></pre>
-<ol>
+&lt;/RelativeLayout&gt;
+</code></pre><ol>
 <li><p>使用 Anko</p>
 <pre><code>relativeLayout {
     val textView = textView(&quot;Sample text view&quot;) {
@@ -1071,8 +1070,8 @@ return AlertDialog.Builder(activity)
 <div id="SOHUCS" sid="2018/05/21/Kotlin 中使用 Anko 编写布局/"  ></div>
 <script type="text/javascript">
 (function(){
-var appid = 'cytd5KKdQ';
-var conf = 'prod_66ed9198e35913ff237d1d23a65e4061';
+var appid = '';
+var conf = '';
 var width = window.innerWidth || document.documentElement.clientWidth;
 if (width < 960) {
 window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
@@ -1500,7 +1499,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
    <!-- 畅言公共 js 代码 start -->
-<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytd5KKdQ">
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=">
 </script>
 <!-- 畅言公共 js 代码 end -->
 
