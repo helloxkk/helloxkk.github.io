@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Mon May 21 2018 21:07:22 GMT+0800" />
-        <meta property="article:modified_time" content="Mon May 21 2018 21:37:10 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Jun 05 2018 19:36:26 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://hellokk.cc/2018/05/21/Kotlin 中使用 Anko 编写布局/index.html",
     "headline": "Kotlin 中使用 Anko 编写布局",
     "datePublished": "Mon May 21 2018 21:07:22 GMT+0800",
-    "dateModified": "Mon May 21 2018 21:37:10 GMT+0800",
+    "dateModified": "Tue Jun 05 2018 19:36:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "青宁",
@@ -536,30 +536,32 @@
 <li>类型安全，不再需要那么多的 findById() 之后的类型转换。 </li>
 <li>null 安全，Kotlin 里，如果一个变量用？表示为可空，并且使用？之后再调用的时候，即使变量为空也不会引发异常。 </li>
 <li>无需设备解析 XML，因为 Anko 本质是代码实现的界面和布局，所以省去了这些麻烦。 </li>
-<li>代码复用，可以通过继承 AnkoComponent 的方式实现代码复用。XML 布局是每一个 Activity，每一个 View 各自专属一个，<br>代码复用比较少。</li>
+<li>代码复用，可以通过继承 AnkoComponent 的方式实现代码复用。XML 布局是每一个 Activity，每一个 View 各自专属一个，代码复用比较少。</li>
 </ul>
 <p>来一个例子看一下：</p>
 <ol>
-<li><p>使用 XML </p>
-<pre><code>&lt;RelativeLayout&gt;
+<li>使用 XML :</li>
+</ol>
+<pre><code class="xml"><span class="tag">&lt;<span class="name">RelativeLayout</span>&gt;</span>
 
-    &lt;TextView
-        android:id=&quot;@+id/sample_text_view&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_alignParentTop=&quot;true&quot;
-        android:text=&quot;Sample text view&quot;
-        android:textSize=&quot;25sp&quot; /&gt;
+            <span class="tag">&lt;<span class="name">TextView</span></span>
+<span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/sample_text_view"</span></span>
+<span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
+<span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
+<span class="tag">                <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span>
+<span class="tag">                <span class="attr">android:text</span>=<span class="string">"Sample text view"</span></span>
+<span class="tag">                <span class="attr">android:textSize</span>=<span class="string">"25sp"</span> /&gt;</span>
 
-    &lt;Button
-        android:id=&quot;@+id/sample_button&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_below=&quot;@+id/sample_text_view&quot;
-        android:text=&quot;Sample button&quot; /&gt;
+            <span class="tag">&lt;<span class="name">Button</span></span>
+<span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/sample_button"</span></span>
+<span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
+<span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
+<span class="tag">                <span class="attr">android:layout_below</span>=<span class="string">"@+id/sample_text_view"</span></span>
+<span class="tag">                <span class="attr">android:text</span>=<span class="string">"Sample button"</span> /&gt;</span>
 
-&lt;/RelativeLayout&gt;
-</code></pre></li>
+        <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span>
+</code></pre>
+<ol>
 <li><p>使用 Anko</p>
 <pre><code>relativeLayout {
     val textView = textView(&quot;Sample text view&quot;) {
