@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Sat Apr 21 2018 15:58:47 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Jun 05 2018 20:44:35 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Jun 05 2018 21:05:08 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "http://hellokk.cc/2018/04/21/使用观察者模式进行订单管理/index.html",
     "headline": "使用观察者模式进行订单管理",
     "datePublished": "Sat Apr 21 2018 15:58:47 GMT+0800",
-    "dateModified": "Tue Jun 05 2018 20:44:35 GMT+0800",
+    "dateModified": "Tue Jun 05 2018 21:05:08 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "青宁",
@@ -537,7 +537,7 @@
 <p>注册观察者</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">OrderManageObserver.instance?.setOrderClick(<span class="keyword">object</span> : OrderManageListener &#123;</div><div class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">orderReceiving</span><span class="params">(orderStep: <span class="type">Int</span>?)</span></span> &#123;</div><div class="line">             <span class="comment">// 在这里做相应操作</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">orderDelete</span><span class="params">(orderStep: <span class="type">Int</span>?)</span></span> &#123;</div><div class="line">               <span class="comment">// 订单删除， 刷新列表</span></div><div class="line">            &#125;</div><div class="line">        &#125;)</div></pre></td></tr></table></figure>
 <p>发送者</p>
-<figure class="highlight plain"><figcaption><span>codeblock [title] [lang:java] [url] [link text] %&#125;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">override fun orderDelSuccess(orderStep: Int?) &#123;</div><div class="line">		// 在订单删除成功后，通知所有的观察者做相应的操作</div><div class="line">        OrderManageObserver.instance?.orderDeleteClick(orderStep)</div><div class="line">    &#125;</div><div class="line">&#123;% endcodeblock %&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">orderDelSuccess</span><span class="params">(orderStep: <span class="type">Int</span>?)</span></span> &#123;</div><div class="line">		<span class="comment">// 在订单删除成功后，通知所有的观察者做相应的操作</span></div><div class="line">        OrderManageObserver.instance?.orderDeleteClick(orderStep)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p><strong>总结</strong>：观察者模式看起来很高大上，其实说白了就是一个类维护了另一个类的一个集合，并通过这个集合绑定解绑或调用另一个类的方法，对程序的解耦有一定帮助。在这里，我只简单的实现了一下，如果项目比较大，且用的地方比较多的话，在设计底层框架的时候，可以利用多态的特性进行抽象，以便适用与各种场景。</p>
 
         
