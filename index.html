@@ -1,1469 +1,1414 @@
+
 <!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.0 -->
-    <script>
-        window.materialVersion = "1.5.0"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-
-
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-
-
-    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Title -->
-    
-    <title>
-        
-        肖坤的博客
-    </title>
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="青宁">
-    <meta name="description" itemprop="description" content="Welcome to Kun blog">
-    <meta name="keywords" content="">
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="肖坤的博客">
-
-    <!-- Site Verification -->
-    
-    
-
-    <!-- RSS -->
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
+<html>
+<head>
+  <meta charset="utf-8">
   
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icon -->
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://hellokk.cc">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="肖坤的博客">
-    <meta property="og:image" content="http://hellokk.cc/img/favicon.png" />
-    <meta property="og:description" content="Welcome to Kun blog">
-    
-
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="肖坤的博客">
-    <meta name="twitter:description" content="Welcome to Kun blog">
-    <meta name="twitter:image" content="http://hellokk.cc/img/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="http://hellokk.cc" />
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="http://hellokk.cc" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Website",
-    "publisher": {
-        "@type": "Organization",
-        "name": "肖坤的博客",
-        "logo": "/img/favicon.png"
-    },
-    "url": "http://hellokk.cc",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.png"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://hellokk.cc"
-    },
-    "description": "Welcome to Kun blog"
-}
-</script>
-
-
-
-
-    
-
-    <!-- Analytics -->
-    
-    
-    
-
-    <!-- Custom Head -->
-    
-
+  <title>肖坤的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Welcome to Kun blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="肖坤的博客">
+<meta property="og:url" content="http://hellokk.cc/index.html">
+<meta property="og:site_name" content="肖坤的博客">
+<meta property="og:description" content="Welcome to Kun blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="肖坤的博客">
+<meta name="twitter:description" content="Welcome to Kun blog">
+  
+    <link rel="alternative" href="/atom.xml" title="肖坤的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
 </head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-        <!-- Paradox Header -->
-        <!-- Daily pic -->
-<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
-
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">
-        
-            
-                Hi, nice to meet you
-            
-        
-        </a></p>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">肖坤的博客</a>
+      </h1>
+      
     </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>青宁</strong>
-        </div>
-    </div>
-</div>
-
-        <!-- Blog info -->
-<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-
-    <!-- Search -->
-    
-    <!-- Google -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
-        </label>
-
-        <form autocomplete="off" id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-            <input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
-            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-
-            <input type="hidden" name="sitesearch" value="http://hellokk.cc">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="hellokk.cc">
         </form>
+      </div>
     </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main">
+  
+    <article id="post-仿微信剪切视频时长View" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/仿微信剪切视频时长View/" class="article-date">
+  <time datetime="2018-07-25T15:09:02.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/25/仿微信剪切视频时长View/">仿微信剪切视频时长View</a>
+    </h1>
+  
 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-preview"><a href="#1-preview" class="headerlink" title="1. preview"></a>1. preview</h2><p><img src="https://camo.githubusercontent.com/cbe6a0956b09e7a09cba0f8c8cdc4e84ab88cb04/68747470733a2f2f696d672d626c6f672e6373646e2e6e65742f32303138303630363231303635353138363f77617465726d61726b2f322f746578742f6148523063484d364c7939696247396e4c6d4e7a5a473475626d56304c3168724e6a4d794d5463794e7a51342f666f6e742f3561364c354c32542f666f6e7473697a652f3430302f66696c6c2f49304a42516b46434d413d3d2f646973736f6c76652f3730" alt="打赏Gif"></p>
 
-
-
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="#" target="_blank">
-            <img src="/img/logo.png" alt="logo" />
-        </a>
+      
     </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://hellokk.cc/2018/07/25/仿微信剪切视频时长View/" data-id="cjtcfau3r00038t0p9m3090d8" class="article-share-link" data-share="baidu" data-title="仿微信剪切视频时长View">分享到</a>
+      
 
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>肖坤的博客</strong>
-        </div>
-        <div class="section-spacer"></div>
+      
+        <a href="http://hellokk.cc/2018/07/25/仿微信剪切视频时长View/#ds-thread" class="article-comment-link">评论</a>
+      
 
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-        </ul>
+      
+    </footer>
+  </div>
+  
+</article>
 
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-                <!-- All Site UV -->
-                <a class="index_share-link" href="#">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        <span id="busuanzi_container_site_uv">
-                            <span id="busuanzi_value_site_uv"></span>&nbsp;浏览量
-                        </span>
-                    </li>
-                </a>
-            
 
-            
+  
+    <article id="post-使用观察者模式进行订单管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/05/使用观察者模式进行订单管理/" class="article-date">
+  <time datetime="2018-06-05T13:05:10.000Z" itemprop="datePublished">2018-06-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/05/使用观察者模式进行订单管理/">使用观察者模式进行订单管理</a>
+    </h1>
+  
 
-            
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=肖坤的博客&url=http://hellokk.cc&pic=http://hellokk.cc/img/favicon.png&searchPic=false&style=simple" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到微博
-                    </li>
-                </a>
-            
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>概念</strong>：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。<br>观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * author: Kun on 2017/12/14 15:34</span></div><div class="line"><span class="comment"> * address: vip@hellokk.cc</span></div><div class="line"><span class="comment"> * description: 订单管理观察者 用户对订单做了操作后，通知所有注册观察者的对象作相应的改变</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">OrderManageObserver</span> </span>&#123;</div><div class="line">	</div><div class="line">    companion object &#123;</div><div class="line">        var list: MutableList&lt;OrderManageListener&gt;? = <span class="keyword">null</span></div><div class="line">        var instance: OrderManageObserver? = <span class="keyword">null</span></div><div class="line">            get() &#123;</div><div class="line">                <span class="keyword">if</span> (field == <span class="keyword">null</span>) &#123;</div><div class="line">					<span class="comment">// 使用双重锁方式实现单例，保持只有一个实例</span></div><div class="line">                    <span class="keyword">synchronized</span>(OrderManageObserver::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>) </span>&#123;</div><div class="line">                        <span class="keyword">if</span> (field == <span class="keyword">null</span>)&#123;</div><div class="line">                            list = ArrayList()</div><div class="line">                        	field = OrderManageObserver()</div><div class="line">						&#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> field</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 接受订单</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function">fun <span class="title">orderReceivingClick</span><span class="params">(orderStep: Int?)</span> </span>&#123;</div><div class="line">        list?.forEach &#123;</div><div class="line">			<span class="comment">// 通知所有观察者</span></div><div class="line">            it.orderReceiving(orderStep)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 订单删除</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function">fun <span class="title">orderDeleteClick</span><span class="params">(orderStep: Int?)</span> </span>&#123;</div><div class="line">        list?.forEach &#123;</div><div class="line">			<span class="comment">// 通知所有观察者</span></div><div class="line">            it.orderDelete(orderStep)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 注册订单监听</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function">fun <span class="title">setOrderClick</span><span class="params">(orderFace: OrderManageListener)</span> </span>&#123;</div><div class="line">        list?.add(orderFace)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>订单管理监听器</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * author: Alan on 2018/1/6 14:01</span></div><div class="line"><span class="comment"> * address: xk6321<span class="doctag">@gmail</span>.com</span></div><div class="line"><span class="comment"> * description: 订单管理监听器</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OrderManageListener</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">orderReceiving</span><span class="params">(orderStep: <span class="type">Int</span>?)</span></span> <span class="comment">// 接受订单</span></div><div class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">orderDelete</span><span class="params">(orderStep: <span class="type">Int</span>?)</span></span> <span class="comment">// 订单删除</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注册观察者</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">OrderManageObserver.instance?.setOrderClick(<span class="keyword">object</span> : OrderManageListener &#123;</div><div class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">orderReceiving</span><span class="params">(orderStep: <span class="type">Int</span>?)</span></span> &#123;</div><div class="line">             <span class="comment">// 在这里做相应操作</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">orderDelete</span><span class="params">(orderStep: <span class="type">Int</span>?)</span></span> &#123;</div><div class="line">               <span class="comment">// 订单删除， 刷新列表</span></div><div class="line">            &#125;</div><div class="line">        &#125;)</div></pre></td></tr></table></figure>
+<p>发送者</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">orderDelSuccess</span><span class="params">(orderStep: <span class="type">Int</span>?)</span></span> &#123;</div><div class="line">		<span class="comment">// 在订单删除成功后，通知所有的观察者做相应的操作</span></div><div class="line">        OrderManageObserver.instance?.orderDeleteClick(orderStep)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p><strong>总结</strong>：观察者模式看起来很高大上，其实说白了就是一个类维护了另一个类的一个集合，并通过这个集合绑定解绑或调用另一个类的方法，对程序的解耦有一定帮助。在这里，我只简单的实现了一下，如果项目比较大，且用的地方比较多的话，在设计底层框架的时候，可以利用多态的特性进行抽象，以便适用与各种场景。</p>
 
-            
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=肖坤的博客&url=http://hellokk.cc&via=青宁" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Twitter
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://hellokk.cc" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Facebook
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://plus.google.com/share?url=http://hellokk.cc" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 Google+
-                    </li>
-                </a>
-            
-
-            
-                <a class="index_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://hellokk.cc&title=肖坤的博客" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到 LinkedIn
-                    </li>
-                </a>
-            
-
-            
-                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=肖坤的博客&title=肖坤的博客&summary=Welcome to Kun blog&pics=http://hellokk.cc/img/favicon.png&url=http://hellokk.cc" target="_blank">
-                    <li class="mdl-menu__item">
-                        分享到 QQ
-                    </li>
-                </a>
-            
-
-            
-                <a class="post_share-link" href="https://telegram.me/share/url?url=http://hellokk.cc&text=肖坤的博客" target="_blank">
-                    <li class="mdl-menu__item">
-                        分享到 Telegram
-                    </li>
-                </a>
-            
-        </ul>
+      
     </div>
-</div>
+    <footer class="article-footer">
+      
+        <a data-url="http://hellokk.cc/2018/06/05/使用观察者模式进行订单管理/" data-id="cjtcfau3r00048t0pzt7crk92" class="article-share-link" data-share="baidu" data-title="使用观察者模式进行订单管理">分享到</a>
+      
 
+      
+        <a href="http://hellokk.cc/2018/06/05/使用观察者模式进行订单管理/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Kotlin 中使用 Anko 编写布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" class="article-date">
+  <time datetime="2018-06-05T12:32:14.000Z" itemprop="datePublished">2018-06-05</time>
+</a>
     
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
+  </div>
+  <div class="article-inner">
     
-
-    <!-- Normal Post -->
     
+      <header class="article-header">
         
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/05/Kotlin 中使用 Anko 编写布局/">Kotlin 中使用 Anko 编写布局</a>
+    </h1>
+  
+
+      </header>
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/25/仿微信剪切视频时长View/">仿微信剪切视频时长View</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/25/仿微信剪切视频时长View/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>7月 25, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/25/仿微信剪切视频时长View/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/06/05/使用观察者模式进行订单管理/">使用观察者模式进行订单管理</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            概念：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。观察者模式定...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/06/05/使用观察者模式进行订单管理/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>6月 05, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/06/05/使用观察者模式进行订单管理/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/">Kotlin 中使用 Anko 编写布局</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            使用 Kotlin 开发已经开发两个项目了。说大幅度的减少了 Java 代码一点不夸张。用 Java 的时候动不动就 new 一个 OnClickL...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>6月 05, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/06/05/Kotlin 中使用 Anko 编写布局/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/05/21/响应式函数编程 RxJava &amp; RxAndroid /">响应式函数编程 RxJava &amp; RxAndroid</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-Github: 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/05/21/响应式函数编程 RxJava &amp; RxAndroid /" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>5月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/05/21/响应式函数编程 RxJava &amp; RxAndroid /" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/19/仿QQ空间打赏功能实现/">仿QQ空间打赏功能实现</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/19/仿QQ空间打赏功能实现/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>11月 19, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/11/19/仿QQ空间打赏功能实现/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/">一行代码获取ViewPager中当前显示的Fragment</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1. 前言...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>11月 07, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/11/07/一行代码获取ViewPager中当前显示的Fragment/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/15/hello-world/">Hello World</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to Hexo
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/15/hello-world/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>9月 15, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/09/15/hello-world/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/11/关于 Kotlin 的一些小知识的总结/">关于 Kotlin 的一些小知识的总结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/11/关于 Kotlin 的一些小知识的总结/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="青宁's avatar">
-            </div>
-            <div>
-                <strong>青宁</strong>
-                <span>9月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/09/11/关于 Kotlin 的一些小知识的总结/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
-</div>
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="青宁's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        xk6321@gmail.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="mailto: xk6321@gmail" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                
-            </ul>
-        </li>
-        
-    
-
-    <!-- Pages  -->
-    
-
-    <!-- Article Number  -->
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用 Kotlin 开发已经开发两个项目了。说大幅度的减少了 Java 代码一点不夸张。用 Java 的时候动不动就 new 一个 OnClickListener() 匿名类，动不动就类型转换的地方都可以省下很多。更不用说特殊的地方使用 data class 更是少些不知道多少代码。</p>
+<p>Jetbrains 给 Android 带来的不仅是 Kotlin，还有 Anko。从 Anko 的官方说明来看这是一个雄心勃勃的要代替 XML 写 Layout 的新的开发方式。 Anko 最重要的一点是引入了 DSL（Domain Specific Language）的方式开发 Android 界面布局。当然，本质是代码实现布局。不过使用 Anko 完全不用经历 Java 纯代码写 Android 的痛苦。因为本身是来自 Kotlin 的，所以自然的使用这种方式开发就具有了： </p>
+<ul>
+<li>类型安全，不再需要那么多的 findById() 之后的类型转换。 </li>
+<li>null 安全，Kotlin 里，如果一个变量用？表示为可空，并且使用？之后再调用的时候，即使变量为空也不会引发异常。 </li>
+<li>无需设备解析 XML，因为 Anko 本质是代码实现的界面和布局，所以省去了这些麻烦。 </li>
+<li>代码复用，可以通过继承 AnkoComponent 的方式实现代码复用。XML 布局是每一个 Activity，每一个 View 各自专属一个，代码复用比较少。</li>
 </ul>
+<p>来一个例子看一下：</p>
+<ol>
+<li>使用 XML </li>
+</ol>
+<pre><code class="xml"><span class="tag">&lt;<span class="name">RelativeLayout</span>&gt;</span>
 
+    <span class="tag">&lt;<span class="name">TextView</span></span>
+<span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/sample_text_view"</span></span>
+<span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
+<span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
+<span class="tag">        <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span>
+<span class="tag">        <span class="attr">android:text</span>=<span class="string">"Sample text view"</span></span>
+<span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"25sp"</span> /&gt;</span>
 
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
+    <span class="tag">&lt;<span class="name">Button</span></span>
+<span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/sample_button"</span></span>
+<span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
+<span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
+<span class="tag">        <span class="attr">android:layout_below</span>=<span class="string">"@+id/sample_text_view"</span></span>
+<span class="tag">        <span class="attr">android:text</span>=<span class="string">"Sample button"</span> /&gt;</span>
 
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
+<span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span>
+</code></pre>
+<ol>
+<li><p>使用 Anko</p>
+<pre><code>relativeLayout {
+    val textView = textView(&quot;Sample text view&quot;) {
+        textSize = 25f
+    }.lparams {
+        width = matchParent
+        alignParentTop()
+    }
 
-<!-- Sidebar Divider -->
+    button(&quot;Sample button&quot;).lparams {
+        width = matchParent
+        below(textView)
+    }
+}
+</code></pre></li>
+</ol>
+<p>使用前需要在在 <code>build.gradle</code> 里添加下面的代码：</p>
+<pre><code>dependencies {
+    compile &apos;org.jetbrains.anko:anko-sdk15:0.8.3&apos; // sdk19, sdk21, sdk23 are also available
+    compile &apos;org.jetbrains.anko:anko-support-v4:0.8.3&apos; // In case you need support-v4 bindings
+    compile &apos;org.jetbrains.anko:anko-appcompat-v7:0.8.3&apos; // For appcompat-v7 bindings
+}
+</code></pre><p>写一个 ListView 热身<br>首先创建一个 ListView 的 item 点击之后跳转的 activity。这里叫做 TabDemo1。</p>
+<p>现在就创建这个 listview，并在 listview 的 item 点击之后调转到相应的 activity 去。<br>这个 listview 非常简单，只在一个竖直的布局中放置，并且宽度和高度都是填满竖直<br>布局。</p>
+<pre><code>// 1
+verticalLayout {
+    padding = dip(16)
+    // 2
+    val list = listView() {
+        // 3
+        adapter = ArrayAdapter&lt;String&gt;(this@MainActivity, android.R.layout.simple_list_item_1, items)
+        // 4
+        onItemClickListener = object : AdapterView.OnItemClickListener {
+            override fun onItemClick(parent: AdapterView&lt;*&gt;?, v: View?, position: Int, id: Long) {
+                when (position) {
+                    0 -&gt; {
+                        // 5
+                        startActivity&lt;TabDemo1&gt;()
+                    }
+                }
+            }
+        }
+    }.lparams(width = matchParent) { // 6
+        height = matchParent
+    }
+}
+</code></pre><p>分别解释： </p>
+<ol>
+<li>竖直布局。本质是 LinearLayout，并且 orientation 的值为 vertical。但是<br>水平方向的就没有 vetialLayout 这种可以直接使用的了，需要自己写明orientation。 </li>
+<li>创建一个 listview。 </li>
+<li>给这个 listview 添加 adapter。这里简单实用 ArrayAdapter<string>。 </string></li>
+<li>添加 OnItemClickListener。object : AdapterView.OnItemClickListener 用来<br>创建实现某个接口的匿名类。 </li>
+<li>startActivity<tabdemo1>()，是Anko的语法糖。startActivity(SourceActivity.this, DestActivity.class)<br>可以直接简化为 startActivity<destactivity>()。简单了不少。 </destactivity></tabdemo1></li>
+<li>在 lparams 中设置 layout params 相关的内容。默认的都是 wrap content。这个设置为<br>宽、高都为 match parent。</li>
+</ol>
+<p>用 Fragment 写一个 Tab 布局</p>
+<p>下面要开发的是一个日记 App。一共有三个 tab，第一个是日记列表，第二个 tab 是写日记，第三个 tab 可以设置一些字体大小等（这里只用来占位，不做实现）。</p>
+<p>每一个 tab 都用一个 Fragment 来展示内容。这三个 tab 分别 HomeListFragment, DetailFragment,DiarySettingsFragment。 这三个 fragment 都在一个叫做 TabDemo1 的托管 Activity 里。</p>
+<p>现在就从这个托管 activity：TabDemo1 开始。这里我们不使用默认的 ActionBar，而是用完全自定义的方式来写一个我们自己的 action bar。所以需要把界面设定为全屏模式。设置全屏的模式的方法有很多，我们用设置 style 的方式来实现。</p>
+<pre><code>&lt;style name=&quot;AppTheme.NoActionBar&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
+&lt;/style&gt;
+</code></pre><p>之后把这个 style 应用在 activity 在 AndroidManifest.xml 配置中。</p>
+<p>这个时候这个托管 activity 的界面布局就是一个完全的白板了。这个白板现在要分为上中下三部分。上部为我们自定义的 action bar，最下面的是 tab bar，剩下的部分就是每个 tab 的内容的fragment。</p>
+<p>我们来看一下这个布局应该怎么写：</p>
+<pre><code>// 1
+relativeLayout {
+    id = ID_RELATIVELAYOUT
 
-    <div class="sidebar-divider"></div>
+    backgroundColor = Color.LTGRAY
 
+    // 2
+    linearLayout {
+        id = ID_TOP_BAR
+        backgroundColor = ContextCompat.getColor(ctx, R.color.colorPrimary)
+        orientation = LinearLayout.HORIZONTAL
 
-<!-- Theme Material -->
+        titleTextView = textView {
+            text = &quot;Some Title&quot;
+            textSize = 16f
+            textColor = Color.WHITE
+            gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL
+        }.lparams {
+            width = dip(0)
+            height = matchParent
+            weight = 1f
+        }
+    }.lparams {
+        width = matchParent
+        height = dip(50)
+        alignParentTop()
+    }
 
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
+    // 3
+    linearLayout {
+        id = ID_BOTTOM_TAB_BAR
+        orientation = LinearLayout.HORIZONTAL
+        backgroundColor = Color.WHITE
 
+        // 4
+        homeListTab = weightTextView {
+            text = &quot;List&quot;
+            normalDrawable = resources.getDrawable(R.mipmap.tab_my_normal)
+            selectedDrawable = resources.getDrawable(R.mipmap.tab_my_pressed)
+            onClick { tabClick(0) }
+        }
 
-<!-- Help & Support -->
-<!--
+        detailTab = weightTextView {
+            text = &quot;Detail&quot;
+            normalDrawable = resources.getDrawable(R.mipmap.tab_channel_normal)
+            selectedDrawable = resources.getDrawable(R.mipmap.tab_channel_pressed)
+            onClick { tabClick(1) }
+        }
 
--->
+        settingsTab = weightTextView {
+            text = &quot;Settings&quot;
+            normalDrawable = resources.getDrawable(R.mipmap.tab_better_normal)
+            selectedDrawable = resources.getDrawable(R.mipmap.tab_better_pressed)
+            onClick { tabClick(2) }
+        }
 
-<!-- Feedback -->
-<!--
+    }.style { // 5
+        view -&gt;
+        when (view) {
+            is TextView -&gt; {
+                view.padding = dip(5)
+                view.compoundDrawablePadding = dip(3)
+                view.textSize = 10f
+                view.gravity = Gravity.CENTER
+            }
+            else -&gt; {
+            }
+        }
+    }.lparams {
+        height = dip(50)
+        width = matchParent
+        alignParentBottom()
+    }
 
--->
+    // 6
+    fragmentContainer = frameLayout {
+        id = ID_FRAMELAYOUT
+        backgroundColor = Color.GREEN
+    }.lparams {
+        below(ID_TOP_BAR)
+        above(ID_BOTTOM_TAB_BAR)
+        width = matchParent
+        height = matchParent
+    }
+}
+</code></pre><p>前文的例子用了一个 verticalLayout, 这里用的是 relativeLayout 的布局。<br>这里是自定义 action bar。使用换一个 linearLayout。如前所述，要横向布局 linear layout<br>就需要单独的指定 orientation：orientation =LinearLayout.HORIZONTAL。这里比较简单，只有一个显示 title 的 textView。</p>
+<p>这里需要注意 gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL<br> 可以直接写成 gravity = Gravity.CENTER。这里是为了突出or的用法。Kotlin 里的 or<br>就是 java 的 | 操作符的作用。</p>
+<p>这部分的布局是 tab bar。</p>
+<p>这里用的是 weightTextView 而不是 textView。后面会详细的讲解这一部分。<br>给 tab bar 添加 style。此 style 不是彼 style。这个 style，会遍历 tab bar 的 linear layout 内部的全部的 view，然后根据 when 表达式匹配对应的规则，之后给对应于规则的 view 设置相应的属性。比如，这里会用 when 语句查看 view 是否为 textView，如果是的话就给这个 view 设置 padding、drawable padding、text size 以及 gravity 属性。tab bar 的 linear layout有三个 text view，所以他们都会被设置这些属性。<br>每一个 tab 的内容展示用 fragment 就是这里了。准确的说是 fragment 的 container。<br>这个 container 是一个 framelayout。在 action bar 之下，在 tab bar 之上。在布局的时候有 below(ID_TOP_BAR), above(ID_BOTTOM_TAB_BAR)。ID_TOP_BAR 和 ID_BOTTOM_TAB_BAR 就分别是 action bar 和 tab bar 的 id 值。这些 id 值自由设定。<br>另外，在 java 写的时候常用的 findViewById() 方法在 Kotlin 和 Anko 中可以改为的find<framelayout>(ID_FRAMELAYOUT)。不见得简单，但是增加了类型安全。不用再强制类型转换。也不用担心相关的错误再发生。</framelayout></p>
+<p>上文第4点用到了 weightTextView。这是一个自定义的 view。在 Anko 布局中，可以根据自己的需要自定义各种各样的 view。但是，需要经过一个小小的处理之后才可以使用到 Anko 的布局中。这个小小的处理就叫做扩展。下面看看如何给 Anko 添加 weightTextView 扩展的。</p>
+<p>首先自定义一个 view：WeightTextView。</p>
+<pre><code>class WeightTextView(context: Context) : TextView(context) {
+        var normalDrawable: Drawable? = null
+        var selectedDrawable: Drawable? = null
 
-<!-- About Theme -->
-<!--
+        init {
+            var layoutParams = LinearLayout.LayoutParams(dip(50),
+                    LinearLayout.LayoutParams.MATCH_PARENT, 1f)
+            layoutParams.weight = 1f
+            this.layoutParams = layoutParams
+        }
 
--->
+        override fun setSelected(selected: Boolean) {
+            super.setSelected(selected)
 
+            if (selected) {
+                this.backgroundColor = ContextCompat.getColor(context, R.color.textGray)
+                this.textColor = ContextCompat.getColor(context, R.color.textYellow)
+
+                if (selectedDrawable != null) {
+                    this.setCompoundDrawablesWithIntrinsicBounds(null, selectedDrawable, null, null)
+                }
+            } else {
+                this.backgroundColor = ContextCompat.getColor(context, android.R.color.transparent)
+                this.textColor = ContextCompat.getColor(context, R.color.textGray)
+                if (normalDrawable != null) {
+                    this.setCompoundDrawablesWithIntrinsicBounds(null, normalDrawable, null, null)
+                }
+            }
+        }
+    }
+</code></pre><p>附加解释：<br>方法 setSelected() 是被迫添加的。在使用 Anko，相当于使用代码开发 Android 布局的时候 selector 不起作用。只好把点击后的高亮效果写在自定义的 text view 里。</p>
+<p>下面看看如何<strong>扩展</strong> Anko，来使用我们上面的自定义 view。</p>
+<pre><code>public inline fun ViewManager.weightTextView() = weightTextView {}
+public inline fun ViewManager.weightTextView(init: WeightTextView.() -&gt; Unit) = ankoView({ WeightTextView(it) }, init)
+</code></pre><p>这部分涉及到的语法内容可以参考官网。<br>这里简单介绍一下。拿官网的例子说一下：</p>
+<pre><code>class HTML {
+    fun body() { ... }
+}
+</code></pre><p>现在有这么一个 HTML 类，那么调用的时候可以这样：</p>
+<pre><code>html {       
+    body()  
+}
+</code></pre><p>在这么一个 lambda 表达式里就可以直接这样调用 HTML 类的方法了，中间的过程是怎么样的呢</p>
+<pre><code>fun html(init: HTML.() -&gt; Unit): HTML {
+    val html = HTML()  // create the receiver object
+    html.init()        
+    return html
+}
+</code></pre><p>其实灰常的简单呢。在方法 html() 里，参数是一个 HTML 类的扩展方法，并且此方法无参，返回 Unit(java的void)。</p>
+<p>在方法执行的过程中，首先初始化了 HTML。之后调用了这个作为参数传入的扩展方法。在具体调用 html() 方法的时候，可以只简单写一个 lambda 表达式作为传入的 HTML 扩展方法。既然是一个类的扩展方法，那当然可以调用这个类内部的方法了。</p>
+<p>为了帮助理解，这里给出一个参数是方法的方法：</p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    calling(&quot;yo&quot;) { p -&gt;
+        println(&quot;method called $p&quot;)
+    }
+
+    calling(&quot;yoyo&quot;, ::called)
+}
+
+fun calling(param: String, func: (String) -&gt; Unit) {
+    func(param)
+}
+
+fun called(p: String) {
+    println(&quot;output string $p&quot;)
+}
+</code></pre><p>第一个是用 lambda 表达式作为传入方法，第二个是已经定义好的一个方法作为传入方法。</p>
+<p>Fragment 的处理<br>本文中的重点在于使用 Anko 做布局，具体的逻辑处理 java 写和 Kotlin 写没有什么区别。这里只简单介绍一下。</p>
+<p>为了保证兼容，这里使用 Support v4 来处理 Fragment 的显示等操作。在 activity 的一开始就把需要的 fragemnt 都加载进来。</p>
+<pre><code>fun prepareTabFragments() {
+    val fm = supportFragmentManager
+    homeListFragment = HomeListFragment.newInstance()
+    fm.beginTransaction()
+            .add(ID_FRAMELAYOUT, homeListFragment)
+            .commit()
+    detailFragment = DetailFragment.newInstance(null)
+    detailFragment?.modelChangeListener = homeListFragment
+    fm.beginTransaction()
+            .add(ID_FRAMELAYOUT, detailFragment)
+            .commit()
+    settingsFragment = DiarySettingsFragment.newInstance()
+    fm.beginTransaction()
+            .add(ID_FRAMELAYOUT, settingsFragment)
+            .commit()
+}
+</code></pre><p>每一个 tab 项被点击的时候的处理：</p>
+<pre><code>fun tabClick(index: Int) {
+    info(&quot;index is $index&quot;)
+    val ft = supportFragmentManager.beginTransaction()
+    ft.hide(homeListFragment)
+    ft.hide(detailFragment)
+    ft.hide(settingsFragment)
+
+    // unselect all textviews
+    homeListTab?.isSelected = false
+    detailTab?.isSelected = false
+    settingsTab?.isSelected = false
+
+    when (index) {
+        0 -&gt; {
+            homeListTab?.isSelected = true
+            ft.show(homeListFragment)
+        }
+        1 -&gt; {
+            detailTab?.isSelected = true
+            ft.show(detailFragment)
+        }
+        2 -&gt; {
+            settingsTab?.isSelected = true
+            ft.show(settingsFragment)
+        }
+        else -&gt; {
+
+        }
+    }
+
+    ft.commit()
+}
+</code></pre><p>分别开始每一个 Fragment<br>在开始之前需要考虑一个很严重的事情：数据存在什么地方。本来应该是 SQLite 或者存在云上的。存在云裳就可以实现同一个账号登录在任何地方都可以同步到同样的内容。这里只简单模拟，存放在 app 的内存里。存放在 Application 派生类 AnkoApplication 的<br>静态属性 diaryDataSource 里。diaryDataSource 是一个 ArrayList 一样的列表。</p>
+<pre><code>class AnkoApplication : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+    }
+
+    companion object {
+        var diaryDataSource = mutableListOf&lt;DiaryModel&gt;()
+    }
+}
+</code></pre><p>第一个 tab，HomeListFragment<br>HomeListFragment 类作为第一个 tab 内容展示 fragment，用来显示全部的日记列表的布局就非常简单了，和我们前面的例子没有什么太大的差别。就是在一个 verticalLayout 里放一个 list view。这个 list view 的 data source 只需要一个列表。</p>
+<pre><code>// 1
+var view = with(ctx) {
+    verticalLayout {
+        backgroundColor = Color.WHITE
+
+        listView = listView {
+            adapter = ArrayAdapter&lt;DiaryModel&gt;(ctx,
+                    android.R.layout.simple_list_item_1,
+                    AnkoApplication.diaryDataSource)
+
+            onItemClick { adapterView, view, i, l -&gt;
+                toast(&quot;clicked index: $i, content: ${AnkoApplication.diaryDataSource[i].toString()}&quot;)
+            }
+        }
+
+        // 2
+        emptyTextView = textView {
+            text = resources.getString(R.string.list_view_empty)
+            textSize = 30f
+            gravity = Gravity.CENTER
+        }.lparams {
+            width = matchParent
+            height = matchParent
+        }
+    }
+}
+// 3
+listView?.emptyView = emptyTextView
+
+return view
+</code></pre><p>在 activity 里的布局可以直接写 vertical{}，但是在 fragment 里不可以这样。直接写 vertical{} 就已经把这个layout添加到父 view 上了，这 fragment 里是不行的。在 fragment 里需要创建一个单独的 view，并返回。用 with 语句来创建这样一个单独的 view。<br>在 vertial layout 里添加了一个 textview。<br>上面一步创建的 textview 作为 list view 没有数据的时候显示的 empty view 来使用。<br>第二个 tab，DetailFragment<br>日记的内容包括，日记 title，日记本身的内容还有日记的日期。</p>
+<p>所以布局上就包括日记的 title 内容输入用的 EditText 以及为了说明用的 text view，还有 edit text 里的 hint。最后还有一个选择<br>日期的控件。</p>
+<pre><code>return with(ctx) {
+    verticalLayout {
+        padding = dip(10)
+        backgroundColor = Color.WHITE
+        textView(&quot;TITLE&quot;) {
+
+        }.lparams(width = matchParent)
+
+        titleEditText = editText {
+            hint = currentDateString()
+            lines = 1
+        }.lparams(width = matchParent) {
+            topMargin = dip(5)
+        }
+
+        textView(&quot;CONTENT&quot;) {
+
+        }.lparams(width = matchParent) {
+            topMargin = dip(15)
+        }
+
+        contentEditText = editText {
+            hint = &quot;what&apos;s going on...&quot;
+            setHorizontallyScrolling(false)
+        }.lparams(width = matchParent) {
+            //                    height = matchParent
+            topMargin = dip(5)
+        }
+
+        button(R.string.button_select_time) {
+            gravity = Gravity.CENTER
+            onClick {
+                val fm = activity.supportFragmentManager
+                var datePicker = DatePickerFragment.newInstance(diaryModel?.date)
+                datePicker.setTargetFragment(this@DetailFragment, DetailFragment.REQUEST_DATE)
+                datePicker.show(fm, &quot;date&quot;)
+            }
+        }
+        // *
+        button(R.string.button_detail_ok) {
+            onClick {
+                v -&gt;
+                println(&quot;ok button clicked&quot;)
+                try {
+                    var model = diaryModel!!
+                    model.title = titleEditText?.text.toString()
+                    model.content = contentEditText?.text.toString()
+                    AnkoApplication.diaryDataSource.add(model)
+
+                    modelChangeListener?.modelChanged()
+
+                    toast(R.string.model_saved_ok)
+                } catch(e: Exception) {
+                    Log.d(&quot;##DetailFragment&quot;, &quot;error: ${e.toString()}&quot;)
+                    toast(R.string.model_save_error)
+                }
+            }
+        }.lparams {
+            topMargin = dip(10)
+            width = matchParent
+        }
+    }.style {
+        view -&gt;
+        when (view) {
+            is Button -&gt; {
+                view.gravity = Gravity.CENTER
+            }
+            is TextView -&gt; {
+                view.gravity = Gravity.LEFT
+                view.textSize = 20f
+                view.textColor = Color.DKGRAY
+            }
+        }
+    }
+}
+</code></pre><p>需要注意打星号的地方。按钮在点击之后会弹出一个 dialog fragment 来显示日期 view。用户可以在这个日期 view 里选择相应的日期。但是，如何从日期 dialog fragment 传递选择的日期给 DetailFragment 呢？这里就涉及到两个 fragment 之间传递数据的问题。</p>
+<p>选择日期的dialog fragment是DatePickerFragment。</p>
+<pre><code>var pickerView = DatePicker(activity)
+pickerView.calendarViewShown = false
+pickerView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+        ViewGroup.LayoutParams.WRAP_CONTENT)
+pickerView.init(year, month, day) {
+    view, year, month, day -&gt;
+    mDate = GregorianCalendar(year, month, day).time
+
+    arguments.putSerializable(EXTRA_DATE, mDate)
+}
+
+return AlertDialog.Builder(activity)
+        .setView(pickerView)
+        .setTitle(R.string.date_picker_title)
+        .setPositiveButton(R.string.picker_button_ok) { dialog, which -&gt;
+            toast(&quot;hello world!&quot;)
+            sendResult(Activity.RESULT_OK)
+        }.create()
+</code></pre><p>首先 DatePickerFragment 要继承 DialogFragment 之后 override 方法 onCreateDialog(savedInstanceState: Bundle)。 在这个方法里使用上面代码创建一个包含日期选择器的 dialog。</p>
+<p>在选择日期的时候，会触发 DatePicker 的 OnDateChangedListener 接口的 onDateChanged 方法。我们在这个方法里记录选择好的日期数据，在dialog的positive按钮点击之后把这个数据发送给 DetailFragment。</p>
+<p>那么怎么发送呢？使用 target fargment 方法。在 detail fragment 弹出 dialog fragment 的时候，把 detail fragment 设置为 target fragment。</p>
+<pre><code>button(R.string.button_select_time) {
+    gravity = Gravity.CENTER
+    onClick {
+        val fm = activity.supportFragmentManager
+        var datePicker = DatePickerFragment.newInstance(diaryModel?.date)
+        // *
+        datePicker.setTargetFragment(this@DetailFragment, DetailFragment.REQUEST_DATE)
+        datePicker.show(fm, &quot;date&quot;)
+    }
+}
+</code></pre><p>在标星下面的一行代码中。datePicker.setTargetFragment(this@DetailFragment,DetailFragment.REQUEST_DATE)将DetailFragment设定为target fragment，并且指定REQUEST_DATE这code，为以后取出数据使用。</p>
+<pre><code>companion object Factory {
+    val REQUEST_DATE = 0`
+}
+</code></pre><p>在 positive 按钮点击之后执行方法 sendResult 回传数据</p>
+<pre><code>private fun sendResult(resultCode: Int) {
+    if (targetFragment == null)
+        return
+
+    var i = Intent()
+    i.putExtra(EXTRA_DATE, mDate)
+    // *
+    targetFragment.onActivityResult(targetRequestCode, resultCode, i)
+}
+</code></pre><p>调用 targetFragment 的 onActivityResult() 方法来回传日期数据。</p>
+<p>在 DetailFragment 中通过 override 方法 onActivityResult() 来接收数据。</p>
+<pre><code>override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    if (resultCode != Activity.RESULT_OK) {
+        return
+    }
+
+    if (requestCode != REQUEST_DATE) {
+        return
+    }
+
+    var date = data?.getSerializableExtra(DatePickerFragment.EXTRA_DATE) as Date
+    diaryModel?.date = date
+}
+</code></pre><p>日期数据传输这部分到这里结束。</p>
+<p>全文也可以在这里画上一个句点了。以上还有很多关于 Anko 没有使用的地方。Anko 也是可以实现代码界面分离的。继承 AnkoComponent 可以写出独立的布局文件，并且可以用 anko preview 插件来预览界面效果。就拿 setting 这个 tab 的 fragment 来举例：<br>首先定义一个独立的布局文件:</p>
+<pre><code>class SettingsUI&lt;T&gt; : AnkoComponent&lt;T&gt; {
+    override fun createView(ui: AnkoContext&lt;T&gt;) = with(ui) {
+        verticalLayout {
+            backgroundColor = ContextCompat.getColor(ctx, R.color.SnowWhite)
+            textView { text = resources.getString(R.string.settings_title) }
+
+            button(&quot;activity with the same `AnkoComponent`&quot;) {
+                id = ID_BUTTON
+            }
+        }
+    }
+
+    companion object Factory {
+        public val ID_BUTTON = 101
+    }
+}
+</code></pre><p>把这个布局文件用在 DiarySettingsFragment 上：</p>
+<pre><code>override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    val view = SettingsUI&lt;DiarySettingsFragment&gt;().createView(AnkoContext.create(ctx, DiarySettingsFragment()))
+
+    return view
+}
+</code></pre><p>然后这个布局还可以用在我们刚刚创建的 TempActivity 上：</p>
+<pre><code>override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    SettingsUI&lt;TempActivity&gt;().setContentView(this)
+
+    val button = find&lt;Button&gt;(SettingsUI.ID_BUTTON)
+    button.text = &quot;you are in `TempActivity`, CLICK!&quot;
+
+    button.onClick {
+        toast(&quot;${TempActivity::class.java.simpleName}&quot;)
+    }
+}
+</code></pre><p>Activity 上使用就简单很多了，只需要这么一句 SettingsUI<tempactivity>().setContentView(this)。</tempactivity></p>
+
+      
     </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://hellokk.cc/2018/06/05/Kotlin 中使用 Anko 编写布局/" data-id="cjtcfau5200078t0po6ulmepr" class="article-share-link" data-share="baidu" data-title="Kotlin 中使用 Anko 编写布局">分享到</a>
+      
 
-    <!-- Sidebar Image -->
+      
+        <a href="http://hellokk.cc/2018/06/05/Kotlin 中使用 Anko 编写布局/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-响应式函数编程 RxJava &amp; RxAndroid " class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /" class="article-date">
+  <time datetime="2018-05-21T12:38:54.000Z" itemprop="datePublished">2018-05-21</time>
+</a>
     
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/twitter" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/facebook" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Google + -->
-    
-        <a href="https://www.google.com/" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
+  </div>
+  <div class="article-inner">
     
     
-    <!-- V2EX -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /">响应式函数编程 RxJava &amp; RxAndroid</a>
+    </h1>
+  
+
+      </header>
     
-</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Github: <a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">https://github.com/ReactiveX/RxJava</a></li>
+<li>中文资料: <ul>
+<li><a href="https://github.com/lzyzsd/Awesome-RxJava" target="_blank" rel="external">https://github.com/lzyzsd/Awesome-RxJava</a></li>
+<li><a href="https://www.zhihu.com/question/35511144" target="_blank" rel="external">https://www.zhihu.com/question/35511144</a></li>
+</ul>
+</li>
+<li>用途:<ul>
+<li>异步操作</li>
+<li>在程序逻辑异常复杂的情况下,仍然可以让代码的逻辑保持简洁</li>
+</ul>
+</li>
+<li><p>配置: 添加依赖: </p>
+<pre><code>compile &apos;io.reactivex:rxjava:1.1.3&apos;
+compile &apos;io.reactivex:rxandroid:1.1.0&apos;
 
+//如果结合Retrofit使用,需要添加以下依赖
 
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>肖坤的博客
-            
-        </div>
+compile &apos;com.squareup.retrofit2:retrofit:2.0.1&apos;
+compile &apos;com.squareup.retrofit2:converter-gson:2.0.1&apos;
+compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
+</code></pre></li>
+</ul>
+<ul>
+<li>基本概念:</li>
+</ul>
+<h2 id="1-被观察者-Observable"><a href="#1-被观察者-Observable" class="headerlink" title="1. 被观察者: Observable"></a>1. 被观察者: Observable</h2><ul>
+<li>作用: 决定什么时候触发事件以及触发怎样的事件</li>
+<li>创建方法:<ul>
+<li>Observable.just(T…) 参数为单个的</li>
+<li>Observable.from(T[]) / Observable.from(Iterable&lt;? extends T&gt;)  参数为数组或Iterable</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-观察者-Observer"><a href="#2-观察者-Observer" class="headerlink" title="2. 观察者: Observer"></a>2. 观察者: Observer</h2><ul>
+<li>作用: 当事件触发的时候将有怎样的行为</li>
+<li>实现类有Observer / Subscriber </li>
+</ul>
+<h2 id="3-订阅-subscribe"><a href="#3-订阅-subscribe" class="headerlink" title="3. 订阅: subscribe"></a>3. 订阅: subscribe</h2><ul>
+<li>作用: 把Observable和Observer关联起来</li>
+<li>方法:<ul>
+<li>observable.subscribe(observer);</li>
+<li>observable.subscribe(subscriber);<h2 id="4-事件"><a href="#4-事件" class="headerlink" title="4. 事件:"></a>4. 事件:</h2></li>
+</ul>
+</li>
+<li>onNext()：普通事件</li>
+<li>onCompleted():事件队列完结</li>
+<li>onError(): 事件队列异常</li>
+<li>需要注意的是onCompleted()和onError()是互斥的.调用了其中一个就不应该触发另一个.<h2 id="5-案例"><a href="#5-案例" class="headerlink" title="5. 案例:"></a>5. 案例:</h2></li>
+<li><p>现有一个数组 String[] arr ={“afdsa”, “bfdsa”, “cfda”}, 把其中以字母”a”开头的字符串找出来并加上”from Alpha”,最后打印出新的字符串的长度</p>
+<pre><code>private void simpleDemo() {
 
-        <!-- Paradox Footer Right Section -->
+     String[] arr = {&quot;afdsa&quot;, &quot;bfdsa&quot;, &quot;cfda&quot;};
 
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
+     Observable
+             .from(arr)
+             .filter(new Func1&lt;String, Boolean&gt;() {
+                 @Override
+                 public Boolean call(String s) {
+                     return s.startsWith(&quot;a&quot;);
+                 }
+             })
+             .map(new Func1&lt;String, String&gt;() {
+                 @Override
+                 public String call(String s) {
+                     return s + &quot; from Alpha&quot;;
+                 }
+             })
+             .subscribe(new Action1&lt;String&gt;() {
+                 @Override
+                 public void call(String s) {
+                     System.out.println(&quot;Rxjava:&quot; + s.length());
+                 }
+             });
 
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
+     for (int i = 0; i &lt; arr.length; i++) {
+         String temp = arr[i];
+         if (temp.startsWith(&quot;a&quot;)) {
+             temp += &quot; from Alpha&quot;;
+             System.out.println(&quot;Normal:&quot; + temp.length());
+         }
 
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
+     }
+</code></pre></li>
+</ul>
+<ul>
+<li><p>由指定的一个 drawable 文件 id 取得图片，并显示在 ImageView 中，并在出现异常的时候打印 Toast 报错：</p>
+<pre><code>private void simpleDemo() {
 
+    final int drawID = R.mipmap.ic_launcher;
+    Observable
+            .create(new Observable.OnSubscribe&lt;Drawable&gt;() {
+                @Override
+                public void call(Subscriber&lt;? super Drawable&gt; subscriber) {
+                    Drawable drawable = getResources().getDrawable(drawID);
+                    subscriber.onNext(drawable);
+                    subscriber.onCompleted();
+                }
+            })
+            .subscribe(new Observer&lt;Drawable&gt;() {
+                @Override
+                public void onCompleted() {
 
-                    <!-- Import JS File -->
+                }
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+                @Override
+                public void onError(Throwable e) {
+                    Toast.makeText(MainActivity.this, &quot;Error&quot;, Toast.LENGTH_SHORT).show();
+                }
 
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-    <!-- Leancloud -->
-    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-    <script>
-        AV.initialize('9bBMi25QkVb4fLi7HzRQaO7P-gzGzoHsz', 'FXWoTpnbhVO6RGxzr5C7TPfl');
-    </script>
-    <script type="text/ls-javascript" id="leancloud-views-script">
-    function showTime(Counter) {
-        var query = new AV.Query(Counter);
-        $('.leancloud-views_num').each(function() {
-            var url = $(this).attr('id').trim();
-            query.equalTo('url', url);
-            query.find({
-                success: function(results) {
-                    if (results.length === 0) {
-                        var content = '0 ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                        return;
-                    }
-                    for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    }
-                },
-                error: function(object, error) {
-                    console.log('Error: ' + error.code + ' ' + error.message);
+                @Override
+                public void onNext(Drawable drawable) {
+                    imageView.setImageDrawable(drawable);
                 }
             });
-        });
-    }
+}
+</code></pre></li>
+</ul>
+<h2 id="6-Scheduler"><a href="#6-Scheduler" class="headerlink" title="6. Scheduler"></a>6. Scheduler</h2><ul>
+<li>作用: 控制线程.指定某一段代码在那个线程里运行.</li>
+<li><p>内置的Scheduler:</p>
+<ul>
+<li>Schedulers.immediate(): 直接在当前线程运行，相当于不指定线程。这是默认的 Scheduler。</li>
+<li>Schedulers.newThread(): 总是启用新线程，并在新线程执行操作。</li>
+<li>Schedulers.io(): I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的 Scheduler。行为模式和 newThread() 差不多，区别在于 io() 的内部实现是是用一个无数量上限的线程池，可以重用空闲的线程，因此多数情况下 io() 比 newThread() 更有效率。不要把计算工作放在 io() 中，可以避免创建不必要的线程。</li>
+<li>Schedulers.computation(): 计算所使用的 Scheduler。这个计算指的是 CPU 密集型计算，即不会被 I/O 等操作限制性能的操作，例如图形的计算。这个 Scheduler 使用的固定的线程池，大小为 CPU 核数。不要把 I/O 操作放在 computation() 中，否则 I/O 操作的等待时间会浪费 CPU。</li>
+<li>AndroidSchedulers.mainThread(): Android专用,它指定的操作将在 Android 主线程运行。</li>
+</ul>
+</li>
+<li><p>指定线程的方法:</p>
+<ul>
+<li>Observable.subscribeOn():指定 subscribe() 所发生的线程，即 Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程</li>
+<li>Observable.observeOn():指定 Subscriber 所运行在的线程。或者叫做事件消费的线程。</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-数据变换"><a href="#7-数据变换" class="headerlink" title="7. 数据变换:"></a>7. 数据变换:</h2><ul>
+<li>作用: 就是将事件序列中的对象或整个序列进行加工处理，转换成不同的事件或事件序列</li>
+<li><p>Observable.map:  一对一的转换</p>
+<pre><code>private void simpleDemo() {
+     Observable
+             .just(R.mipmap.ic_launcher)
+             .map(new Func1&lt;Integer, Drawable&gt;() {
+                 @Override
+                 public Drawable call(Integer integer) {
+                     return getResources().getDrawable(integer);
+                 }
+             })
+             .subscribe(new Action1&lt;Drawable&gt;() {
+                 @Override
+                 public void call(Drawable drawable) {
+                     imageView.setImageDrawable(drawable);
+                 }
+             });
+ }
+</code></pre></li>
+<li><p>Observable.flatMap: 一对多的转换</p>
+<pre><code>public class Course {
+ private String name;
+ private int id;
 
-    function addCount(Counter) {
-      var Counter = AV.Object.extend('Counter');
-      url = $('.leancloud-views_num').attr('id').trim();
-      title = $('.leancloud-views_num').attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-      query.equalTo('url', url);
-      query.find({
-          success: function(results) {
-            if (results.length > 0) {
-                var counter = results[0];
-                counter.fetchWhenSave(true);
-                counter.increment('time');
-                counter.save(null, {
-                    success: function(counter) {
-                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    },
-                    error: function(counter, error) {
-                        console.log('Failed to save Visitor num, with error message: ' + error.message);
-                    }
-                });
-            } else {
-              var newcounter = new Counter();
-              newcounter.set('title', title);
-              newcounter.set('url', url);
-              newcounter.set('time', 1);
-              newcounter.save(null, {
-                  success: function(newcounter) {
-                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
-                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
-                      $(document.getElementById(url)).text(content);
-                  },
-                  error: function(newcounter, error) {
-                      console.log('Failed to create');
-                  }
-              });
-            }
-        },
-        error: function(error) {
-            console.log('Error:' + error.code + ' ' + error.message);
-        }
-      });
-    }
-    $(function() {
-        var Counter = AV.Object.extend('Counter');
-        if ($('.leancloud-views_num').length === 1) {
-            addCount(Counter);
-        } else if ($('.post-title-link').length > 1) {
-            showTime(Counter);
+ public Course(String name, int id) {
+     this.name = name;
+     this.id = id;
+ }
+
+ public String getName() {
+     return name;
+ }
+
+ public void setName(String name) {
+     this.name = name;
+ }
+
+ public int getId() {
+     return id;
+ }
+
+ public void setId(int id) {
+     this.id = id;
+ }
+}
+
+public class Student {
+ private String name;
+
+ private ArrayList&lt;Course&gt; courses;
+
+ public Student(String name, ArrayList&lt;Course&gt; courses) {
+     this.name = name;
+     this.courses = courses;
+ }
+
+ public String getName() {
+     return name;
+ }
+
+ public void setName(String name) {
+     this.name = name;
+ }
+
+ public ArrayList&lt;Course&gt; getCourses() {
+     return courses;
+ }
+
+ public void setCourses(ArrayList&lt;Course&gt; courses) {
+     this.courses = courses;
+ }
+}
+
+private void student() {
+
+    Course yuwen = new Course(&quot;语文&quot;, 1);
+    Course shuxue = new Course(&quot;数学&quot;, 2);
+    Course yingyu = new Course(&quot;英文&quot;, 3);
+    Course lishi = new Course(&quot;历史&quot;, 4);
+    Course zhengzhi = new Course(&quot;政治&quot;, 5);
+    Course xila = new Course(&quot;希腊语&quot;, 6);
+
+    ArrayList&lt;Course&gt; course1 = new ArrayList&lt;&gt;();
+    course1.add(yuwen);
+    course1.add(shuxue);
+    course1.add(yingyu);
+             course1.add(lishi);
+             course1.add(zhengzhi);
+             course1.add(xila);
+    Student zhangsan = new Student(&quot;zhangsan&quot;, course1);
+
+    Observable.just(zhangsan)
+            .flatMap(new Func1&lt;Student, Observable&lt;Course&gt;&gt;() {
+                @Override
+                public Observable&lt;Course&gt; call(Student student) {
+                    return Observable.from(student.getCourses());
+                }
+            }).subscribe(new Action1&lt;Course&gt;() {
+        @Override
+        public void call(Course course) {
+            System.out.println(course.getName());
         }
     });
-</script>
+}
+</code></pre></li>
+</ul>
+<h2 id="8-和Retrofit一起使用"><a href="#8-和Retrofit一起使用" class="headerlink" title="8. 和Retrofit一起使用"></a>8. 和Retrofit一起使用</h2><ol>
+<li><p>添加依赖: </p>
+<pre><code>compile &apos;com.squareup.retrofit2:retrofit:2.0.1&apos;
+compile &apos;com.squareup.retrofit2:converter-gson:2.0.1&apos;
+compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
+</code></pre></li>
+</ol>
+<ol>
+<li><p>利用<a href="http://www.jsonschema2pojo.org/" target="_blank" rel="external">http://www.jsonschema2pojo.org/</a>创建数据模型</p>
+</li>
+<li><p>创建REST API 接口.注意此时返回的不能是Call而是Observable.示例代码:</p>
+<pre><code>public interface LocationInterface {
+    // http://ip.taobao.com/service/getIpInfo.php?ip=202.178.10.23
+    @GET(&quot;/service/getIpInfo.php&quot;)
+    public Observable&lt;Location&gt; getLocation(@Query(&quot;ip&quot;) String ip);
+
+}
+</code></pre></li>
+</ol>
+<ol>
+<li><p>创建Retrofit对象,发起请求.注意此时Retrofit需要添加addCallAdapterFactory.示例代码:</p>
+<pre><code>Retrofit retrofit = new Retrofit.Builder()
+         .baseUrl(BASE2)
+         .addConverterFactory(GsonConverterFactory.create())
+         .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+         .build();
+
+ LocationInterface locationInterface = retrofit.create(LocationInterface.class);
+ Observable&lt;Location&gt; location = locationInterface.getLocation(&quot;8.8.8.8&quot;);
+ location
+         .subscribeOn(Schedulers.io())
+         .map(new Func1&lt;Location, String&gt;() {
+
+             @Override
+             public String call(Location location) {
+                 return location.getData().getCountry();
+             }
+         })
+         .observeOn(AndroidSchedulers.mainThread())
+         .subscribe(new Action1&lt;String&gt;() {
+             @Override
+             public void call(String s) {
+                 textView.setText(s);
+             }
+    });
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://hellokk.cc/2018/05/21/响应式函数编程 RxJava & RxAndroid /" data-id="cjtcfau4900068t0phd2n6gi9" class="article-share-link" data-share="baidu" data-title="响应式函数编程 RxJava &amp; RxAndroid">分享到</a>
+      
+
+      
+        <a href="http://hellokk.cc/2018/05/21/响应式函数编程 RxJava & RxAndroid /#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
 
 
-
-
-    <!-- Busuanzi -->
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-   <!-- 畅言公共 js 代码 start -->
-<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=">
-</script>
-<!-- 畅言公共 js 代码 end -->
-
-
-
-
-    <!-- Swiftye -->
+  
+    <article id="post-仿QQ空间打赏功能实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/19/仿QQ空间打赏功能实现/" class="article-date">
+  <time datetime="2017-11-19T12:48:26.000Z" itemprop="datePublished">2017-11-19</time>
+</a>
     
-
-    <!-- Local Search-->
+  </div>
+  <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/19/仿QQ空间打赏功能实现/">仿QQ空间打赏功能实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-preview"><a href="#1-preview" class="headerlink" title="1. preview"></a>1. preview</h2><p><img src="http://img.blog.csdn.net/20171119204708886?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWGs2MzIxNzI3NDg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="打赏Gif"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://hellokk.cc/2017/11/19/仿QQ空间打赏功能实现/" data-id="cjtcfau3q00028t0pujbdg3jy" class="article-share-link" data-share="baidu" data-title="仿QQ空间打赏功能实现">分享到</a>
+      
+
+      
+        <a href="http://hellokk.cc/2017/11/19/仿QQ空间打赏功能实现/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
 
 
-<!-- UC Browser Compatible -->
+  
+    <article id="post-一行代码获取ViewPager中当前显示的Fragment" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/" class="article-date">
+  <time datetime="2017-11-06T16:25:24.000Z" itemprop="datePublished">2017-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/">一行代码获取ViewPager中当前显示的Fragment</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><blockquote>
+<p>我不知道网上的那些答案为什么写的那么复杂, 明明一行代码可以搞定的事情, 写的这么麻烦</p>
+</blockquote>
+<p> <strong>方式一 :</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mFragment = (MyFragment) mAdapter.instantiateItem(mPager, mPager.getCurrentItem());</div></pre></td></tr></table></figure>
+<p><strong>方式二 :</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mFragment = (MyFragment) getSupportFragmentManager().findFragmentByTag(&quot;android:switcher:&quot; + viewpager + &quot;:&quot; + mViewPager.getCurrentItem());</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/" data-id="cjtcfau3n00018t0pdeusrtrr" class="article-share-link" data-share="baidu" data-title="一行代码获取ViewPager中当前显示的Fragment">分享到</a>
+      
+
+      
+        <a href="http://hellokk.cc/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/15/hello-world/" class="article-date">
+  <time datetime="2017-09-15T11:42:44.000Z" itemprop="datePublished">2017-09-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/15/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://hellokk.cc/2017/09/15/hello-world/" data-id="cjtcfau3i00008t0povziz09v" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
+      
+
+      
+        <a href="http://hellokk.cc/2017/09/15/hello-world/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于 Kotlin 的一些小知识的总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/11/关于 Kotlin 的一些小知识的总结/" class="article-date">
+  <time datetime="2017-09-11T12:23:12.000Z" itemprop="datePublished">2017-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/11/关于 Kotlin 的一些小知识的总结/">关于 Kotlin 的一些小知识的总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-Class"><a href="#1-Class" class="headerlink" title="1. Class"></a>1. Class</h2><p>在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">open class RunClass ｛｝</div></pre></td></tr></table></figure></p>
+<h2 id="2-构造函数"><a href="#2-构造函数" class="headerlink" title="2. 构造函数"></a>2. 构造函数</h2><p>当我们只需要一个构造函数的时候，可以直接有下面这种方式进行声明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class CustomView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :   View(context, attrs, defStyleAttr) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>有时候一个构造函数不够用的时候，可以使用 constructor 来声明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">constructor(context: Context) : super(context) &#123;</div><div class="line">    init(context)</div><div class="line">&#125;</div><div class="line">constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) &#123;</div><div class="line">    init(context, attributeSet)</div><div class="line">&#125;</div><div class="line">constructor(context: Context, attributeSet: AttributeSet?, defstyle: Int) : super(context, attributeSet, defstyle) &#123;</div><div class="line">    init(context, attributeSet, defstyle)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-static-静态"><a href="#3-static-静态" class="headerlink" title="3. static 静态"></a>3. static 静态</h2><p>在 kotlin 中是不支持 static 关键字的，不过提供了另一种方案：companion object 关键字里面的内容都代表静态，可以是静态变量也可以是静态函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">companion object &#123;</div><div class="line">    fun main(context: Context) &#123;</div><div class="line">        val child = ChildImpl()</div><div class="line">        val run = RunClass(child)</div><div class="line">        run.show(context, &quot;haha&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>##4. 匿名内部类<br>一般匿名内部类里面只有一个方法的时候，Kotlin 会默认帮我们转成 Lambda 表达式，但是有多个方法的时候，就需要我们自己来实现了，可以采用下面这种方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">viewpager.addOnPageChangeListener(object: ViewPager.OnPageChangeListener &#123;</div><div class="line">      override fun onPageScrollStateChanged(state: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      override fun onPageSelected(position: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
+<h2 id="5-和-Java-的互通"><a href="#5-和-Java-的互通" class="headerlink" title="5. 和 Java 的互通"></a>5. 和 Java 的互通</h2><p>最常用的比如 startActivity，我们在 Java 文件中，该如何启动 kotlin 中的 activity:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">startActivity(Intent(activity, UserActivity::class.java))</div></pre></td></tr></table></figure>
+<p>这些是目前自己开发中遇到的一些问题，基本可以满足一般的kotlin开发了，其他问题可以再查看 Kotlin 官方文档。</p>
+<p><a href="https://www.kotlincn.net/docs/reference/basic-syntax.html" target="_blank" rel="external">Kotlin中文教程文档</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://hellokk.cc/2017/09/11/关于 Kotlin 的一些小知识的总结/" data-id="cjtcfau3s00058t0pnemmwpa8" class="article-share-link" data-share="baidu" data-title="关于 Kotlin 的一些小知识的总结">分享到</a>
+      
+
+      
+        <a href="http://hellokk.cc/2017/09/11/关于 Kotlin 的一些小知识的总结/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/25/仿微信剪切视频时长View/">仿微信剪切视频时长View</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/05/使用观察者模式进行订单管理/">使用观察者模式进行订单管理</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/">Kotlin 中使用 Anko 编写布局</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /">响应式函数编程 RxJava &amp; RxAndroid</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/19/仿QQ空间打赏功能实现/">仿QQ空间打赏功能实现</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://arvinxiang.com" target="_blank">主题作者</a>
+          </li>
+        
+          <li>
+            <a href="http://reqianduan.com" target="_blank">热前端</a>
+          </li>
+        
+          <li>
+            <a href="http://yuancheng.work" target="_blank">远程.work</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 青宁<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"reqianduan"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
 <script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 
-<!-- Import prettify js  -->
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
 
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
 
-    
-    
-</script>
+<script src="/js/script.js"></script>
 
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
-
-
-
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
-
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
-
-                </main>
-            </div>
-        </body>
-    
+</div>
+</body>
 </html>
