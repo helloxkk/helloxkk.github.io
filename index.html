@@ -243,6 +243,12 @@
 
     <div class="card">
     
+    <div class="card-image">
+        <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/thumbnail8.jpg" alt="Kotlin 中使用 Anko 编写布局">
+        </a>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -267,36 +273,18 @@
         </h1>
         <div class="content">
             <p>使用 Kotlin 开发已经开发两个项目了。说大幅度的减少了 Java 代码一点不夸张。用 Java 的时候动不动就 new 一个 OnClickListener() 匿名类，动不动就类型转换的地方都可以省下很多。更不用说特殊的地方使用 data class 更是少些不知道多少代码。</p>
-<p>Jetbrains 给 Android 带来的不仅是 Kotlin，还有 Anko。从 Anko 的官方说明来看这是一个雄心勃勃的要代替 XML 写 Layout 的新的开发方式。 Anko 最重要的一点是引入了 DSL（Domain Specific Language）的方式开发 Android 界面布局。当然，本质是代码实现布局。不过使用 Anko 完全不用经历 Java 纯代码写 Android 的痛苦。因为本身是来自 Kotlin 的，所以自然的使用这种方式开发就具有了： </p>
+<p>Jetbrains 给 Android 带来的不仅是 Kotlin，还有 Anko。从 Anko 的官方说明来看这是一个雄心勃勃的要代替 XML 写 Layout 的新的开发方式。 Anko 最重要的一点是引入了 DSL（Domain Specific Language）的方式开发 Android 界面布局。当然，本质是代码实现布局。不过使用 Anko 完全不用经历 Java 纯代码写 Android 的痛苦。因为本身是来自 Kotlin 的，所以自然的使用这种方式开发就具有了：</p>
 <ul>
-<li>类型安全，不再需要那么多的 findById() 之后的类型转换。 </li>
-<li>null 安全，Kotlin 里，如果一个变量用？表示为可空，并且使用？之后再调用的时候，即使变量为空也不会引发异常。 </li>
-<li>无需设备解析 XML，因为 Anko 本质是代码实现的界面和布局，所以省去了这些麻烦。 </li>
+<li>类型安全，不再需要那么多的 findById() 之后的类型转换。</li>
+<li>null 安全，Kotlin 里，如果一个变量用？表示为可空，并且使用？之后再调用的时候，即使变量为空也不会引发异常。</li>
+<li>无需设备解析 XML，因为 Anko 本质是代码实现的界面和布局，所以省去了这些麻烦。</li>
 <li>代码复用，可以通过继承 AnkoComponent 的方式实现代码复用。XML 布局是每一个 Activity，每一个 View 各自专属一个，代码复用比较少。</li>
 </ul>
 <p>来一个例子看一下：</p>
 <ol>
-<li>使用 XML </li>
+<li>使用 XML</li>
 </ol>
-<pre><code class="xml"><span class="tag">&lt;<span class="name">RelativeLayout</span>&gt;</span>
-
-    <span class="tag">&lt;<span class="name">TextView</span></span>
-<span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/sample_text_view"</span></span>
-<span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
-<span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
-<span class="tag">        <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></span>
-<span class="tag">        <span class="attr">android:text</span>=<span class="string">"Sample text view"</span></span>
-<span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"25sp"</span> /&gt;</span>
-
-    <span class="tag">&lt;<span class="name">Button</span></span>
-<span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/sample_button"</span></span>
-<span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span>
-<span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span>
-<span class="tag">        <span class="attr">android:layout_below</span>=<span class="string">"@+id/sample_text_view"</span></span>
-<span class="tag">        <span class="attr">android:text</span>=<span class="string">"Sample button"</span> /&gt;</span>
-
-<span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span>
-</code></pre>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-tag">&lt;<span class="hljs-name">RelativeLayout</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/sample_text_view"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:layout_alignParentTop</span>=<span class="hljs-string">"true"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">"Sample text view"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">"25sp"</span> /&gt;</span></div><div class="line"></div><div class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/sample_button"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:layout_below</span>=<span class="hljs-string">"@+id/sample_text_view"</span></span></div><div class="line"><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">"Sample button"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure>
 <ol>
 <li><p>使用 Anko</p>
 <pre><code>relativeLayout {
@@ -344,13 +332,13 @@ verticalLayout {
         height = matchParent
     }
 }
-</code></pre><p>分别解释： </p>
+</code></pre><p>分别解释：</p>
 <ol>
-<li>竖直布局。本质是 LinearLayout，并且 orientation 的值为 vertical。但是<br>水平方向的就没有 vetialLayout 这种可以直接使用的了，需要自己写明orientation。 </li>
-<li>创建一个 listview。 </li>
-<li>给这个 listview 添加 adapter。这里简单实用 ArrayAdapter<string>。 </string></li>
-<li>添加 OnItemClickListener。object : AdapterView.OnItemClickListener 用来<br>创建实现某个接口的匿名类。 </li>
-<li>startActivity<tabdemo1>()，是Anko的语法糖。startActivity(SourceActivity.this, DestActivity.class)<br>可以直接简化为 startActivity<destactivity>()。简单了不少。 </destactivity></tabdemo1></li>
+<li>竖直布局。本质是 LinearLayout，并且 orientation 的值为 vertical。但是<br>水平方向的就没有 vetialLayout 这种可以直接使用的了，需要自己写明orientation。</li>
+<li>创建一个 listview。</li>
+<li>给这个 listview 添加 adapter。这里简单实用 ArrayAdapter<string>。</string></li>
+<li>添加 OnItemClickListener。object : AdapterView.OnItemClickListener 用来<br>创建实现某个接口的匿名类。</li>
+<li>startActivity<tabdemo1>()，是Anko的语法糖。startActivity(SourceActivity.this, DestActivity.class)<br>可以直接简化为 startActivity<destactivity>()。简单了不少。</destactivity></tabdemo1></li>
 <li>在 lparams 中设置 layout params 相关的内容。默认的都是 wrap content。这个设置为<br>宽、高都为 match parent。</li>
 </ol>
 <p>用 Fragment 写一个 Tab 布局</p>
@@ -805,6 +793,12 @@ return AlertDialog.Builder(activity)
 
     <div class="card">
     
+    <div class="card-image">
+        <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/thumbnail5.jpg" alt="响应式函数编程 RxJava &amp; RxAndroid">
+        </a>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -830,7 +824,7 @@ return AlertDialog.Builder(activity)
         <div class="content">
             <ul>
 <li>Github: <a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">https://github.com/ReactiveX/RxJava</a></li>
-<li>中文资料: <ul>
+<li>中文资料:<ul>
 <li><a href="https://github.com/lzyzsd/Awesome-RxJava" target="_blank" rel="external">https://github.com/lzyzsd/Awesome-RxJava</a></li>
 <li><a href="https://www.zhihu.com/question/35511144" target="_blank" rel="external">https://www.zhihu.com/question/35511144</a></li>
 </ul>
@@ -840,7 +834,7 @@ return AlertDialog.Builder(activity)
 <li>在程序逻辑异常复杂的情况下,仍然可以让代码的逻辑保持简洁</li>
 </ul>
 </li>
-<li><p>配置: 添加依赖: </p>
+<li><p>配置: 添加依赖:</p>
 <pre><code>compile &apos;io.reactivex:rxjava:1.1.3&apos;
 compile &apos;io.reactivex:rxandroid:1.1.0&apos;
 
@@ -864,7 +858,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
 </ul>
 <h2 id="2-观察者-Observer"><a href="#2-观察者-Observer" class="headerlink" title="2. 观察者: Observer"></a>2. 观察者: Observer</h2><ul>
 <li>作用: 当事件触发的时候将有怎样的行为</li>
-<li>实现类有Observer / Subscriber </li>
+<li>实现类有Observer / Subscriber</li>
 </ul>
 <h2 id="3-订阅-subscribe"><a href="#3-订阅-subscribe" class="headerlink" title="3. 订阅: subscribe"></a>3. 订阅: subscribe</h2><ul>
 <li>作用: 把Observable和Observer关联起来</li>
@@ -1072,7 +1066,7 @@ private void student() {
 </code></pre></li>
 </ul>
 <h2 id="8-和Retrofit一起使用"><a href="#8-和Retrofit一起使用" class="headerlink" title="8. 和Retrofit一起使用"></a>8. 和Retrofit一起使用</h2><ol>
-<li><p>添加依赖: </p>
+<li><p>添加依赖:</p>
 <pre><code>compile &apos;com.squareup.retrofit2:retrofit:2.0.1&apos;
 compile &apos;com.squareup.retrofit2:converter-gson:2.0.1&apos;
 compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
@@ -1135,6 +1129,12 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
 
     <div class="card">
     
+    <div class="card-image">
+        <a href="/2017/11/19/仿QQ空间打赏功能实现/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/thumbnail4.jpg" alt="仿QQ空间打赏功能实现">
+        </a>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -1175,6 +1175,12 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
 
 
     <div class="card">
+    
+    <div class="card-image">
+        <a href="/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/thumbnail6.jpg" alt="一行代码获取ViewPager中当前显示的Fragment">
+        </a>
+    </div>
     
     <div class="card-content article ">
         
@@ -1222,6 +1228,12 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
 
 
     <div class="card">
+    
+    <div class="card-image">
+        <a href="/2017/09/15/hello-world/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/thumbnail7.jpg" alt="Hello World">
+        </a>
+    </div>
     
     <div class="card-content article ">
         
@@ -1555,7 +1567,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             
             <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Kotlin 中使用 Anko 编写布局">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail8.jpg" alt="Kotlin 中使用 Anko 编写布局">
                 </p>
             </a>
             
@@ -1574,7 +1586,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             
             <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="响应式函数编程 RxJava &amp; RxAndroid">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail5.jpg" alt="响应式函数编程 RxJava &amp; RxAndroid">
                 </p>
             </a>
             
@@ -1593,7 +1605,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             
             <a href="/2017/11/19/仿QQ空间打赏功能实现/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="仿QQ空间打赏功能实现">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail4.jpg" alt="仿QQ空间打赏功能实现">
                 </p>
             </a>
             
@@ -1753,7 +1765,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             
             <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Kotlin 中使用 Anko 编写布局">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail8.jpg" alt="Kotlin 中使用 Anko 编写布局">
                 </p>
             </a>
             
@@ -1772,7 +1784,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             
             <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="响应式函数编程 RxJava &amp; RxAndroid">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail5.jpg" alt="响应式函数编程 RxJava &amp; RxAndroid">
                 </p>
             </a>
             
@@ -1791,7 +1803,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             
             <a href="/2017/11/19/仿QQ空间打赏功能实现/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="仿QQ空间打赏功能实现">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail4.jpg" alt="仿QQ空间打赏功能实现">
                 </p>
             </a>
             
