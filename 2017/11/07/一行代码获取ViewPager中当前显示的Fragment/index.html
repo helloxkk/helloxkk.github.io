@@ -168,9 +168,9 @@
 <p>我不知道网上的那些答案为什么写的那么复杂, 明明一行代码可以搞定的事情, 写的这么麻烦</p>
 </blockquote>
 <p> <strong>方式一 :</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mFragment = (MyFragment) mAdapter.instantiateItem(mPager, mPager.getCurrentItem());</div></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mFragment = (MyFragment) mAdapter.instantiateItem(mPager, mPager.getCurrentItem());</div></pre></td></tr></table></figure>
 <p><strong>方式二 :</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mFragment = (MyFragment) getSupportFragmentManager().findFragmentByTag(&quot;android:switcher:&quot; + viewpager + &quot;:&quot; + mViewPager.getCurrentItem());</div></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mFragment = (MyFragment) getSupportFragmentManager().findFragmentByTag(&quot;android:switcher:&quot; + viewpager + &quot;:&quot; + mViewPager.getCurrentItem());</div></pre></td></tr></table></figure>
 
         </div>
         
@@ -220,7 +220,9 @@
             <div class="level-item has-text-centered">
                 <div>
                     
-                        <img class="image is-128x128 has-mb-6" src="/images/avatar.JPG" alt="肖坤">
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.JPG" alt="肖坤">
+                        </figure>
                     
                     
                     <p class="is-size-4 is-block">
