@@ -14,12 +14,12 @@
 <meta property="og:site_name" content="肖坤的博客">
 <meta property="og:description" content="React Native 中的所有组件存在生命周期，了解其生命周期对于我们掌握一个组件从创建到销毁的整个完整的过程和优化逻辑有很大的帮助。 先来一张经典的生命周期图:  getDefaultPropsgetDefaultProps 是创建前的准备工作，来设置默认 props 的值，所以严格地来说，这不是组件的生命周期的一部分。需要注意的是如果有从父组件传过来的同名的 props，那么会覆盖。还有就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190317234124814.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hrNjMyMTcyNzQ4,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-03-17T16:09:17.158Z">
+<meta property="og:image" content="https://i.ibb.co/cYjqn79/React-Life-Cycle.jpg">
+<meta property="og:updated_time" content="2019-03-17T16:26:32.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native 组件生命周期学习总结">
 <meta name="twitter:description" content="React Native 中的所有组件存在生命周期，了解其生命周期对于我们掌握一个组件从创建到销毁的整个完整的过程和优化逻辑有很大的帮助。 先来一张经典的生命周期图:  getDefaultPropsgetDefaultProps 是创建前的准备工作，来设置默认 props 的值，所以严格地来说，这不是组件的生命周期的一部分。需要注意的是如果有从父组件传过来的同名的 props，那么会覆盖。还有就">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190317234124814.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hrNjMyMTcyNzQ4,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://i.ibb.co/cYjqn79/React-Life-Cycle.jpg">
 
 
 
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 分钟 读完 (大约 1045 个字)
+                    7 分钟 读完 (大约 1025 个字)
                 </span>
                 
                 
@@ -174,7 +174,7 @@
         <div class="content">
             <p>React Native 中的所有组件存在生命周期，了解其生命周期对于我们掌握一个组件从创建到销毁的整个完整的过程和优化逻辑有很大的帮助。</p>
 <p>先来一张经典的生命周期图:</p>
-<p><img src="https://img-blog.csdnimg.cn/20190317234124814.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hrNjMyMTcyNzQ4,size_16,color_FFFFFF,t_70" alt="ReactLifeCycle"></p>
+<p><img src="https://i.ibb.co/cYjqn79/React-Life-Cycle.jpg" alt="ReactLifeCycle"></p>
 <h2 id="getDefaultProps"><a href="#getDefaultProps" class="headerlink" title="getDefaultProps"></a>getDefaultProps</h2><p><code>getDefaultProps</code> 是创建前的准备工作，来设置默认 <code>props</code> 的值，所以严格地来说，这不是组件的生命周期的一部分。需要注意的是如果有从父组件传过来的同名的 <code>props</code>，那么会覆盖。还有就是多个实例间共享引用，而不是有多个。</p>
 <h2 id="getInitialState"><a href="#getInitialState" class="headerlink" title="getInitialState"></a>getInitialState</h2><p>这个函数控件加载之前执行，返回值会被用于 <code>state</code> 的初始化值。</p>
 <h2 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount"></a>componentWillMount</h2><p>这个回调函数在初始化 <code>render</code> 之前执行，调用时机是在组件创建，并初始化了状态之后，在第一次绘制 <code>render()</code> 之前。可以在这里做一些业务初始化操作，也可以设置组件状态 <code>setState</code>。这个函数在整个生命周期中只被调用一次。</p>
