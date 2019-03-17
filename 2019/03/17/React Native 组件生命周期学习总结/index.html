@@ -2,22 +2,24 @@
 <html  lang="zh">
 <head>
     <meta charset="utf-8">
-<title>Hello World - 肖坤的博客</title>
+<title>React Native 组件生命周期学习总结 - 肖坤的博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="React Native 中的所有组件存在生命周期，了解其生命周期对于我们掌握一个组件从创建到销毁的整个完整的过程和优化逻辑有很大的帮助。 先来一张经典的生命周期图:  getDefaultPropsgetDefaultProps 是创建前的准备工作，来设置默认 props 的值，所以严格地来说，这不是组件的生命周期的一部分。需要注意的是如果有从父组件传过来的同名的 props，那么会覆盖。还有就">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://hellokk.cc/2017/09/15/hello-world/index.html">
+<meta property="og:title" content="React Native 组件生命周期学习总结">
+<meta property="og:url" content="http://hellokk.cc/2019/03/17/React Native 组件生命周期学习总结/index.html">
 <meta property="og:site_name" content="肖坤的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="React Native 中的所有组件存在生命周期，了解其生命周期对于我们掌握一个组件从创建到销毁的整个完整的过程和优化逻辑有很大的帮助。 先来一张经典的生命周期图:  getDefaultPropsgetDefaultProps 是创建前的准备工作，来设置默认 props 的值，所以严格地来说，这不是组件的生命周期的一部分。需要注意的是如果有从父组件传过来的同名的 props，那么会覆盖。还有就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T11:05:51.455Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190317234124814.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hrNjMyMTcyNzQ4,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-03-17T15:55:58.008Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="React Native 组件生命周期学习总结">
+<meta name="twitter:description" content="React Native 中的所有组件存在生命周期，了解其生命周期对于我们掌握一个组件从创建到销毁的整个完整的过程和优化逻辑有很大的帮助。 先来一张经典的生命周期图:  getDefaultPropsgetDefaultProps 是创建前的准备工作，来设置默认 props 的值，所以严格地来说，这不是组件的生命周期的一部分。需要注意的是如果有从父组件传过来的同名的 props，那么会覆盖。还有就">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190317234124814.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hrNjMyMTcyNzQ4,size_16,color_FFFFFF,t_70">
 
 
 
@@ -89,7 +91,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Hello World" height="28">
+                <img src="/images/logo.svg" alt="React Native 组件生命周期学习总结" height="28">
             
             </a>
         </div>
@@ -143,7 +145,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/thumbnail7.jpg" alt="Hello World">
+            <img class="thumbnail" src="/gallery/thumbnails/thumbnail9.jpg" alt="React Native 组件生命周期学习总结">
         </span>
     </div>
     
@@ -151,13 +153,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-09-15T11:42:44.000Z">2017-09-15</time>
+                <time class="level-item has-text-grey" datetime="2019-03-17T15:45:35.218Z">2019-03-17</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 121 个字)
+                    7 分钟 读完 (大约 1045 个字)
                 </span>
                 
                 
@@ -166,19 +168,84 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Hello World
+                React Native 组件生命周期学习总结
             
         </h1>
         <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="hljs-string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p>React Native 中的所有组件存在生命周期，了解其生命周期对于我们掌握一个组件从创建到销毁的整个完整的过程和优化逻辑有很大的帮助。</p>
+<p>先来一张经典的生命周期图:</p>
+<p><img src="https://img-blog.csdnimg.cn/20190317234124814.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hrNjMyMTcyNzQ4,size_16,color_FFFFFF,t_70" alt="ReactLifeCycle"></p>
+<h2 id="getDefaultProps"><a href="#getDefaultProps" class="headerlink" title="getDefaultProps"></a>getDefaultProps</h2><p><code>getDefaultProps</code> 是创建前的准备工作，来设置默认 <code>props</code> 的值，所以严格地来说，这不是组件的生命周期的一部分。需要注意的是如果有从父组件传过来的同名的 <code>props</code>，那么会覆盖。还有就是多个实例间共享引用，而不是有多个。</p>
+<h2 id="getInitialState"><a href="#getInitialState" class="headerlink" title="getInitialState"></a>getInitialState</h2><p>这个函数控件加载之前执行，返回值会被用于 <code>state</code> 的初始化值。</p>
+<h2 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount"></a>componentWillMount</h2><p>这个回调函数在初始化 <code>render</code> 之前执行，调用时机是在组件创建，并初始化了状态之后，在第一次绘制 <code>render()</code> 之前。可以在这里做一些业务初始化操作，也可以设置组件状态 <code>setState</code>。这个函数在整个生命周期中只被调用一次。</p>
+<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><p><code>render</code> 函数会在组件渲染的时候调用，只允许返回一个最外层容器组件。<code>render</code> 函数内要尽量保持纯净，只渲染组件，就是不要这个函数里初始化或更改组件的 <code>state</code> 以及其他耗时的操作。</p>
+<h2 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h2><p>在初始化 <code>render</code> 之后只执行一次，在这个函数内，可以访问任何组件，我们从这个函数开始，就可以和 JS 其他框架交互了，例如设置计时 <code>setTimeout</code> 或者 <code>setInterval</code>，或者发起网络请求，但是需要注意：<strong>RN 框架是先调用子组件的 <code>componentDidMount</code> 函数，然后调用父组件的函数。</strong></p>
+<h2 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h2><p>我们从上图中可以看出，这个函数在初始化 <code>render</code> 时不会执行，当  <code>props</code> 或者 <code>state</code> 发生变化的时候，才会调用该函数，并且是在<code>render</code>之前。<br>这个函数会返回一个布尔值，如果返回 <code>ture</code>，则进行组件的重新渲染 <code>render</code>，相反返回 <code>false</code>，则不做任何处理。<br>默认情况下，这个函数永远返回 <code>true</code> 用来保证数据变化的时候 UI 能够同步更新。但是在某些特定条件下，我们可以重载这一函数根据传递过来的 <code>props</code> 和 <code>state</code> 来选择是否更新，从而提高性能。</p>
+<h2 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate"></a>componentWillUpdate</h2><p>当 <code>props</code> 和 <code>state</code> 发生变化时执行，并且在 <code>render</code> 函数之前执行，当然初始化 <code>render</code> 时不执行该函数，需要特别注意的是，<strong>在这个函数里面，我们就不能使用 <code>this.setState</code> 来修改状态。</strong>这个函数调用之后，就会把 <code>nextProps</code> 和 <code>nextState</code> 分别设置到 <code>this.props</code> 和 <code>this.state</code> 中。紧接着这个函数，就会调用 <code>render()</code> 来更新界面了。</p>
+<h2 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h2><p>这个函数在组件更新渲染完成之后执行，初始化 <code>render</code> 时不执行，<strong>这里也不能使用 this.setState 来修改状态。</strong></p>
+<h2 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps"></a>componentWillReceiveProps</h2><p>这个函数在接收到新的  <code>props</code> 时调用，一般是从父组件传递过来，初始化 <code>render</code> 时不执行，在这个回调函数里面，我们可以根据属性的变化，通过调用 <code>this.setState()</code> 来更新组件状态，旧的属性还是可以通过 <code>this.props</code> 来获取，这里调用更新状态是安全的，并不会触发额外的 <code>render</code> 调用。</p>
+<h2 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h2><p>当组件要被从界面上移除的时候，就会调用这个函数，在 <code>componentDidMount</code> 函数里面注册的事件需要在这里取消，例如计时器、网络请求等。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>生命周期</th>
+<th>调用次数</th>
+<th>能否使用 setSate()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getDefaultProps</td>
+<td>1</td>
+<td>否</td>
+</tr>
+<tr>
+<td>getInitialState</td>
+<td>1</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentWillMount</td>
+<td>1</td>
+<td>是</td>
+</tr>
+<tr>
+<td>render</td>
+<td>&gt;=1</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentDidMount</td>
+<td>1</td>
+<td>是</td>
+</tr>
+<tr>
+<td>shouldComponentUpdate</td>
+<td>&gt;=0</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentWillUpdate</td>
+<td>&gt;=0</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentDidUpdate</td>
+<td>&gt;=0</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentWillReceiveProps</td>
+<td>&gt;=0</td>
+<td>是</td>
+</tr>
+<tr>
+<td>componentWillUnmount</td>
+<td>1</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
 
         </div>
         
@@ -223,17 +290,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/11/07/一行代码获取ViewPager中当前显示的Fragment/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">一行代码获取ViewPager中当前显示的Fragment</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2017/09/11/关于 Kotlin 的一些小知识的总结/">
-                <span class="level-item">关于 Kotlin 的一些小知识的总结</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/07/25/仿微信剪切视频时长View/">
+                <span class="level-item">仿微信剪切视频时长View</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -249,8 +309,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://hellokk.cc/2017/09/15/hello-world/';
-        this.page.identifier = '2017/09/15/hello-world/';
+        this.page.url = 'http://hellokk.cc/2019/03/17/React Native 组件生命周期学习总结/';
+        this.page.identifier = '2019/03/17/React Native 组件生命周期学习总结/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -885,7 +945,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Hello World" height="28">
+                    <img src="/images/logo.svg" alt="React Native 组件生命周期学习总结" height="28">
                 
                 </a>
                 <p class="is-size-7">
