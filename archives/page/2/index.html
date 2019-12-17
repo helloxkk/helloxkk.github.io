@@ -2,22 +2,21 @@
 <html  lang="zh">
 <head>
     <meta charset="utf-8">
-<title>使用观察者模式进行订单管理 - 肖坤的博客</title>
+<title>归档 - 肖坤的博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="概念：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用观察者模式进行订单管理">
-<meta property="og:url" content="http://hellokk.cc/2018/06/05/使用观察者模式进行订单管理/index.html">
+    <meta name="description" content="Welcome to Kun blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="肖坤的博客">
+<meta property="og:url" content="http://hellokk.cc/archives/page/2/index.html">
 <meta property="og:site_name" content="肖坤的博客">
-<meta property="og:description" content="概念：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta property="og:description" content="Welcome to Kun blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T10:49:50.728Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用观察者模式进行订单管理">
-<meta name="twitter:description" content="概念：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta name="twitter:title" content="肖坤的博客">
+<meta name="twitter:description" content="Welcome to Kun blog">
 
 
 
@@ -89,7 +88,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="使用观察者模式进行订单管理" height="28">
+                <img src="/images/logo.svg" alt="肖坤的博客" height="28">
             
             </a>
         </div>
@@ -139,132 +138,59 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/thumbnail3.jpg" alt="使用观察者模式进行订单管理">
-        </span>
-    </div>
-    
-    <div class="card-content article ">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-06-05T13:05:10.000Z">2018-06-05</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 509 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                使用观察者模式进行订单管理
-            
-        </h1>
-        <div class="content">
-            <p><strong>概念</strong>：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。<br>观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment"> * author: Kun on 2017/12/14 15:34</span></div><div class="line"><span class="hljs-comment"> * address: vip@hellokk.cc</span></div><div class="line"><span class="hljs-comment"> * description: 订单管理观察者 用户对订单做了操作后，通知所有注册观察者的对象作相应的改变</span></div><div class="line"><span class="hljs-comment"> */</span></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderManageObserver</span> </span>&#123;</div><div class="line"></div><div class="line">    companion object &#123;</div><div class="line">        var list: MutableList&lt;OrderManageListener&gt;? = <span class="hljs-keyword">null</span></div><div class="line">        var instance: OrderManageObserver? = <span class="hljs-keyword">null</span></div><div class="line">            get() &#123;</div><div class="line">                <span class="hljs-keyword">if</span> (field == <span class="hljs-keyword">null</span>) &#123;</div><div class="line">					<span class="hljs-comment">// 使用双重锁方式实现单例，保持只有一个实例</span></div><div class="line">                    <span class="hljs-keyword">synchronized</span>(OrderManageObserver::<span class="hljs-class"><span class="hljs-keyword">class</span>.<span class="hljs-title">java</span>) </span>&#123;</div><div class="line">                        <span class="hljs-keyword">if</span> (field == <span class="hljs-keyword">null</span>)&#123;</div><div class="line">                            list = ArrayList()</div><div class="line">                        	field = OrderManageObserver()</div><div class="line">						&#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="hljs-keyword">return</span> field</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment">     * 接受订单</span></div><div class="line"><span class="hljs-comment">     */</span></div><div class="line">    <span class="hljs-function">fun <span class="hljs-title">orderReceivingClick</span><span class="hljs-params">(orderStep: Int?)</span> </span>&#123;</div><div class="line">        list?.forEach &#123;</div><div class="line">			<span class="hljs-comment">// 通知所有观察者</span></div><div class="line">            it.orderReceiving(orderStep)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment">     * 订单删除</span></div><div class="line"><span class="hljs-comment">     */</span></div><div class="line">    <span class="hljs-function">fun <span class="hljs-title">orderDeleteClick</span><span class="hljs-params">(orderStep: Int?)</span> </span>&#123;</div><div class="line">        list?.forEach &#123;</div><div class="line">			<span class="hljs-comment">// 通知所有观察者</span></div><div class="line">            it.orderDelete(orderStep)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment">     * 注册订单监听</span></div><div class="line"><span class="hljs-comment">     */</span></div><div class="line">    <span class="hljs-function">fun <span class="hljs-title">setOrderClick</span><span class="hljs-params">(orderFace: OrderManageListener)</span> </span>&#123;</div><div class="line">        list?.add(orderFace)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>订单管理监听器</p>
-<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment"> * author: Alan on 2018/1/6 14:01</span></div><div class="line"><span class="hljs-comment"> * address: xk6321<span class="hljs-doctag">@gmail</span>.com</span></div><div class="line"><span class="hljs-comment"> * description: 订单管理监听器</span></div><div class="line"><span class="hljs-comment"> */</span></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">OrderManageListener</span> </span>&#123;</div><div class="line">    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderReceiving</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> <span class="hljs-comment">// 接受订单</span></div><div class="line">    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderDelete</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> <span class="hljs-comment">// 订单删除</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>注册观察者</p>
-<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">OrderManageObserver.instance?.setOrderClick(<span class="hljs-keyword">object</span> : OrderManageListener &#123;</div><div class="line">            <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderReceiving</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> &#123;</div><div class="line">             <span class="hljs-comment">// 在这里做相应操作</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderDelete</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> &#123;</div><div class="line">               <span class="hljs-comment">// 订单删除， 刷新列表</span></div><div class="line">            &#125;</div><div class="line">        &#125;)</div></pre></td></tr></table></figure>
-<p>发送者</p>
-<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderDelSuccess</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> &#123;</div><div class="line">		<span class="hljs-comment">// 在订单删除成功后，通知所有的观察者做相应的操作</span></div><div class="line">        OrderManageObserver.instance?.orderDeleteClick(orderStep)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p><strong>总结</strong>：观察者模式看起来很高大上，其实说白了就是一个类维护了另一个类的一个集合，并通过这个集合绑定解绑或调用另一个类的方法，对程序的解耦有一定帮助。在这里，我只简单的实现了一下，如果项目比较大，且用的地方比较多的话，在设计底层框架的时候，可以利用多态的特性进行抽象，以便适用与各种场景。</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-<div class="card">
+<div class="card widget">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
+        <h3 class="tag is-link">
+        2017
+        </h3>
+        <div class="timeline">
+        
+            <article class="media">
                 
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="/images/IMG_2199.JPG" alt="支付宝"></div>
-</a>
-
+                <a href="/2017/09/11/关于 Kotlin 的一些小知识的总结/" class="media-left">
+                    <p class="image is-64x64">
+                        <img class="thumbnail" src="/gallery/thumbnails/thumbnail2.jpeg" alt="关于 Kotlin 的一些小知识的总结">
+                    </p>
+                </a>
                 
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="/images/IMG_2198.JPG" alt="微信"></div>
-</a>
-
-                
+                <div class="media-content">
+                    <div class="content">
+                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2017-09-11T12:23:12.000Z">2017-09-11</time>
+                        <a href="/2017/09/11/关于 Kotlin 的一些小知识的总结/" class="has-link-black-ter is-size-6">关于 Kotlin 的一些小知识的总结</a>
+                        <div class="level article-meta is-mobile">
+                            <div class="level-left">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        
         </div>
     </div>
 </div>
 
+    
 
-
+    
 <div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/07/25/仿微信剪切视频时长View/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">仿微信剪切视频时长View</span>
-            </a>
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/archives/">上一页</a>
         </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/06/05/Kotlin 中使用 Anko 编写布局/">
-                <span class="level-item">Kotlin 中使用 Anko 编写布局</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
+        <div class="pagination-next is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/archives/page/3/">下一页</a>
         </div>
-        
-    </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://hellokk.cc/2018/06/05/使用观察者模式进行订单管理/';
-        this.page.identifier = '2018/06/05/使用观察者模式进行订单管理/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hellokk' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-    </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/archives/">1</a></li>
+            
+            <li><a class="pagination-link is-current" href="/archives/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
 </div>
 </div>
                 
@@ -907,7 +833,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="使用观察者模式进行订单管理" height="28">
+                    <img src="/images/logo.svg" alt="肖坤的博客" height="28">
                 
                 </a>
                 <p class="is-size-7">

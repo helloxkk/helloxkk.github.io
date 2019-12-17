@@ -142,6 +142,201 @@
     <div class="card">
     
     <div class="card-image">
+        <a href="/2019/12/17/JetPack 简介/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/JetPack.jpeg" alt="JetPack 简介">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-17T08:01:35.734Z">2019-12-17</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 分钟 读完 (大约 694 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/17/JetPack 简介/">JetPack 简介</a>
+            
+        </h1>
+        <div class="content">
+            <p><code>JetPack</code>是<code>Google</code>推出的一些库的集合。是<code>Android</code>基础支持库<code>SDK</code>以外的部分<br>从官方的介绍来看。<code>JetPack</code> 总体包含四部分内容：</p>
+<p><img src="https://raw.githubusercontent.com/googlesamples/android-sunflower/master/screenshots/jetpack_donut.png" alt="jetPack"></p>
+<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p><strong><a href="https://developer.android.com/topic/libraries/support-library/packages.html#v7-appcompat" target="_blank" rel="external">AppCompat</a></strong> ： 使得支持较低的 <code>Android</code> 版本。从以前继承 <code>Activity</code> 到现在继承 <code>AppCompatActivity</code> 就是属于这一部分。</p>
+<p><strong><a href="https://developer.android.com/kotlin/ktx.html" target="_blank" rel="external">Android KTX</a></strong>: <code>Kotlin</code> 的扩展支持库</p>
+<p><strong><a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="external">Multidex</a></strong>: 多 <code>dex</code> 文件支持</p>
+<p><strong><a href="https://developer.android.com/training/testing/" target="_blank" rel="external">Test</a></strong>: 测试支持库</p>
+<h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p><strong><a href="https://developer.android.com/topic/libraries/data-binding" target="_blank" rel="external">Data Binding</a></strong>: <code>MVVM</code>的一种实践</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/lifecycle" target="_blank" rel="external">Lifecycles</a></strong>: 管理你的<code>Activity</code> 和 <code>Fragment</code> 生命周期</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/livedata" target="_blank" rel="external">LiveData</a></strong>: 通过观察者模式感知数据变化，类比 <code>RxJava</code></p>
+<p><strong><a href="https://developer.android.com/guide/navigation" target="_blank" rel="external">Navigation</a></strong>: 处理 <code>Fragment</code> </p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/paging" target="_blank" rel="external">Paging</a></strong>: 分页数据加载方案</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/room" target="_blank" rel="external">Room</a></strong>: 官方 <code>ORM</code> 库</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/viewmodel" target="_blank" rel="external">ViewModel</a></strong>: 通过数据驱动V视图发生改变</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/workmanager" target="_blank" rel="external">WorkManager</a></strong>: 管理后台任务</p>
+<h4 id="行为"><a href="#行为" class="headerlink" title="行为"></a>行为</h4><p><strong><a href="https://developer.android.com/training/camerax" target="_blank" rel="external">Camerax</a></strong>: 轻松地向应用中添加相机功能</p>
+<p><strong><a href="https://developer.android.com/reference/android/app/DownloadManager" target="_blank" rel="external">DownloadManager</a></strong>: 安排和管理大量下载任务</p>
+<p><strong><a href="https://developer.android.com/guide/topics/media-apps/media-apps-overview.html" target="_blank" rel="external">Media app</a></strong>： 用于媒体播放和路由（包括 <code>Google Cast</code>）的向后兼容<code>API</code></p>
+<p><strong><a href="https://developer.android.com/guide/topics/ui/notifiers/notifications.html" target="_blank" rel="external">Notifications</a></strong>: 提供向后兼容的通知 <code>API</code>，支持 <code>Wear</code> 和 <code>Auto</code></p>
+<p><strong><a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank" rel="external">Permissions</a></strong>: 用于检查和请求应用权限的兼容性 <code>API</code></p>
+<p><strong><a href="https://developer.android.com/guide/topics/ui/settings" target="_blank" rel="external">Settings</a></strong>: 创建交互式设置屏幕</p>
+<p><strong><a href="https://developer.android.com/training/sharing" target="_blank" rel="external">Share Action</a></strong>: 提供适合应用操作栏的共享操作。这块在国内使用的不多，都是自己封装或者采用第三方方案。</p>
+<p><strong><a href="https://developer.android.com/guide/slices" target="_blank" rel="external">Slices</a></strong>: 可以让应用通过外部（其他<code>APP</code>）显示<code>APP</code>界面（通过设备自带的搜索，语音助手等）</p>
+<h4 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h4><p>界面部分所包含的东西基本是我们接触的最多的了：</p>
+<p><strong><a href="https://developer.android.com/training/animation/" target="_blank" rel="external">Animations and Transitions</a></strong>: 动画，界面转场等</p>
+<p><strong><a href="https://developer.android.com/guide/topics/ui/look-and-feel/emoji-compat" target="_blank" rel="external">Emoji</a></strong>: 在旧版平台上启用最新的表情符号字体</p>
+<p><strong><a href="https://developer.android.com/guide/components/fragments" target="_blank" rel="external">Fragment</a></strong>: 组件化界面的基本单位</p>
+<p><strong><a href="https://developer.android.com/guide/topics/ui/declaring-layout" target="_blank" rel="external">Layout</a></strong>: 基础概念</p>
+<p><strong><a href="https://developer.android.com/training/material/palette-colors" target="_blank" rel="external">Palette-Colors</a></strong>: 从调色板中提取出有用的信息</p>
+<p><strong><a href="https://developer.android.com/tv" target="_blank" rel="external">TV</a></strong>: 有助于开发 <code>Android TV</code> 应用的组件</p>
+<p><strong><a href="https://developer.android.com/wear" target="_blank" rel="external">Wear</a></strong>: 有助于开发 <code>Wear</code> 应用的组件</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/12/17/JetPack 之 LiveData/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/LiveData.png" alt="JetPack 之 LiveData">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-17T07:44:16.723Z">2019-12-17</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    18 分钟 读完 (大约 2665 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/17/JetPack 之 LiveData/">JetPack 之 LiveData</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="LiveData"><a href="#LiveData" class="headerlink" title="LiveData"></a>LiveData</h2><blockquote>
+<p><code>LiveData</code>是一个可观察的数据持有者类。与常规<code>observable</code>不同，<code>LiveData</code>是生命周期感知的。</p>
+</blockquote>
+<p>从<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdeveloper.android.com%2Ftopic%2Flibraries%2Farchitecture%2Flivedata" target="_blank" rel="external">官方文档</a>的介绍上我们可以看到俩个关键词：<strong>可观察</strong>、<strong>生命周期感知</strong>。简单来说，Google 给我们提供了一个可以被观察的，并且拥有生命周期感知能力的类。那有什么用呢？</p>
+<p>直接上 demo：</p>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="1-1-初级官方-Demo"><a href="#1-1-初级官方-Demo" class="headerlink" title="1.1 初级官方 Demo"></a>1.1 初级官方 Demo</h3><figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NameViewModel</span> : <span class="hljs-type">ViewModel</span></span>() &#123;</div><div class="line"></div><div class="line">    <span class="hljs-comment">// 创建LiveData</span></div><div class="line">    <span class="hljs-keyword">val</span> currentName: MutableLiveData&lt;String&gt; <span class="hljs-keyword">by</span> lazy &#123;</div><div class="line">        MutableLiveData&lt;String&gt;()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-comment">// ViewModel 的其余部分...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NameActivity</span> : <span class="hljs-type">AppCompatActivity</span></span>() &#123;</div><div class="line"></div><div class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> model: NameViewModel</div><div class="line"></div><div class="line">    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;</div><div class="line">        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)</div><div class="line"></div><div class="line">        <span class="hljs-comment">// 获取ViewModel.</span></div><div class="line">        model = ViewModelProviders.of(<span class="hljs-keyword">this</span>).<span class="hljs-keyword">get</span>(NameViewModel::<span class="hljs-class"><span class="hljs-keyword">class</span>.<span class="hljs-title">java</span>)</span></div><div class="line"></div><div class="line">        <span class="hljs-comment">// 创建更新UI的观察者.</span></div><div class="line">        <span class="hljs-keyword">val</span> nameObserver = Observer&lt;String&gt; &#123; newName -&gt;</div><div class="line">            <span class="hljs-comment">// 更新UI，在本例中是一个TextView.</span></div><div class="line">            nameTextView.text = newName</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="hljs-comment">// 观察LiveData，将此活动作为生命周期所有者和观察者传入.</span></div><div class="line">        model.currentName.observe(<span class="hljs-keyword">this</span>, nameObserver)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="1-2-Demo解释"><a href="#1-2-Demo解释" class="headerlink" title="1.2 Demo解释"></a>1.2 Demo解释</h3><p>最开始我们先声明了一个<code>NameViewModel</code>的<code>ViewModel</code>，这部分内容在<code>ViewModel</code>篇有所提及。内部有一个<code>MutableLiveData&lt;String&gt;</code>的成员变量。说白了就是一个<strong><code>LiveData</code>类型的<code>String</code></strong>，我们使用时是借助<code>LiveData</code>的特性，但本质还是用String。</p>
+<p>也就是说这里如果我们要用一个<code>List&lt;String&gt;</code>，那么此时就是<code>MutableLiveData&gt;()</code>。</p>
+<p><code>Activity</code>之中，我们先获取<code>ViewModel</code>，然后<code>mModel.currentName.observe(...,...)</code>，这里我们就是在<strong>观察</strong><code>LiveData</code>。我们只需要在回调中处理我们自己的UI操作即可了。也就是demo中的<code>mNameTextView.text = newName</code>。</p>
+<p><code>LiveData</code>会在每一次<code>postValue(...)</code>或者<code>value=...</code>时，<code>observe()</code>便会回调，哪怕是<code>null</code>。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>这里有俩个点需要特别注意：</p>
+<ol>
+<li><code>LiveData</code>是生命周期感知的，在当前的<code>LifecycleOwner</code>不处于活动状态(例如<code>onPasue()</code>、<code>onStop()</code>)时，LiveData是不会回调<code>observe()</code>的，因为没有意义。</li>
+<li>如果<code>LiveData</code>没有被<code>observe()</code>，那么此时你调用这个<code>LiveData</code>的<code>postValue(...)/value=...</code>，是<strong>没有任何作用</strong>。这个我们可以在源码中看到。</li>
+</ol>
+<h2 id="1-3、不同的-LiveData-实现类-系统实现"><a href="#1-3、不同的-LiveData-实现类-系统实现" class="headerlink" title="1.3、不同的 LiveData 实现类 (系统实现)"></a>1.3、不同的 LiveData 实现类 (系统实现)</h2><p><strong>MutableLiveData</strong>：</p>
+<p>上文咱们已经见过了，没什么特别的，就是<code>LiveData</code>的实现类。就相当于<code>List</code>和<code>ArrayList</code>的关系。</p>
+<p><strong>MediatorLiveData</strong>：</p>
+<p><code>MutableLiveData</code>的子类，它是一个比较强大的<code>LiveData</code>，我们的<code>map()</code>、<code>switchMap()</code>都是基于它进行实现的。<br>最大的特点是可以同时监听多个<code>LiveData</code>。</p>
+<h2 id="三、进阶"><a href="#三、进阶" class="headerlink" title="三、进阶"></a>三、进阶</h2><h3 id="3-1-map"><a href="#3-1-map" class="headerlink" title="3.1 map()"></a>3.1 map()</h3><p>初用过<code>RxJava</code>的小伙伴，估计会和我一样，被各种“姿势”的操作符所正经，比如常用的：<code>map、flatMap...</code>而<code>LiveData</code>中同样有这样的操作。</p>
+<p>一个很常见的场景：我们通过一个唯一<code>id</code>去查询这个<code>id</code>下的实体类，并且要同时展示二者的数据。很简单的业务逻辑，在<code>LiveData</code>中的展示是这样的：</p>
+<h4 id="3-1-1-使用"><a href="#3-1-1-使用" class="headerlink" title="3.1.1 使用"></a>3.1.1 使用</h4><figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NameViewModel</span> : <span class="hljs-type">ViewModel</span></span>() &#123;</div><div class="line">    <span class="hljs-keyword">val</span> userIdLiveData = MutableLiveData&lt;<span class="hljs-built_in">Long</span>&gt;()</div><div class="line">    <span class="hljs-comment">// 伪码:当userIdLiveData发生变化时，userLiveData中的map就会调用，那么我们就可以得到罪行的id</span></div><div class="line">    <span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = Transformations.map(userIdLiveData) &#123; id-&gt;</div><div class="line">        <span class="hljs-comment">// 通过id拿到User，return一个User的实例user</span></div><div class="line">        user</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="hljs-comment">// Activity中</span></div><div class="line">mModel.userLiveData.observe(<span class="hljs-keyword">this</span>, Observer &#123; user -&gt;</div><div class="line">    <span class="hljs-comment">// user变化后通知mNameTextView更新UI</span></div><div class="line">    mNameTextView.text = user.name</div><div class="line">&#125;)</div><div class="line"><span class="hljs-comment">// 给userIdLiveData设置id为1</span></div><div class="line">mModel.userIdLiveData.postValue(<span class="hljs-string">"1"</span>)</div></pre></td></tr></table></figure>
+<p>针对这个业务场景，我们只需要监听我们用户通知UI变化的<code>LiveData(userLiveData)</code>，然后通过<code>userIdLiveData.postValue(&quot;1&quot;)</code>来驱动数据的变化。</p>
+<blockquote>
+<p>这里可能和我们传统的<code>MVP</code>的思想并不相同，毕竟<code>MVVM</code>和<code>MVP</code>还是有区别的，而<code>MVVM</code>的这种方式被称之为：<strong>数据驱动</strong>。</p>
+</blockquote>
+<h4 id="3-1-2-map-源码"><a href="#3-1-2-map-源码" class="headerlink" title="3.1.2 map() 源码"></a>3.1.2 map() 源码</h4><p>我们直接点到<code>Transformations.map()</code>中。</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">public</span> static &lt;X, Y&gt; LiveData&lt;Y&gt; map(</div><div class="line">        <span class="hljs-meta">@NonNull</span> LiveData&lt;X&gt; source,</div><div class="line">        <span class="hljs-meta">@NonNull</span> <span class="hljs-keyword">final</span> Function&lt;X, Y&gt; mapFunction) &#123;</div><div class="line">    <span class="hljs-keyword">final</span> MediatorLiveData&lt;Y&gt; result = new MediatorLiveData&lt;&gt;();</div><div class="line">    result.addSource(source, new Observer&lt;X&gt;() &#123;</div><div class="line">        <span class="hljs-meta">@Override</span></div><div class="line">        <span class="hljs-keyword">public</span> void onChanged(<span class="hljs-meta">@Nullable</span> X x) &#123;</div><div class="line">            result.setValue(mapFunction.apply(x));</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="hljs-keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>很简单，就是使用了<code>MediatorLiveData</code>，然后通过一个高阶函数，将高阶函数返回的内容，<code>set</code>到<code>LiveData</code>上，完成<code>map()</code>。</p>
+<p>既然提到了<code>MediatorLiveData</code>，以及它的<code>addSource()</code>的方法，那么我们就来看看它的源码。</p>
+<h4 id="3-1-3-MediatorLiveData-源码"><a href="#3-1-3-MediatorLiveData-源码" class="headerlink" title="3.1.3 MediatorLiveData 源码"></a>3.1.3 MediatorLiveData 源码</h4><blockquote>
+<p>这部分没啥意思，可以直接跳过看<strong>3.1.4、map() 源码总结</strong>…</p>
+</blockquote>
+<p>进入<code>MediatorLiveData</code>之中，我们会发现代码比较少。这里抽出俩块比较重点的内容，我们一同来感受一下：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> <span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">public</span> &lt;S&gt; void addSource(<span class="hljs-meta">@NonNull</span> LiveData&lt;S&gt; source, <span class="hljs-meta">@NonNull</span> Observer&lt;? <span class="hljs-keyword">super</span> S&gt; onChanged) &#123;</div><div class="line">    Source&lt;S&gt; e = new Source&lt;&gt;(source, onChanged);</div><div class="line">    Source&lt;?&gt; existing = mSources.putIfAbsent(source, e);</div><div class="line">    <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span> &amp;&amp; existing.mObserver != onChanged) &#123;</div><div class="line">        <span class="hljs-keyword">throw</span> new IllegalArgumentException(</div><div class="line">                <span class="hljs-string">"This source was already added with the different observer"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span>) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-keyword">if</span> (hasActiveObservers()) &#123;</div><div class="line">        e.plug();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>从这段代码中，我们粗略可以得到一个信息，这里把我们的<code>LiveData</code>和<code>Observer</code>封装成了<code>Source</code>对象，并且这个对象，不能重复添加。</p>
+<p>此外，<code>Source</code>的<code>plug()</code>方法，被调用。接下来我们去看一看这个内部类<code>Source</code>的实现：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">private</span> static <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Source</span>&lt;<span class="hljs-type">V</span>&gt; <span class="hljs-title">implements</span> <span class="hljs-title">Observer</span>&lt;<span class="hljs-type">V</span>&gt; </span>&#123;</div><div class="line">    <span class="hljs-keyword">final</span> LiveData&lt;V&gt; mLiveData;</div><div class="line">    <span class="hljs-keyword">final</span> Observer&lt;? <span class="hljs-keyword">super</span> V&gt; mObserver;</div><div class="line">    int mVersion = START_VERSION;</div><div class="line"></div><div class="line">    Source(LiveData&lt;V&gt; liveData, <span class="hljs-keyword">final</span> Observer&lt;? <span class="hljs-keyword">super</span> V&gt; observer) &#123;</div><div class="line">        mLiveData = liveData;</div><div class="line">        mObserver = observer;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void plug() &#123;</div><div class="line">        mLiveData.observeForever(<span class="hljs-keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void unplug() &#123;</div><div class="line">        mLiveData.removeObserver(<span class="hljs-keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-meta">@Override</span></div><div class="line">    <span class="hljs-keyword">public</span> void onChanged(<span class="hljs-meta">@Nullable</span> V v) &#123;</div><div class="line">        <span class="hljs-keyword">if</span> (mVersion != mLiveData.getVersion()) &#123;</div><div class="line">            mVersion = mLiveData.getVersion();</div><div class="line">            mObserver.onChanged(v);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>首先<code>Source</code>是一个观察者，可以看到，我们外部使用的<code>Observer</code>会以<code>Source</code>的成员变量的形式，添加到传入的<code>LiveData</code>中。值得注意的是，这里使用了<code>mLiveData.observeForever(this);</code>。</p>
+<p>从<code>observeForever()</code>用法可以看到，我们并没有传递<code>LifecycleOwner</code>，因此它并不具备生命感知能力。从注释中也可见一斑：<code>This means that the given observer will receive all events and will never be automatically removed.</code></p>
+<h4 id="3-1-4-map-源码总结"><a href="#3-1-4-map-源码总结" class="headerlink" title="3.1.4 map() 源码总结"></a>3.1.4 map() 源码总结</h4><p>打住，打住吧。其实没必要继续看了。一句话总结：<code>map()</code>的原理就是基于<code>MediatorLiveData</code>，<code>MediatorLiveData</code>内部会将传递进来的<code>LiveData</code>和<code>Observer</code>封装成内部类，然后放在内部维护的一个<code>Map</code>中。并且自动帮我们完成<code>observeForever</code>()和<code>removeObserver()</code>。</p>
+<h2 id="3-2-switchMap"><a href="#3-2-switchMap" class="headerlink" title="3.2 switchMap()"></a>3.2 switchMap()</h2><h4 id="3-2-1-使用"><a href="#3-2-1-使用" class="headerlink" title="3.2.1 使用"></a>3.2.1 使用</h4><p><code>switchMap()</code>的场景可以应用在切换<code>LiveData</code>上。这话怎么解释呢？</p>
+<p>很常见的业务场景：比如你的业务用的是<code>map()</code>，<code>map()</code>中使用你自己写的络，而且<code>LiveData</code>运行的很良好，抽着烟喝着酒，啥事都没有…就比如，上面<code>map()</code>那样的代码：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = Transformations.map(userIdLiveData) &#123; id-&gt;</div><div class="line">    <span class="hljs-comment">// 自己的一段逻辑</span></div><div class="line">    user</div><div class="line">&#125;</div><div class="line"><span class="hljs-comment">// Activity中</span></div><div class="line">mViewModel.userLiveData.observe(<span class="hljs-keyword">this</span>,Observer&#123;-&gt;user</div><div class="line">    <span class="hljs-comment">//更新UI</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>突然有一天，这个地方数据结构、UI都没变，唯独变了逻辑。此时你一个同事写好了一个方法，让你替换一下就好了。不过当你调用的时候突然返现，这个方法返回一个<code>LiveData</code>对象！</p>
+<p>当然此时我们可以让<code>UI</code>重新<code>observe()</code>这个<code>LiveData</code>对象：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">val</span> otherLiveData:LiveData&lt;User&gt; = <span class="hljs-comment">// 同事的逻辑</span></div><div class="line"></div><div class="line"><span class="hljs-comment">// Activity中重新observe()</span></div><div class="line">mViewModel.otherLiveData.observe(<span class="hljs-keyword">this</span>,Observer&#123;-&gt;user</div><div class="line">    <span class="hljs-comment">//更新UI</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>可是这样的话，自己之前写的东西不都白费了么？所以此时，我们可以使用<code>switchMap()</code>，我们只需要很少的改动，就可以设配这次需求的变动：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = Transformations.switchMap(userIdLiveData) &#123; id-&gt;</div><div class="line">    <span class="hljs-comment">// 直接把同事的代码放在这里即可</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-2-2、switchMap-源码"><a href="#3-2-2、switchMap-源码" class="headerlink" title="3.2.2、switchMap() 源码"></a>3.2.2、switchMap() 源码</h4><p>有了上边<code>map()</code>源码基础，我们可以很容易的看出<code>switchMap()</code>的端倪：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">public</span> static &lt;X, Y&gt; LiveData&lt;Y&gt; switchMap(</div><div class="line">        <span class="hljs-meta">@NonNull</span> LiveData&lt;X&gt; source,</div><div class="line">        <span class="hljs-meta">@NonNull</span> <span class="hljs-keyword">final</span> Function&lt;X, LiveData&lt;Y&gt;&gt; switchMapFunction) &#123;</div><div class="line">    <span class="hljs-keyword">final</span> MediatorLiveData&lt;Y&gt; result = new MediatorLiveData&lt;&gt;();</div><div class="line">    result.addSource(source, new Observer&lt;X&gt;() &#123;</div><div class="line">        LiveData&lt;Y&gt; mSource;</div><div class="line"></div><div class="line">        <span class="hljs-meta">@Override</span></div><div class="line">        <span class="hljs-keyword">public</span> void onChanged(<span class="hljs-meta">@Nullable</span> X x) &#123;</div><div class="line">            <span class="hljs-comment">// 从Function中拿到返回的LiveData，也就是我们新的LiveData(文章背景中同事写的LiveData)</span></div><div class="line">            LiveData&lt;Y&gt; newLiveData = switchMapFunction.apply(x);</div><div class="line">            <span class="hljs-keyword">if</span> (mSource == newLiveData) &#123;</div><div class="line">                <span class="hljs-keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="hljs-comment">// remove掉旧的LiveData</span></div><div class="line">            <span class="hljs-keyword">if</span> (mSource != <span class="hljs-literal">null</span>) &#123;</div><div class="line">                result.removeSource(mSource);</div><div class="line">            &#125;</div><div class="line">            mSource = newLiveData;</div><div class="line">            <span class="hljs-keyword">if</span> (mSource != <span class="hljs-literal">null</span>) &#123;</div><div class="line">                <span class="hljs-comment">// add新的LiveData</span></div><div class="line">                result.addSource(mSource, new Observer&lt;Y&gt;() &#123;</div><div class="line">                    <span class="hljs-meta">@Override</span></div><div class="line">                    <span class="hljs-keyword">public</span> void onChanged(<span class="hljs-meta">@Nullable</span> Y y) &#123;</div><div class="line">                        <span class="hljs-comment">// 通知LiveData发生变化</span></div><div class="line">                        result.setValue(y);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="hljs-keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们对比一下<code>switchMap()</code>和<code>map()</code>的参数类型：</p>
+<ul>
+<li><code>Function&lt;X, LiveData&lt;Y&gt;&gt; switchMapFunction</code></li>
+<li><code>Function&lt;X, Y&gt; mapFunction</code></li>
+</ul>
+<p>很明显一个是返回<strong>LiveData类型</strong>，一个是<strong>换一种类</strong>型。这也说明了，这俩个方法的不一样之处<br>。</p>
+<blockquote>
+<p>代码解释可以看注释，很直白的思路。</p>
+</blockquote>
+<h2 id="3-3、MediatorLiveData-的使用"><a href="#3-3、MediatorLiveData-的使用" class="headerlink" title="3.3、MediatorLiveData 的使用"></a>3.3、MediatorLiveData 的使用</h2><p>上述我们看过了<code>map()</code>和<code>switchMap()</code>的用法。各位应该都注意到<code>MediatorLiveData</code>这个类的作用。</p>
+<p>上边我们一直都在操作一个<code>LiveData</code>，但是我们需求很容易遇到多种状态的变化。就像官方的<code>demo</code>：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">LiveData liveData1 = ...;</div><div class="line">LiveData liveData2 = ...;</div><div class="line"></div><div class="line">MediatorLiveData liveDataMerger = new MediatorLiveData&lt;&gt;();</div><div class="line">liveDataMerger.addSource(liveData1, value -&gt; liveDataMerger.setValue(value));</div><div class="line">liveDataMerger.addSource(liveData2, value -&gt; liveDataMerger.setValue(value));</div></pre></td></tr></table></figure>
+<p>如同<code>demo</code>所示，我们可以同时<code>add</code>多个<code>LiveData</code>，根据不同的<code>LiveData</code>的变化，处理我们不同的逻辑。最后通过<code>MediatorLiveData</code>回调到我们的UI上。</p>
+<h2 id="四、源码分析"><a href="#四、源码分析" class="headerlink" title="四、源码分析"></a>四、源码分析</h2><p>注册 Observer</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">public</span> void observe(<span class="hljs-meta">@NonNull</span> LifecycleOwner owner, <span class="hljs-meta">@NonNull</span> Observer&lt;? <span class="hljs-keyword">super</span> T&gt; observer) &#123;</div><div class="line">    <span class="hljs-comment">// 如果当前生命周期是DESTROYED，直接return</span></div><div class="line">    <span class="hljs-keyword">if</span> (owner.getLifecycle().getCurrentState() == DESTROYED) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-comment">// 这个包装类，做了一件事情，在DESTROYED，移除Observer</span></div><div class="line">    LifecycleBoundObserver wrapper = new LifecycleBoundObserver(owner, observer);</div><div class="line">    <span class="hljs-comment">// 添加在已经Observer，已存在且在Attach上后直接抛异常，也就是不能重复add</span></div><div class="line">    ObserverWrapper existing = mObservers.putIfAbsent(observer, wrapper);</div><div class="line">    <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span> &amp;&amp; !existing.isAttachedTo(owner)) &#123;</div><div class="line">        <span class="hljs-keyword">throw</span> new IllegalArgumentException(<span class="hljs-string">"Cannot add the same observer"</span></div><div class="line">                + <span class="hljs-string">" with different lifecycles"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span>) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-comment">// 把Wrapper添加到LifecycleOwner上</span></div><div class="line">    owner.getLifecycle().addObserver(wrapper);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Observer如何被响应：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Observer</span>&lt;<span class="hljs-type">T</span>&gt; </span>&#123;</div><div class="line">    <span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment">     * Called when the data is changed.</span></div><div class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> t  The new data</span></div><div class="line"><span class="hljs-comment">     */</span></div><div class="line">    void onChanged(T t);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>触发的起点，很明显是我们在<code>set/postValue</code>的时候：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">protected</span> void setValue(T value) &#123;</div><div class="line">    <span class="hljs-comment">// 记住这个值，它是用来表示数据是否发生变化的</span></div><div class="line">    mVersion++;</div><div class="line">    mData = value;</div><div class="line">    dispatchingValue(<span class="hljs-literal">null</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void dispatchingValue(<span class="hljs-meta">@Nullable</span> ObserverWrapper initiator) &#123;</div><div class="line">    <span class="hljs-comment">// 省略部分代码 </span></div><div class="line">    <span class="hljs-keyword">for</span> (Iterator&lt;Map.Entry&lt;Observer&lt;? <span class="hljs-keyword">super</span> T&gt;, ObserverWrapper&gt;&gt; iterator =</div><div class="line">        mObservers.iteratorWithAdditions(); iterator.hasNext(); ) &#123;</div><div class="line">        <span class="hljs-comment">// 往里走</span></div><div class="line">        considerNotify(iterator.next().getValue());</div><div class="line">        <span class="hljs-keyword">if</span> (mDispatchInvalidated) &#123;</div><div class="line">            <span class="hljs-keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-comment">// 省略部分代码</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="hljs-keyword">private</span> void considerNotify(ObserverWrapper observer) &#123;</div><div class="line">    <span class="hljs-comment">// 如果observer不在活动期，则直接return。也就是上述说observer不在前台，将不会接受回调。</span></div><div class="line">    <span class="hljs-keyword">if</span> (!observer.mActive) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-comment">// 省略部分代码</span></div><div class="line">    <span class="hljs-comment">// 很直白的version对比</span></div><div class="line">    <span class="hljs-keyword">if</span> (observer.mLastVersion &gt;= mVersion) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    observer.mLastVersion = mVersion;</div><div class="line">    <span class="hljs-comment">// 回调</span></div><div class="line">    observer.mObserver.onChanged((T) mData);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>observer.mActive</code>在哪被赋值？很多地方。除了一些边界条件的赋值外，一个比较正式的赋值,<code>ObserverWrapper</code>中的<code>void activeStateChanged(boolean newActive)</code>方法：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">void activeStateChanged(boolean newActive) &#123;</div><div class="line">    <span class="hljs-keyword">if</span> (newActive == mActive) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    mActive = newActive;</div><div class="line">&#125;</div><div class="line"><span class="hljs-comment">// 此方法最终会调到此方法</span></div><div class="line"><span class="hljs-meta">@Override</span></div><div class="line">boolean shouldBeActive() &#123;</div><div class="line">    <span class="hljs-keyword">return</span> mOwner.getLifecycle().getCurrentState().isAtLeast(STARTED);</div><div class="line">&#125;</div><div class="line"><span class="hljs-keyword">public</span> boolean isAtLeast(<span class="hljs-meta">@NonNull</span> State state) &#123;</div><div class="line">    <span class="hljs-keyword">return</span> compareTo(state) &gt;= <span class="hljs-number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>很简单，每次生命周期回调，<code>observer.mActive</code>都会被赋值，而只有到<code>Lifecycle</code>是活动状态是，<code>mActive</code>才会<code>true</code>。因此只有在我们的<code>Activity</code>为前台时我们的<code>LiveData</code>才会被回调。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
         <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/react3.gif" alt="React Native 组件生命周期学习总结">
         </a>
@@ -1402,64 +1597,25 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
 
 
 
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2017/09/11/关于 Kotlin 的一些小知识的总结/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/thumbnail2.jpeg" alt="关于 Kotlin 的一些小知识的总结">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-09-11T12:23:12.000Z">2017-09-11</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 434 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2017/09/11/关于 Kotlin 的一些小知识的总结/">关于 Kotlin 的一些小知识的总结</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-Class"><a href="#1-Class" class="headerlink" title="1. Class"></a>1. Class</h2><p>在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">open class RunClass ｛｝</div></pre></td></tr></table></figure></p>
-<h2 id="2-构造函数"><a href="#2-构造函数" class="headerlink" title="2. 构造函数"></a>2. 构造函数</h2><p>当我们只需要一个构造函数的时候，可以直接有下面这种方式进行声明：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class CustomView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :   View(context, attrs, defStyleAttr) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>有时候一个构造函数不够用的时候，可以使用 constructor 来声明：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">constructor(context: Context) : super(context) &#123;</div><div class="line">    init(context)</div><div class="line">&#125;</div><div class="line">constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) &#123;</div><div class="line">    init(context, attributeSet)</div><div class="line">&#125;</div><div class="line">constructor(context: Context, attributeSet: AttributeSet?, defstyle: Int) : super(context, attributeSet, defstyle) &#123;</div><div class="line">    init(context, attributeSet, defstyle)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="3-static-静态"><a href="#3-static-静态" class="headerlink" title="3. static 静态"></a>3. static 静态</h2><p>在 kotlin 中是不支持 static 关键字的，不过提供了另一种方案：companion object 关键字里面的内容都代表静态，可以是静态变量也可以是静态函数</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">companion object &#123;</div><div class="line">    fun main(context: Context) &#123;</div><div class="line">        val child = ChildImpl()</div><div class="line">        val run = RunClass(child)</div><div class="line">        run.show(context, &quot;haha&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>##4. 匿名内部类<br>一般匿名内部类里面只有一个方法的时候，Kotlin 会默认帮我们转成 Lambda 表达式，但是有多个方法的时候，就需要我们自己来实现了，可以采用下面这种方式：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">viewpager.addOnPageChangeListener(object: ViewPager.OnPageChangeListener &#123;</div><div class="line">      override fun onPageScrollStateChanged(state: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      override fun onPageSelected(position: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
-<h2 id="5-和-Java-的互通"><a href="#5-和-Java-的互通" class="headerlink" title="5. 和 Java 的互通"></a>5. 和 Java 的互通</h2><p>最常用的比如 startActivity，我们在 Java 文件中，该如何启动 kotlin 中的 activity:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">startActivity(Intent(activity, UserActivity::class.java))</div></pre></td></tr></table></figure>
-<p>这些是目前自己开发中遇到的一些问题，基本可以满足一般的kotlin开发了，其他问题可以再查看 Kotlin 官方文档。</p>
-<p><a href="https://www.kotlincn.net/docs/reference/basic-syntax.html" target="_blank" rel="external">Kotlin中文教程文档</a></p>
 
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/page/0/">上一页</a>
         </div>
-        
-        
-        
-    </div>
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/page/2/">下一页</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link is-current" href="/">1</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
 </div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -1486,7 +1642,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
                     
                     
                     <p class="is-size-6 is-block">
-                        肖坤的博客
+                        Kun的博客
                     </p>
                     
                     
@@ -1505,7 +1661,7 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        11
                     </p>
                 </div>
             </div>
@@ -1669,6 +1825,44 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
         
         <article class="media">
             
+            <a href="/2019/12/17/JetPack 简介/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/JetPack.jpeg" alt="JetPack 简介">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T08:01:35.734Z">2019-12-17</time></div>
+                    <a href="/2019/12/17/JetPack 简介/" class="has-link-black-ter is-size-6">JetPack 简介</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/17/JetPack 之 LiveData/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/LiveData.png" alt="JetPack 之 LiveData">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T07:44:16.723Z">2019-12-17</time></div>
+                    <a href="/2019/12/17/JetPack 之 LiveData/" class="has-link-black-ter is-size-6">JetPack 之 LiveData</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/react3.gif" alt="React Native 组件生命周期学习总结">
@@ -1724,44 +1918,6 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail8.jpg" alt="Kotlin 中使用 Anko 编写布局">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-06-05T12:32:14.000Z">2018-06-05</time></div>
-                    <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" class="has-link-black-ter is-size-6">Kotlin 中使用 Anko 编写布局</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail5.jpg" alt="响应式函数编程 RxJava &amp; RxAndroid">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-05-21T12:38:54.000Z">2018-05-21</time></div>
-                    <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /" class="has-link-black-ter is-size-6">响应式函数编程 RxJava &amp; RxAndroid</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1773,6 +1929,17 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/03/">
@@ -1878,6 +2045,44 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
         
         <article class="media">
             
+            <a href="/2019/12/17/JetPack 简介/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/JetPack.jpeg" alt="JetPack 简介">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T08:01:35.734Z">2019-12-17</time></div>
+                    <a href="/2019/12/17/JetPack 简介/" class="has-link-black-ter is-size-6">JetPack 简介</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/17/JetPack 之 LiveData/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/LiveData.png" alt="JetPack 之 LiveData">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T07:44:16.723Z">2019-12-17</time></div>
+                    <a href="/2019/12/17/JetPack 之 LiveData/" class="has-link-black-ter is-size-6">JetPack 之 LiveData</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/react3.gif" alt="React Native 组件生命周期学习总结">
@@ -1933,44 +2138,6 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail8.jpg" alt="Kotlin 中使用 Anko 编写布局">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-06-05T12:32:14.000Z">2018-06-05</time></div>
-                    <a href="/2018/06/05/Kotlin 中使用 Anko 编写布局/" class="has-link-black-ter is-size-6">Kotlin 中使用 Anko 编写布局</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail5.jpg" alt="响应式函数编程 RxJava &amp; RxAndroid">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-05-21T12:38:54.000Z">2018-05-21</time></div>
-                    <a href="/2018/05/21/响应式函数编程 RxJava & RxAndroid /" class="has-link-black-ter is-size-6">响应式函数编程 RxJava &amp; RxAndroid</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1982,6 +2149,17 @@ compile &apos;com.squareup.retrofit2:adapter-rxjava:2.0.1&apos;
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/03/">

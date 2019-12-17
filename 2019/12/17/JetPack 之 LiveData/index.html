@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8">
+<title>JetPack 之 LiveData - 肖坤的博客</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
+    <meta name="description" content="LiveData LiveData是一个可观察的数据持有者类。与常规observable不同，LiveData是生命周期感知的。  从官方文档的介绍上我们可以看到俩个关键词：可观察、生命周期感知。简单来说，Google 给我们提供了一个可以被观察的，并且拥有生命周期感知能力的类。那有什么用呢？ 直接上 demo： 入门1.1 初级官方 Demo123456789101112131415161718">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JetPack 之 LiveData">
+<meta property="og:url" content="http://hellokk.cc/2019/12/17/JetPack 之 LiveData/index.html">
+<meta property="og:site_name" content="肖坤的博客">
+<meta property="og:description" content="LiveData LiveData是一个可观察的数据持有者类。与常规observable不同，LiveData是生命周期感知的。  从官方文档的介绍上我们可以看到俩个关键词：可观察、生命周期感知。简单来说，Google 给我们提供了一个可以被观察的，并且拥有生命周期感知能力的类。那有什么用呢？ 直接上 demo： 入门1.1 初级官方 Demo123456789101112131415161718">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-17T08:34:11.034Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JetPack 之 LiveData">
+<meta name="twitter:description" content="LiveData LiveData是一个可观察的数据持有者类。与常规observable不同，LiveData是生命周期感知的。  从官方文档的介绍上我们可以看到俩个关键词：可观察、生命周期感知。简单来说，Google 给我们提供了一个可以被观察的，并且拥有生命周期感知能力的类。那有什么用呢？ 直接上 demo： 入门1.1 初级官方 Demo123456789101112131415161718">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="JetPack 之 LiveData" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/LiveData.png" alt="JetPack 之 LiveData">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-17T07:44:16.723Z">2019-12-17</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    18 分钟 读完 (大约 2665 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                JetPack 之 LiveData
+            
+        </h1>
+        <div class="content">
+            <h2 id="LiveData"><a href="#LiveData" class="headerlink" title="LiveData"></a>LiveData</h2><blockquote>
+<p><code>LiveData</code>是一个可观察的数据持有者类。与常规<code>observable</code>不同，<code>LiveData</code>是生命周期感知的。</p>
+</blockquote>
+<p>从<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdeveloper.android.com%2Ftopic%2Flibraries%2Farchitecture%2Flivedata" target="_blank" rel="external">官方文档</a>的介绍上我们可以看到俩个关键词：<strong>可观察</strong>、<strong>生命周期感知</strong>。简单来说，Google 给我们提供了一个可以被观察的，并且拥有生命周期感知能力的类。那有什么用呢？</p>
+<p>直接上 demo：</p>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="1-1-初级官方-Demo"><a href="#1-1-初级官方-Demo" class="headerlink" title="1.1 初级官方 Demo"></a>1.1 初级官方 Demo</h3><figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NameViewModel</span> : <span class="hljs-type">ViewModel</span></span>() &#123;</div><div class="line"></div><div class="line">    <span class="hljs-comment">// 创建LiveData</span></div><div class="line">    <span class="hljs-keyword">val</span> currentName: MutableLiveData&lt;String&gt; <span class="hljs-keyword">by</span> lazy &#123;</div><div class="line">        MutableLiveData&lt;String&gt;()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-comment">// ViewModel 的其余部分...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NameActivity</span> : <span class="hljs-type">AppCompatActivity</span></span>() &#123;</div><div class="line"></div><div class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> model: NameViewModel</div><div class="line"></div><div class="line">    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;</div><div class="line">        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)</div><div class="line"></div><div class="line">        <span class="hljs-comment">// 获取ViewModel.</span></div><div class="line">        model = ViewModelProviders.of(<span class="hljs-keyword">this</span>).<span class="hljs-keyword">get</span>(NameViewModel::<span class="hljs-class"><span class="hljs-keyword">class</span>.<span class="hljs-title">java</span>)</span></div><div class="line"></div><div class="line">        <span class="hljs-comment">// 创建更新UI的观察者.</span></div><div class="line">        <span class="hljs-keyword">val</span> nameObserver = Observer&lt;String&gt; &#123; newName -&gt;</div><div class="line">            <span class="hljs-comment">// 更新UI，在本例中是一个TextView.</span></div><div class="line">            nameTextView.text = newName</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="hljs-comment">// 观察LiveData，将此活动作为生命周期所有者和观察者传入.</span></div><div class="line">        model.currentName.observe(<span class="hljs-keyword">this</span>, nameObserver)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="1-2-Demo解释"><a href="#1-2-Demo解释" class="headerlink" title="1.2 Demo解释"></a>1.2 Demo解释</h3><p>最开始我们先声明了一个<code>NameViewModel</code>的<code>ViewModel</code>，这部分内容在<code>ViewModel</code>篇有所提及。内部有一个<code>MutableLiveData&lt;String&gt;</code>的成员变量。说白了就是一个<strong><code>LiveData</code>类型的<code>String</code></strong>，我们使用时是借助<code>LiveData</code>的特性，但本质还是用String。</p>
+<p>也就是说这里如果我们要用一个<code>List&lt;String&gt;</code>，那么此时就是<code>MutableLiveData&gt;()</code>。</p>
+<p><code>Activity</code>之中，我们先获取<code>ViewModel</code>，然后<code>mModel.currentName.observe(...,...)</code>，这里我们就是在<strong>观察</strong><code>LiveData</code>。我们只需要在回调中处理我们自己的UI操作即可了。也就是demo中的<code>mNameTextView.text = newName</code>。</p>
+<p><code>LiveData</code>会在每一次<code>postValue(...)</code>或者<code>value=...</code>时，<code>observe()</code>便会回调，哪怕是<code>null</code>。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>这里有俩个点需要特别注意：</p>
+<ol>
+<li><code>LiveData</code>是生命周期感知的，在当前的<code>LifecycleOwner</code>不处于活动状态(例如<code>onPasue()</code>、<code>onStop()</code>)时，LiveData是不会回调<code>observe()</code>的，因为没有意义。</li>
+<li>如果<code>LiveData</code>没有被<code>observe()</code>，那么此时你调用这个<code>LiveData</code>的<code>postValue(...)/value=...</code>，是<strong>没有任何作用</strong>。这个我们可以在源码中看到。</li>
+</ol>
+<h2 id="1-3、不同的-LiveData-实现类-系统实现"><a href="#1-3、不同的-LiveData-实现类-系统实现" class="headerlink" title="1.3、不同的 LiveData 实现类 (系统实现)"></a>1.3、不同的 LiveData 实现类 (系统实现)</h2><p><strong>MutableLiveData</strong>：</p>
+<p>上文咱们已经见过了，没什么特别的，就是<code>LiveData</code>的实现类。就相当于<code>List</code>和<code>ArrayList</code>的关系。</p>
+<p><strong>MediatorLiveData</strong>：</p>
+<p><code>MutableLiveData</code>的子类，它是一个比较强大的<code>LiveData</code>，我们的<code>map()</code>、<code>switchMap()</code>都是基于它进行实现的。<br>最大的特点是可以同时监听多个<code>LiveData</code>。</p>
+<h2 id="三、进阶"><a href="#三、进阶" class="headerlink" title="三、进阶"></a>三、进阶</h2><h3 id="3-1-map"><a href="#3-1-map" class="headerlink" title="3.1 map()"></a>3.1 map()</h3><p>初用过<code>RxJava</code>的小伙伴，估计会和我一样，被各种“姿势”的操作符所正经，比如常用的：<code>map、flatMap...</code>而<code>LiveData</code>中同样有这样的操作。</p>
+<p>一个很常见的场景：我们通过一个唯一<code>id</code>去查询这个<code>id</code>下的实体类，并且要同时展示二者的数据。很简单的业务逻辑，在<code>LiveData</code>中的展示是这样的：</p>
+<h4 id="3-1-1-使用"><a href="#3-1-1-使用" class="headerlink" title="3.1.1 使用"></a>3.1.1 使用</h4><figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NameViewModel</span> : <span class="hljs-type">ViewModel</span></span>() &#123;</div><div class="line">    <span class="hljs-keyword">val</span> userIdLiveData = MutableLiveData&lt;<span class="hljs-built_in">Long</span>&gt;()</div><div class="line">    <span class="hljs-comment">// 伪码:当userIdLiveData发生变化时，userLiveData中的map就会调用，那么我们就可以得到罪行的id</span></div><div class="line">    <span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = Transformations.map(userIdLiveData) &#123; id-&gt;</div><div class="line">        <span class="hljs-comment">// 通过id拿到User，return一个User的实例user</span></div><div class="line">        user</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="hljs-comment">// Activity中</span></div><div class="line">mModel.userLiveData.observe(<span class="hljs-keyword">this</span>, Observer &#123; user -&gt;</div><div class="line">    <span class="hljs-comment">// user变化后通知mNameTextView更新UI</span></div><div class="line">    mNameTextView.text = user.name</div><div class="line">&#125;)</div><div class="line"><span class="hljs-comment">// 给userIdLiveData设置id为1</span></div><div class="line">mModel.userIdLiveData.postValue(<span class="hljs-string">"1"</span>)</div></pre></td></tr></table></figure>
+<p>针对这个业务场景，我们只需要监听我们用户通知UI变化的<code>LiveData(userLiveData)</code>，然后通过<code>userIdLiveData.postValue(&quot;1&quot;)</code>来驱动数据的变化。</p>
+<blockquote>
+<p>这里可能和我们传统的<code>MVP</code>的思想并不相同，毕竟<code>MVVM</code>和<code>MVP</code>还是有区别的，而<code>MVVM</code>的这种方式被称之为：<strong>数据驱动</strong>。</p>
+</blockquote>
+<h4 id="3-1-2-map-源码"><a href="#3-1-2-map-源码" class="headerlink" title="3.1.2 map() 源码"></a>3.1.2 map() 源码</h4><p>我们直接点到<code>Transformations.map()</code>中。</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">public</span> static &lt;X, Y&gt; LiveData&lt;Y&gt; map(</div><div class="line">        <span class="hljs-meta">@NonNull</span> LiveData&lt;X&gt; source,</div><div class="line">        <span class="hljs-meta">@NonNull</span> <span class="hljs-keyword">final</span> Function&lt;X, Y&gt; mapFunction) &#123;</div><div class="line">    <span class="hljs-keyword">final</span> MediatorLiveData&lt;Y&gt; result = new MediatorLiveData&lt;&gt;();</div><div class="line">    result.addSource(source, new Observer&lt;X&gt;() &#123;</div><div class="line">        <span class="hljs-meta">@Override</span></div><div class="line">        <span class="hljs-keyword">public</span> void onChanged(<span class="hljs-meta">@Nullable</span> X x) &#123;</div><div class="line">            result.setValue(mapFunction.apply(x));</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="hljs-keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>很简单，就是使用了<code>MediatorLiveData</code>，然后通过一个高阶函数，将高阶函数返回的内容，<code>set</code>到<code>LiveData</code>上，完成<code>map()</code>。</p>
+<p>既然提到了<code>MediatorLiveData</code>，以及它的<code>addSource()</code>的方法，那么我们就来看看它的源码。</p>
+<h4 id="3-1-3-MediatorLiveData-源码"><a href="#3-1-3-MediatorLiveData-源码" class="headerlink" title="3.1.3 MediatorLiveData 源码"></a>3.1.3 MediatorLiveData 源码</h4><blockquote>
+<p>这部分没啥意思，可以直接跳过看<strong>3.1.4、map() 源码总结</strong>…</p>
+</blockquote>
+<p>进入<code>MediatorLiveData</code>之中，我们会发现代码比较少。这里抽出俩块比较重点的内容，我们一同来感受一下：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> <span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">public</span> &lt;S&gt; void addSource(<span class="hljs-meta">@NonNull</span> LiveData&lt;S&gt; source, <span class="hljs-meta">@NonNull</span> Observer&lt;? <span class="hljs-keyword">super</span> S&gt; onChanged) &#123;</div><div class="line">    Source&lt;S&gt; e = new Source&lt;&gt;(source, onChanged);</div><div class="line">    Source&lt;?&gt; existing = mSources.putIfAbsent(source, e);</div><div class="line">    <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span> &amp;&amp; existing.mObserver != onChanged) &#123;</div><div class="line">        <span class="hljs-keyword">throw</span> new IllegalArgumentException(</div><div class="line">                <span class="hljs-string">"This source was already added with the different observer"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span>) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-keyword">if</span> (hasActiveObservers()) &#123;</div><div class="line">        e.plug();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>从这段代码中，我们粗略可以得到一个信息，这里把我们的<code>LiveData</code>和<code>Observer</code>封装成了<code>Source</code>对象，并且这个对象，不能重复添加。</p>
+<p>此外，<code>Source</code>的<code>plug()</code>方法，被调用。接下来我们去看一看这个内部类<code>Source</code>的实现：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">private</span> static <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Source</span>&lt;<span class="hljs-type">V</span>&gt; <span class="hljs-title">implements</span> <span class="hljs-title">Observer</span>&lt;<span class="hljs-type">V</span>&gt; </span>&#123;</div><div class="line">    <span class="hljs-keyword">final</span> LiveData&lt;V&gt; mLiveData;</div><div class="line">    <span class="hljs-keyword">final</span> Observer&lt;? <span class="hljs-keyword">super</span> V&gt; mObserver;</div><div class="line">    int mVersion = START_VERSION;</div><div class="line"></div><div class="line">    Source(LiveData&lt;V&gt; liveData, <span class="hljs-keyword">final</span> Observer&lt;? <span class="hljs-keyword">super</span> V&gt; observer) &#123;</div><div class="line">        mLiveData = liveData;</div><div class="line">        mObserver = observer;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void plug() &#123;</div><div class="line">        mLiveData.observeForever(<span class="hljs-keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void unplug() &#123;</div><div class="line">        mLiveData.removeObserver(<span class="hljs-keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-meta">@Override</span></div><div class="line">    <span class="hljs-keyword">public</span> void onChanged(<span class="hljs-meta">@Nullable</span> V v) &#123;</div><div class="line">        <span class="hljs-keyword">if</span> (mVersion != mLiveData.getVersion()) &#123;</div><div class="line">            mVersion = mLiveData.getVersion();</div><div class="line">            mObserver.onChanged(v);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>首先<code>Source</code>是一个观察者，可以看到，我们外部使用的<code>Observer</code>会以<code>Source</code>的成员变量的形式，添加到传入的<code>LiveData</code>中。值得注意的是，这里使用了<code>mLiveData.observeForever(this);</code>。</p>
+<p>从<code>observeForever()</code>用法可以看到，我们并没有传递<code>LifecycleOwner</code>，因此它并不具备生命感知能力。从注释中也可见一斑：<code>This means that the given observer will receive all events and will never be automatically removed.</code></p>
+<h4 id="3-1-4-map-源码总结"><a href="#3-1-4-map-源码总结" class="headerlink" title="3.1.4 map() 源码总结"></a>3.1.4 map() 源码总结</h4><p>打住，打住吧。其实没必要继续看了。一句话总结：<code>map()</code>的原理就是基于<code>MediatorLiveData</code>，<code>MediatorLiveData</code>内部会将传递进来的<code>LiveData</code>和<code>Observer</code>封装成内部类，然后放在内部维护的一个<code>Map</code>中。并且自动帮我们完成<code>observeForever</code>()和<code>removeObserver()</code>。</p>
+<h2 id="3-2-switchMap"><a href="#3-2-switchMap" class="headerlink" title="3.2 switchMap()"></a>3.2 switchMap()</h2><h4 id="3-2-1-使用"><a href="#3-2-1-使用" class="headerlink" title="3.2.1 使用"></a>3.2.1 使用</h4><p><code>switchMap()</code>的场景可以应用在切换<code>LiveData</code>上。这话怎么解释呢？</p>
+<p>很常见的业务场景：比如你的业务用的是<code>map()</code>，<code>map()</code>中使用你自己写的络，而且<code>LiveData</code>运行的很良好，抽着烟喝着酒，啥事都没有…就比如，上面<code>map()</code>那样的代码：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = Transformations.map(userIdLiveData) &#123; id-&gt;</div><div class="line">    <span class="hljs-comment">// 自己的一段逻辑</span></div><div class="line">    user</div><div class="line">&#125;</div><div class="line"><span class="hljs-comment">// Activity中</span></div><div class="line">mViewModel.userLiveData.observe(<span class="hljs-keyword">this</span>,Observer&#123;-&gt;user</div><div class="line">    <span class="hljs-comment">//更新UI</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>突然有一天，这个地方数据结构、UI都没变，唯独变了逻辑。此时你一个同事写好了一个方法，让你替换一下就好了。不过当你调用的时候突然返现，这个方法返回一个<code>LiveData</code>对象！</p>
+<p>当然此时我们可以让<code>UI</code>重新<code>observe()</code>这个<code>LiveData</code>对象：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">val</span> otherLiveData:LiveData&lt;User&gt; = <span class="hljs-comment">// 同事的逻辑</span></div><div class="line"></div><div class="line"><span class="hljs-comment">// Activity中重新observe()</span></div><div class="line">mViewModel.otherLiveData.observe(<span class="hljs-keyword">this</span>,Observer&#123;-&gt;user</div><div class="line">    <span class="hljs-comment">//更新UI</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>可是这样的话，自己之前写的东西不都白费了么？所以此时，我们可以使用<code>switchMap()</code>，我们只需要很少的改动，就可以设配这次需求的变动：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = Transformations.switchMap(userIdLiveData) &#123; id-&gt;</div><div class="line">    <span class="hljs-comment">// 直接把同事的代码放在这里即可</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-2-2、switchMap-源码"><a href="#3-2-2、switchMap-源码" class="headerlink" title="3.2.2、switchMap() 源码"></a>3.2.2、switchMap() 源码</h4><p>有了上边<code>map()</code>源码基础，我们可以很容易的看出<code>switchMap()</code>的端倪：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">public</span> static &lt;X, Y&gt; LiveData&lt;Y&gt; switchMap(</div><div class="line">        <span class="hljs-meta">@NonNull</span> LiveData&lt;X&gt; source,</div><div class="line">        <span class="hljs-meta">@NonNull</span> <span class="hljs-keyword">final</span> Function&lt;X, LiveData&lt;Y&gt;&gt; switchMapFunction) &#123;</div><div class="line">    <span class="hljs-keyword">final</span> MediatorLiveData&lt;Y&gt; result = new MediatorLiveData&lt;&gt;();</div><div class="line">    result.addSource(source, new Observer&lt;X&gt;() &#123;</div><div class="line">        LiveData&lt;Y&gt; mSource;</div><div class="line"></div><div class="line">        <span class="hljs-meta">@Override</span></div><div class="line">        <span class="hljs-keyword">public</span> void onChanged(<span class="hljs-meta">@Nullable</span> X x) &#123;</div><div class="line">            <span class="hljs-comment">// 从Function中拿到返回的LiveData，也就是我们新的LiveData(文章背景中同事写的LiveData)</span></div><div class="line">            LiveData&lt;Y&gt; newLiveData = switchMapFunction.apply(x);</div><div class="line">            <span class="hljs-keyword">if</span> (mSource == newLiveData) &#123;</div><div class="line">                <span class="hljs-keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="hljs-comment">// remove掉旧的LiveData</span></div><div class="line">            <span class="hljs-keyword">if</span> (mSource != <span class="hljs-literal">null</span>) &#123;</div><div class="line">                result.removeSource(mSource);</div><div class="line">            &#125;</div><div class="line">            mSource = newLiveData;</div><div class="line">            <span class="hljs-keyword">if</span> (mSource != <span class="hljs-literal">null</span>) &#123;</div><div class="line">                <span class="hljs-comment">// add新的LiveData</span></div><div class="line">                result.addSource(mSource, new Observer&lt;Y&gt;() &#123;</div><div class="line">                    <span class="hljs-meta">@Override</span></div><div class="line">                    <span class="hljs-keyword">public</span> void onChanged(<span class="hljs-meta">@Nullable</span> Y y) &#123;</div><div class="line">                        <span class="hljs-comment">// 通知LiveData发生变化</span></div><div class="line">                        result.setValue(y);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="hljs-keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们对比一下<code>switchMap()</code>和<code>map()</code>的参数类型：</p>
+<ul>
+<li><code>Function&lt;X, LiveData&lt;Y&gt;&gt; switchMapFunction</code></li>
+<li><code>Function&lt;X, Y&gt; mapFunction</code></li>
+</ul>
+<p>很明显一个是返回<strong>LiveData类型</strong>，一个是<strong>换一种类</strong>型。这也说明了，这俩个方法的不一样之处<br>。</p>
+<blockquote>
+<p>代码解释可以看注释，很直白的思路。</p>
+</blockquote>
+<h2 id="3-3、MediatorLiveData-的使用"><a href="#3-3、MediatorLiveData-的使用" class="headerlink" title="3.3、MediatorLiveData 的使用"></a>3.3、MediatorLiveData 的使用</h2><p>上述我们看过了<code>map()</code>和<code>switchMap()</code>的用法。各位应该都注意到<code>MediatorLiveData</code>这个类的作用。</p>
+<p>上边我们一直都在操作一个<code>LiveData</code>，但是我们需求很容易遇到多种状态的变化。就像官方的<code>demo</code>：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">LiveData liveData1 = ...;</div><div class="line">LiveData liveData2 = ...;</div><div class="line"></div><div class="line">MediatorLiveData liveDataMerger = new MediatorLiveData&lt;&gt;();</div><div class="line">liveDataMerger.addSource(liveData1, value -&gt; liveDataMerger.setValue(value));</div><div class="line">liveDataMerger.addSource(liveData2, value -&gt; liveDataMerger.setValue(value));</div></pre></td></tr></table></figure>
+<p>如同<code>demo</code>所示，我们可以同时<code>add</code>多个<code>LiveData</code>，根据不同的<code>LiveData</code>的变化，处理我们不同的逻辑。最后通过<code>MediatorLiveData</code>回调到我们的UI上。</p>
+<h2 id="四、源码分析"><a href="#四、源码分析" class="headerlink" title="四、源码分析"></a>四、源码分析</h2><p>注册 Observer</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">public</span> void observe(<span class="hljs-meta">@NonNull</span> LifecycleOwner owner, <span class="hljs-meta">@NonNull</span> Observer&lt;? <span class="hljs-keyword">super</span> T&gt; observer) &#123;</div><div class="line">    <span class="hljs-comment">// 如果当前生命周期是DESTROYED，直接return</span></div><div class="line">    <span class="hljs-keyword">if</span> (owner.getLifecycle().getCurrentState() == DESTROYED) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-comment">// 这个包装类，做了一件事情，在DESTROYED，移除Observer</span></div><div class="line">    LifecycleBoundObserver wrapper = new LifecycleBoundObserver(owner, observer);</div><div class="line">    <span class="hljs-comment">// 添加在已经Observer，已存在且在Attach上后直接抛异常，也就是不能重复add</span></div><div class="line">    ObserverWrapper existing = mObservers.putIfAbsent(observer, wrapper);</div><div class="line">    <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span> &amp;&amp; !existing.isAttachedTo(owner)) &#123;</div><div class="line">        <span class="hljs-keyword">throw</span> new IllegalArgumentException(<span class="hljs-string">"Cannot add the same observer"</span></div><div class="line">                + <span class="hljs-string">" with different lifecycles"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span>) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-comment">// 把Wrapper添加到LifecycleOwner上</span></div><div class="line">    owner.getLifecycle().addObserver(wrapper);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Observer如何被响应：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Observer</span>&lt;<span class="hljs-type">T</span>&gt; </span>&#123;</div><div class="line">    <span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment">     * Called when the data is changed.</span></div><div class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> t  The new data</span></div><div class="line"><span class="hljs-comment">     */</span></div><div class="line">    void onChanged(T t);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>触发的起点，很明显是我们在<code>set/postValue</code>的时候：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-meta">@MainThread</span></div><div class="line"><span class="hljs-keyword">protected</span> void setValue(T value) &#123;</div><div class="line">    <span class="hljs-comment">// 记住这个值，它是用来表示数据是否发生变化的</span></div><div class="line">    mVersion++;</div><div class="line">    mData = value;</div><div class="line">    dispatchingValue(<span class="hljs-literal">null</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void dispatchingValue(<span class="hljs-meta">@Nullable</span> ObserverWrapper initiator) &#123;</div><div class="line">    <span class="hljs-comment">// 省略部分代码 </span></div><div class="line">    <span class="hljs-keyword">for</span> (Iterator&lt;Map.Entry&lt;Observer&lt;? <span class="hljs-keyword">super</span> T&gt;, ObserverWrapper&gt;&gt; iterator =</div><div class="line">        mObservers.iteratorWithAdditions(); iterator.hasNext(); ) &#123;</div><div class="line">        <span class="hljs-comment">// 往里走</span></div><div class="line">        considerNotify(iterator.next().getValue());</div><div class="line">        <span class="hljs-keyword">if</span> (mDispatchInvalidated) &#123;</div><div class="line">            <span class="hljs-keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-comment">// 省略部分代码</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="hljs-keyword">private</span> void considerNotify(ObserverWrapper observer) &#123;</div><div class="line">    <span class="hljs-comment">// 如果observer不在活动期，则直接return。也就是上述说observer不在前台，将不会接受回调。</span></div><div class="line">    <span class="hljs-keyword">if</span> (!observer.mActive) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="hljs-comment">// 省略部分代码</span></div><div class="line">    <span class="hljs-comment">// 很直白的version对比</span></div><div class="line">    <span class="hljs-keyword">if</span> (observer.mLastVersion &gt;= mVersion) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    observer.mLastVersion = mVersion;</div><div class="line">    <span class="hljs-comment">// 回调</span></div><div class="line">    observer.mObserver.onChanged((T) mData);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>observer.mActive</code>在哪被赋值？很多地方。除了一些边界条件的赋值外，一个比较正式的赋值,<code>ObserverWrapper</code>中的<code>void activeStateChanged(boolean newActive)</code>方法：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">void activeStateChanged(boolean newActive) &#123;</div><div class="line">    <span class="hljs-keyword">if</span> (newActive == mActive) &#123;</div><div class="line">        <span class="hljs-keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    mActive = newActive;</div><div class="line">&#125;</div><div class="line"><span class="hljs-comment">// 此方法最终会调到此方法</span></div><div class="line"><span class="hljs-meta">@Override</span></div><div class="line">boolean shouldBeActive() &#123;</div><div class="line">    <span class="hljs-keyword">return</span> mOwner.getLifecycle().getCurrentState().isAtLeast(STARTED);</div><div class="line">&#125;</div><div class="line"><span class="hljs-keyword">public</span> boolean isAtLeast(<span class="hljs-meta">@NonNull</span> State state) &#123;</div><div class="line">    <span class="hljs-keyword">return</span> compareTo(state) &gt;= <span class="hljs-number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>很简单，每次生命周期回调，<code>observer.mActive</code>都会被赋值，而只有到<code>Lifecycle</code>是活动状态是，<code>mActive</code>才会<code>true</code>。因此只有在我们的<code>Activity</code>为前台时我们的<code>LiveData</code>才会被回调。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/IMG_2199.JPG" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/IMG_2198.JPG" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/12/17/JetPack 简介/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">JetPack 简介</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/17/React Native 组件生命周期学习总结/">
+                <span class="level-item">React Native 组件生命周期学习总结</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://hellokk.cc/2019/12/17/JetPack 之 LiveData/';
+        this.page.identifier = '2019/12/17/JetPack 之 LiveData/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hellokk' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpg" alt="Kun">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Kun
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Kun的博客
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>GuangZhou, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        0
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        0
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/helloxkk" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="http://github.com/helloxkk">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="http://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="http://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Dribbble" href="http://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://www.yuque.com/xytech/flutter" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">闲鱼技术 · Flutter</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.yuque.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://www.ruanyifeng.com/blog/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">阮一峰的个人网站</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.ruanyifeng.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/12/17/JetPack 简介/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/JetPack.jpeg" alt="JetPack 简介">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T08:01:35.734Z">2019-12-17</time></div>
+                    <a href="/2019/12/17/JetPack 简介/" class="has-link-black-ter is-size-6">JetPack 简介</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/17/JetPack 之 LiveData/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/LiveData.png" alt="JetPack 之 LiveData">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T07:44:16.723Z">2019-12-17</time></div>
+                    <a href="/2019/12/17/JetPack 之 LiveData/" class="has-link-black-ter is-size-6">JetPack 之 LiveData</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/react3.gif" alt="React Native 组件生命周期学习总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-17T15:45:35.218Z">2019-03-17</time></div>
+                    <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="has-link-black-ter is-size-6">React Native 组件生命周期学习总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/07/25/仿微信剪切视频时长View/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail1.jpg" alt="仿微信剪切视频时长View">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-25T15:09:02.000Z">2018-07-25</time></div>
+                    <a href="/2018/07/25/仿微信剪切视频时长View/" class="has-link-black-ter is-size-6">仿微信剪切视频时长View</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/06/05/使用观察者模式进行订单管理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail3.jpg" alt="使用观察者模式进行订单管理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-06-05T13:05:10.000Z">2018-06-05</time></div>
+                    <a href="/2018/06/05/使用观察者模式进行订单管理/" class="has-link-black-ter is-size-6">使用观察者模式进行订单管理</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/12/17/JetPack 简介/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/JetPack.jpeg" alt="JetPack 简介">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T08:01:35.734Z">2019-12-17</time></div>
+                    <a href="/2019/12/17/JetPack 简介/" class="has-link-black-ter is-size-6">JetPack 简介</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/17/JetPack 之 LiveData/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/LiveData.png" alt="JetPack 之 LiveData">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T07:44:16.723Z">2019-12-17</time></div>
+                    <a href="/2019/12/17/JetPack 之 LiveData/" class="has-link-black-ter is-size-6">JetPack 之 LiveData</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/react3.gif" alt="React Native 组件生命周期学习总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-17T15:45:35.218Z">2019-03-17</time></div>
+                    <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="has-link-black-ter is-size-6">React Native 组件生命周期学习总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/07/25/仿微信剪切视频时长View/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail1.jpg" alt="仿微信剪切视频时长View">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-25T15:09:02.000Z">2018-07-25</time></div>
+                    <a href="/2018/07/25/仿微信剪切视频时长View/" class="has-link-black-ter is-size-6">仿微信剪切视频时长View</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/06/05/使用观察者模式进行订单管理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/thumbnail3.jpg" alt="使用观察者模式进行订单管理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-06-05T13:05:10.000Z">2018-06-05</time></div>
+                    <a href="/2018/06/05/使用观察者模式进行订单管理/" class="has-link-black-ter is-size-6">使用观察者模式进行订单管理</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="JetPack 之 LiveData" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 青宁&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

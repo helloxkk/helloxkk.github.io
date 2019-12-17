@@ -2,22 +2,24 @@
 <html  lang="zh">
 <head>
     <meta charset="utf-8">
-<title>使用观察者模式进行订单管理 - 肖坤的博客</title>
+<title>JetPack 简介 - 肖坤的博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="概念：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+    <meta name="description" content="JetPack是Google推出的一些库的集合。是Android基础支持库SDK以外的部分从官方的介绍来看。JetPack 总体包含四部分内容：  基础AppCompat ： 使得支持较低的 Android 版本。从以前继承 Activity 到现在继承 AppCompatActivity 就是属于这一部分。 Android KTX: Kotlin 的扩展支持库 Multidex: 多 dex 文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用观察者模式进行订单管理">
-<meta property="og:url" content="http://hellokk.cc/2018/06/05/使用观察者模式进行订单管理/index.html">
+<meta property="og:title" content="JetPack 简介">
+<meta property="og:url" content="http://hellokk.cc/2019/12/17/JetPack 简介/index.html">
 <meta property="og:site_name" content="肖坤的博客">
-<meta property="og:description" content="概念：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta property="og:description" content="JetPack是Google推出的一些库的集合。是Android基础支持库SDK以外的部分从官方的介绍来看。JetPack 总体包含四部分内容：  基础AppCompat ： 使得支持较低的 Android 版本。从以前继承 Activity 到现在继承 AppCompatActivity 就是属于这一部分。 Android KTX: Kotlin 的扩展支持库 Multidex: 多 dex 文">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T10:49:50.728Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/googlesamples/android-sunflower/master/screenshots/jetpack_donut.png">
+<meta property="og:updated_time" content="2019-12-17T08:30:53.033Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用观察者模式进行订单管理">
-<meta name="twitter:description" content="概念：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515">
+<meta name="twitter:title" content="JetPack 简介">
+<meta name="twitter:description" content="JetPack是Google推出的一些库的集合。是Android基础支持库SDK以外的部分从官方的介绍来看。JetPack 总体包含四部分内容：  基础AppCompat ： 使得支持较低的 Android 版本。从以前继承 Activity 到现在继承 AppCompatActivity 就是属于这一部分。 Android KTX: Kotlin 的扩展支持库 Multidex: 多 dex 文">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/googlesamples/android-sunflower/master/screenshots/jetpack_donut.png">
 
 
 
@@ -89,7 +91,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="使用观察者模式进行订单管理" height="28">
+                <img src="/images/logo.svg" alt="JetPack 简介" height="28">
             
             </a>
         </div>
@@ -143,7 +145,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/thumbnail3.jpg" alt="使用观察者模式进行订单管理">
+            <img class="thumbnail" src="/gallery/thumbnails/JetPack.jpeg" alt="JetPack 简介">
         </span>
     </div>
     
@@ -151,13 +153,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-06-05T13:05:10.000Z">2018-06-05</time>
+                <time class="level-item has-text-grey" datetime="2019-12-17T08:01:35.734Z">2019-12-17</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 509 个字)
+                    5 分钟 读完 (大约 694 个字)
                 </span>
                 
                 
@@ -166,19 +168,40 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                使用观察者模式进行订单管理
+                JetPack 简介
             
         </h1>
         <div class="content">
-            <p><strong>概念</strong>：观察者模式是由发送者和观察者构成，发送者在状态改变时，主动通知所有的观察者做相应的刷新。<br>观察者模式定义了对象之间一对多的依赖关系，以便一个对象状态发生改变时，所有依赖于它的对象都能够得到通知，并自动刷新。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment"> * author: Kun on 2017/12/14 15:34</span></div><div class="line"><span class="hljs-comment"> * address: vip@hellokk.cc</span></div><div class="line"><span class="hljs-comment"> * description: 订单管理观察者 用户对订单做了操作后，通知所有注册观察者的对象作相应的改变</span></div><div class="line"><span class="hljs-comment"> */</span></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderManageObserver</span> </span>&#123;</div><div class="line"></div><div class="line">    companion object &#123;</div><div class="line">        var list: MutableList&lt;OrderManageListener&gt;? = <span class="hljs-keyword">null</span></div><div class="line">        var instance: OrderManageObserver? = <span class="hljs-keyword">null</span></div><div class="line">            get() &#123;</div><div class="line">                <span class="hljs-keyword">if</span> (field == <span class="hljs-keyword">null</span>) &#123;</div><div class="line">					<span class="hljs-comment">// 使用双重锁方式实现单例，保持只有一个实例</span></div><div class="line">                    <span class="hljs-keyword">synchronized</span>(OrderManageObserver::<span class="hljs-class"><span class="hljs-keyword">class</span>.<span class="hljs-title">java</span>) </span>&#123;</div><div class="line">                        <span class="hljs-keyword">if</span> (field == <span class="hljs-keyword">null</span>)&#123;</div><div class="line">                            list = ArrayList()</div><div class="line">                        	field = OrderManageObserver()</div><div class="line">						&#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="hljs-keyword">return</span> field</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment">     * 接受订单</span></div><div class="line"><span class="hljs-comment">     */</span></div><div class="line">    <span class="hljs-function">fun <span class="hljs-title">orderReceivingClick</span><span class="hljs-params">(orderStep: Int?)</span> </span>&#123;</div><div class="line">        list?.forEach &#123;</div><div class="line">			<span class="hljs-comment">// 通知所有观察者</span></div><div class="line">            it.orderReceiving(orderStep)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment">     * 订单删除</span></div><div class="line"><span class="hljs-comment">     */</span></div><div class="line">    <span class="hljs-function">fun <span class="hljs-title">orderDeleteClick</span><span class="hljs-params">(orderStep: Int?)</span> </span>&#123;</div><div class="line">        list?.forEach &#123;</div><div class="line">			<span class="hljs-comment">// 通知所有观察者</span></div><div class="line">            it.orderDelete(orderStep)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment">     * 注册订单监听</span></div><div class="line"><span class="hljs-comment">     */</span></div><div class="line">    <span class="hljs-function">fun <span class="hljs-title">setOrderClick</span><span class="hljs-params">(orderFace: OrderManageListener)</span> </span>&#123;</div><div class="line">        list?.add(orderFace)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>订单管理监听器</p>
-<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="hljs-comment">/**</span></div><div class="line"><span class="hljs-comment"> * author: Alan on 2018/1/6 14:01</span></div><div class="line"><span class="hljs-comment"> * address: xk6321<span class="hljs-doctag">@gmail</span>.com</span></div><div class="line"><span class="hljs-comment"> * description: 订单管理监听器</span></div><div class="line"><span class="hljs-comment"> */</span></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">OrderManageListener</span> </span>&#123;</div><div class="line">    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderReceiving</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> <span class="hljs-comment">// 接受订单</span></div><div class="line">    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderDelete</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> <span class="hljs-comment">// 订单删除</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>注册观察者</p>
-<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">OrderManageObserver.instance?.setOrderClick(<span class="hljs-keyword">object</span> : OrderManageListener &#123;</div><div class="line">            <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderReceiving</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> &#123;</div><div class="line">             <span class="hljs-comment">// 在这里做相应操作</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderDelete</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> &#123;</div><div class="line">               <span class="hljs-comment">// 订单删除， 刷新列表</span></div><div class="line">            &#125;</div><div class="line">        &#125;)</div></pre></td></tr></table></figure>
-<p>发送者</p>
-<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">orderDelSuccess</span><span class="hljs-params">(orderStep: <span class="hljs-type">Int</span>?)</span></span> &#123;</div><div class="line">		<span class="hljs-comment">// 在订单删除成功后，通知所有的观察者做相应的操作</span></div><div class="line">        OrderManageObserver.instance?.orderDeleteClick(orderStep)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p><strong>总结</strong>：观察者模式看起来很高大上，其实说白了就是一个类维护了另一个类的一个集合，并通过这个集合绑定解绑或调用另一个类的方法，对程序的解耦有一定帮助。在这里，我只简单的实现了一下，如果项目比较大，且用的地方比较多的话，在设计底层框架的时候，可以利用多态的特性进行抽象，以便适用与各种场景。</p>
+            <p><code>JetPack</code>是<code>Google</code>推出的一些库的集合。是<code>Android</code>基础支持库<code>SDK</code>以外的部分<br>从官方的介绍来看。<code>JetPack</code> 总体包含四部分内容：</p>
+<p><img src="https://raw.githubusercontent.com/googlesamples/android-sunflower/master/screenshots/jetpack_donut.png" alt="jetPack"></p>
+<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p><strong><a href="https://developer.android.com/topic/libraries/support-library/packages.html#v7-appcompat" target="_blank" rel="external">AppCompat</a></strong> ： 使得支持较低的 <code>Android</code> 版本。从以前继承 <code>Activity</code> 到现在继承 <code>AppCompatActivity</code> 就是属于这一部分。</p>
+<p><strong><a href="https://developer.android.com/kotlin/ktx.html" target="_blank" rel="external">Android KTX</a></strong>: <code>Kotlin</code> 的扩展支持库</p>
+<p><strong><a href="https://developer.android.com/studio/build/multidex.html" target="_blank" rel="external">Multidex</a></strong>: 多 <code>dex</code> 文件支持</p>
+<p><strong><a href="https://developer.android.com/training/testing/" target="_blank" rel="external">Test</a></strong>: 测试支持库</p>
+<h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p><strong><a href="https://developer.android.com/topic/libraries/data-binding" target="_blank" rel="external">Data Binding</a></strong>: <code>MVVM</code>的一种实践</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/lifecycle" target="_blank" rel="external">Lifecycles</a></strong>: 管理你的<code>Activity</code> 和 <code>Fragment</code> 生命周期</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/livedata" target="_blank" rel="external">LiveData</a></strong>: 通过观察者模式感知数据变化，类比 <code>RxJava</code></p>
+<p><strong><a href="https://developer.android.com/guide/navigation" target="_blank" rel="external">Navigation</a></strong>: 处理 <code>Fragment</code> </p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/paging" target="_blank" rel="external">Paging</a></strong>: 分页数据加载方案</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/room" target="_blank" rel="external">Room</a></strong>: 官方 <code>ORM</code> 库</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/viewmodel" target="_blank" rel="external">ViewModel</a></strong>: 通过数据驱动V视图发生改变</p>
+<p><strong><a href="https://developer.android.com/topic/libraries/architecture/workmanager" target="_blank" rel="external">WorkManager</a></strong>: 管理后台任务</p>
+<h4 id="行为"><a href="#行为" class="headerlink" title="行为"></a>行为</h4><p><strong><a href="https://developer.android.com/training/camerax" target="_blank" rel="external">Camerax</a></strong>: 轻松地向应用中添加相机功能</p>
+<p><strong><a href="https://developer.android.com/reference/android/app/DownloadManager" target="_blank" rel="external">DownloadManager</a></strong>: 安排和管理大量下载任务</p>
+<p><strong><a href="https://developer.android.com/guide/topics/media-apps/media-apps-overview.html" target="_blank" rel="external">Media app</a></strong>： 用于媒体播放和路由（包括 <code>Google Cast</code>）的向后兼容<code>API</code></p>
+<p><strong><a href="https://developer.android.com/guide/topics/ui/notifiers/notifications.html" target="_blank" rel="external">Notifications</a></strong>: 提供向后兼容的通知 <code>API</code>，支持 <code>Wear</code> 和 <code>Auto</code></p>
+<p><strong><a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank" rel="external">Permissions</a></strong>: 用于检查和请求应用权限的兼容性 <code>API</code></p>
+<p><strong><a href="https://developer.android.com/guide/topics/ui/settings" target="_blank" rel="external">Settings</a></strong>: 创建交互式设置屏幕</p>
+<p><strong><a href="https://developer.android.com/training/sharing" target="_blank" rel="external">Share Action</a></strong>: 提供适合应用操作栏的共享操作。这块在国内使用的不多，都是自己封装或者采用第三方方案。</p>
+<p><strong><a href="https://developer.android.com/guide/slices" target="_blank" rel="external">Slices</a></strong>: 可以让应用通过外部（其他<code>APP</code>）显示<code>APP</code>界面（通过设备自带的搜索，语音助手等）</p>
+<h4 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h4><p>界面部分所包含的东西基本是我们接触的最多的了：</p>
+<p><strong><a href="https://developer.android.com/training/animation/" target="_blank" rel="external">Animations and Transitions</a></strong>: 动画，界面转场等</p>
+<p><strong><a href="https://developer.android.com/guide/topics/ui/look-and-feel/emoji-compat" target="_blank" rel="external">Emoji</a></strong>: 在旧版平台上启用最新的表情符号字体</p>
+<p><strong><a href="https://developer.android.com/guide/components/fragments" target="_blank" rel="external">Fragment</a></strong>: 组件化界面的基本单位</p>
+<p><strong><a href="https://developer.android.com/guide/topics/ui/declaring-layout" target="_blank" rel="external">Layout</a></strong>: 基础概念</p>
+<p><strong><a href="https://developer.android.com/training/material/palette-colors" target="_blank" rel="external">Palette-Colors</a></strong>: 从调色板中提取出有用的信息</p>
+<p><strong><a href="https://developer.android.com/tv" target="_blank" rel="external">TV</a></strong>: 有助于开发 <code>Android TV</code> 应用的组件</p>
+<p><strong><a href="https://developer.android.com/wear" target="_blank" rel="external">Wear</a></strong>: 有助于开发 <code>Wear</code> 应用的组件</p>
 
         </div>
         
@@ -223,17 +246,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/07/25/仿微信剪切视频时长View/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">仿微信剪切视频时长View</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/06/05/Kotlin 中使用 Anko 编写布局/">
-                <span class="level-item">Kotlin 中使用 Anko 编写布局</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/17/JetPack 之 LiveData/">
+                <span class="level-item">JetPack 之 LiveData</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -249,8 +265,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://hellokk.cc/2018/06/05/使用观察者模式进行订单管理/';
-        this.page.identifier = '2018/06/05/使用观察者模式进行订单管理/';
+        this.page.url = 'http://hellokk.cc/2019/12/17/JetPack 简介/';
+        this.page.identifier = '2019/12/17/JetPack 简介/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -907,7 +923,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="使用观察者模式进行订单管理" height="28">
+                    <img src="/images/logo.svg" alt="JetPack 简介" height="28">
                 
                 </a>
                 <p class="is-size-7">
