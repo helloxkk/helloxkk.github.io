@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html  lang="zh">
 <head>
-    <meta charset="utf-8">
-<title>关于 Kotlin 的一些小知识的总结 - 肖坤的博客</title>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.1.1" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+<title>关于 Kotlin 的一些小知识的总结 - 青宁的博客</title>
 
 
-    <meta name="description" content="1. Class在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样：1open class RunClass ｛｝ 2. 构造函数当我们只需要一个构造函数的时候，可以直接有下面这种方式进行声明： 12class CustomView(context: Context?, attrs: Attribut">
+    <meta name="description" content="1. Class在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样： 1open class RunClass ｛｝ 2. 构造函数当我们只需要一个构造函数的时候，可以直接有下面这种方式进行声明： 12class CustomView(context: Context?, attrs: Attribu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于 Kotlin 的一些小知识的总结">
-<meta property="og:url" content="http://hellokk.cc/2017/09/11/关于 Kotlin 的一些小知识的总结/index.html">
-<meta property="og:site_name" content="肖坤的博客">
-<meta property="og:description" content="1. Class在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样：1open class RunClass ｛｝ 2. 构造函数当我们只需要一个构造函数的时候，可以直接有下面这种方式进行声明： 12class CustomView(context: Context?, attrs: Attribut">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T10:50:42.005Z">
+<meta property="og:url" content="http:&#x2F;&#x2F;hellokk.cc&#x2F;2017&#x2F;09&#x2F;11&#x2F;%E5%85%B3%E4%BA%8E%20Kotlin%20%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%9A%84%E6%80%BB%E7%BB%93&#x2F;index.html">
+<meta property="og:site_name" content="青宁的博客">
+<meta property="og:description" content="1. Class在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样： 1open class RunClass ｛｝ 2. 构造函数当我们只需要一个构造函数的时候，可以直接有下面这种方式进行声明： 12class CustomView(context: Context?, attrs: Attribu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;hellokk.cc&#x2F;gallery&#x2F;thumbnails&#x2F;thumbnail2.jpeg">
+<meta property="article:published_time" content="2017-09-11T12:23:12.000Z">
+<meta property="article:modified_time" content="2019-12-18T06:29:20.796Z">
+<meta property="article:author" content="青宁">
+<meta property="article:tag" content="总结">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于 Kotlin 的一些小知识的总结">
-<meta name="twitter:description" content="1. Class在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样：1open class RunClass ｛｝ 2. 构造函数当我们只需要一个构造函数的时候，可以直接有下面这种方式进行声明： 12class CustomView(context: Context?, attrs: Attribut">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;hellokk.cc&#x2F;gallery&#x2F;thumbnails&#x2F;thumbnail2.jpeg">
 
 
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="icon" href="/images/favicon.png">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -34,48 +42,32 @@
 
     
     
-    
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
 
     
     
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
 
     
     
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
 
-
     
     
     
     
-
 <link rel="stylesheet" href="/css/back-to-top.css">
 
-
-    
-    
-
     
     
     
     
-
     
     
-<link rel="stylesheet" href="/css/progressbar.css">
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-
     
     
     
@@ -89,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="关于 Kotlin 的一些小知识的总结" height="28">
+                <img src="/images/logo.png" alt="关于 Kotlin 的一些小知识的总结" height="28">
             
             </a>
         </div>
@@ -117,8 +109,7 @@
             <div class="navbar-end">
                 
                     
-                    
-                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/helloxkk/">
                         
                         <i class="fab fa-github"></i>
                         
@@ -139,7 +130,8 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
     
     <div class="card-image">
         <span  class="image is-7by1">
@@ -152,6 +144,10 @@
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2017-09-11T12:23:12.000Z">2017-09-11</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Kotlin/">Kotlin</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
@@ -170,19 +166,31 @@
             
         </h1>
         <div class="content">
-            <h2 id="1-Class"><a href="#1-Class" class="headerlink" title="1. Class"></a>1. Class</h2><p>在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">open class RunClass ｛｝</div></pre></td></tr></table></figure></p>
+            <h2 id="1-Class"><a href="#1-Class" class="headerlink" title="1. Class"></a>1. Class</h2><p>在 Kotlin 中 Class 的默认修饰符是 final，是不可以被继承和重写的，如果需要进行重写，可以在类名前面加修饰符 open,像下面这样：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RunClass</span> ｛｝</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-构造函数"><a href="#2-构造函数" class="headerlink" title="2. 构造函数"></a>2. 构造函数</h2><p>当我们只需要一个构造函数的时候，可以直接有下面这种方式进行声明：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class CustomView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :   View(context, attrs, defStyleAttr) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight angelscript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">class</span> <span class="hljs-symbol">CustomView</span>(<span class="hljs-symbol">context: <span class="hljs-symbol">Context</span></span>?, <span class="hljs-symbol">attrs: <span class="hljs-symbol">AttributeSet</span></span>?, <span class="hljs-symbol">defStyleAttr: <span class="hljs-symbol">Int</span></span>) :   <span class="hljs-symbol">View</span>(<span class="hljs-symbol">context, <span class="hljs-symbol">attrs</span>, <span class="hljs-symbol">defStyleAttr</span></span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>有时候一个构造函数不够用的时候，可以使用 constructor 来声明：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">constructor(context: Context) : super(context) &#123;</div><div class="line">    init(context)</div><div class="line">&#125;</div><div class="line">constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) &#123;</div><div class="line">    init(context, attributeSet)</div><div class="line">&#125;</div><div class="line">constructor(context: Context, attributeSet: AttributeSet?, defstyle: Int) : super(context, attributeSet, defstyle) &#123;</div><div class="line">    init(context, attributeSet, defstyle)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight delphi hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">constructor</span><span class="hljs-params">(context: Context)</span> :</span> super(context) <span class="hljs-comment">&#123;</span></span><br><span class="line"><span class="hljs-comment">    init(context)</span></span><br><span class="line"><span class="hljs-comment">&#125;</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">constructor</span><span class="hljs-params">(context: Context, attributeSet: AttributeSet)</span> :</span> super(context, attributeSet) <span class="hljs-comment">&#123;</span></span><br><span class="line"><span class="hljs-comment">    init(context, attributeSet)</span></span><br><span class="line"><span class="hljs-comment">&#125;</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">constructor</span><span class="hljs-params">(context: Context, attributeSet: AttributeSet?, defstyle: Int)</span> :</span> super(context, attributeSet, defstyle) <span class="hljs-comment">&#123;</span></span><br><span class="line"><span class="hljs-comment">    init(context, attributeSet, defstyle)</span></span><br><span class="line"><span class="hljs-comment">&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="3-static-静态"><a href="#3-static-静态" class="headerlink" title="3. static 静态"></a>3. static 静态</h2><p>在 kotlin 中是不支持 static 关键字的，不过提供了另一种方案：companion object 关键字里面的内容都代表静态，可以是静态变量也可以是静态函数</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">companion object &#123;</div><div class="line">    fun main(context: Context) &#123;</div><div class="line">        val child = ChildImpl()</div><div class="line">        val run = RunClass(child)</div><div class="line">        run.show(context, &quot;haha&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>##4. 匿名内部类<br>一般匿名内部类里面只有一个方法的时候，Kotlin 会默认帮我们转成 Lambda 表达式，但是有多个方法的时候，就需要我们自己来实现了，可以采用下面这种方式：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">viewpager.addOnPageChangeListener(object: ViewPager.OnPageChangeListener &#123;</div><div class="line">      override fun onPageScrollStateChanged(state: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      override fun onPageSelected(position: Int) &#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">companion</span> <span class="hljs-keyword">object</span> &#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(context: <span class="hljs-type">Context</span>)</span></span> &#123;</span><br><span class="line">        <span class="hljs-keyword">val</span> child = ChildImpl()</span><br><span class="line">        <span class="hljs-keyword">val</span> run = RunClass(child)</span><br><span class="line">        run.show(context, <span class="hljs-string">"haha"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##4. 匿名内部类<br>一般匿名内部类里面只有一个方法的时候，Kotlin 会默认帮我们转成 Lambda 表达式，但是有多个方法的时候，就需要我们自己来实现了，可以采用下面这种方式：</p>
+<figure class="highlight kotlin hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">viewpager.addOnPageChangeListener(<span class="hljs-keyword">object</span>: ViewPager.OnPageChangeListener &#123;</span><br><span class="line">      <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPageScrollStateChanged</span><span class="hljs-params">(state: <span class="hljs-type">Int</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPageScrolled</span><span class="hljs-params">(position: <span class="hljs-type">Int</span>, positionOffset: <span class="hljs-type">Float</span>, positionOffsetPixels: <span class="hljs-type">Int</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPageSelected</span><span class="hljs-params">(position: <span class="hljs-type">Int</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="5-和-Java-的互通"><a href="#5-和-Java-的互通" class="headerlink" title="5. 和 Java 的互通"></a>5. 和 Java 的互通</h2><p>最常用的比如 startActivity，我们在 Java 文件中，该如何启动 kotlin 中的 activity:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">startActivity(Intent(activity, UserActivity::class.java))</div></pre></td></tr></table></figure>
+<figure class="highlight lisp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startActivity(<span class="hljs-name">Intent</span>(<span class="hljs-name">activity</span>, UserActivity:<span class="hljs-symbol">:class</span>.java))</span><br></pre></td></tr></table></figure>
+
 <p>这些是目前自己开发中遇到的一些问题，基本可以满足一般的kotlin开发了，其他问题可以再查看 Kotlin 官方文档。</p>
-<p><a href="https://www.kotlincn.net/docs/reference/basic-syntax.html" target="_blank" rel="external">Kotlin中文教程文档</a></p>
+<p><a href="https://www.kotlincn.net/docs/reference/basic-syntax.html" target="_blank" rel="noopener">Kotlin中文教程文档</a></p>
 
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a>
+                </div>
+            </div>
         </div>
         
         
@@ -191,35 +199,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="/images/IMG_2199.JPG" alt="支付宝"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="/images/IMG_2198.JPG" alt="微信"></div>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
@@ -243,23 +222,23 @@
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
 <script>
-    var disqus_config = function () {
-        this.page.url = 'http://hellokk.cc/2017/09/11/关于 Kotlin 的一些小知识的总结/';
-        this.page.identifier = '2017/09/11/关于 Kotlin 的一些小知识的总结/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hellokk' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+    var gitalk = new Gitalk({
+        clientID: '72fe59658cae364c9e32',
+        clientSecret: '2ceb38c526d099fcc4601aabae7872024d2f7cbf',
+        id: 'c7af4d1dacc9dff6b5da1200a38baa7d',
+        repo: 'helloxkk.github.io',
+        owner: 'hellokk',
+        admin: "hellokk",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
 </script>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>
@@ -274,13 +253,12 @@
 <div class="card widget">
     <div class="card-content">
         <nav class="level">
-            <div class="level-item has-text-centered">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
                 <div>
                     
-                        <figure class="image container is-128x128 has-mb-6">
-                            <img class="is-rounded" src="/images/avatar.jpg" alt="Kun">
-                        </figure>
-                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/avatar.jpg" alt="Kun">
+                    </figure>
                     
                     <p class="is-size-4 is-block">
                         Kun
@@ -306,9 +284,11 @@
                     <p class="heading">
                         文章
                     </p>
-                    <p class="title has-text-weight-normal">
-                        11
-                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
@@ -316,9 +296,11 @@
                     <p class="heading">
                         分类
                     </p>
-                    <p class="title has-text-weight-normal">
-                        0
-                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            4
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
@@ -326,16 +308,20 @@
                     <p class="heading">
                         标签
                     </p>
-                    <p class="title has-text-weight-normal">
-                        0
-                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            7
+                        </p>
+                    </a>
                 </div>
             </div>
         </nav>
+        
         <div class="level">
             <a class="level-item button is-link is-rounded" href="http://github.com/helloxkk" target="_blank">
                 关注我</a>
         </div>
+        
         
         
         <div class="level is-mobile">
@@ -348,21 +334,21 @@
             </a>
             
             <a class="level-item button is-white is-marginless" target="_blank"
-                title="Facebook" href="http://facebook.com">
+                title="Facebook" href="https://facebook.com">
                 
                 <i class="fab fa-facebook"></i>
                 
             </a>
             
             <a class="level-item button is-white is-marginless" target="_blank"
-                title="Twitter" href="http://twitter.com">
+                title="Twitter" href="https://twitter.com">
                 
                 <i class="fab fa-twitter"></i>
                 
             </a>
             
             <a class="level-item button is-white is-marginless" target="_blank"
-                title="Dribbble" href="http://dribbble.com">
+                title="Dribbble" href="https://dribbble.com">
                 
                 <i class="fab fa-dribbble"></i>
                 
@@ -382,9 +368,7 @@
     
         
     
-        
-
-<div class="card widget">
+        <div class="card widget">
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
@@ -441,7 +425,6 @@
     </div>
 </div>
 
-
     
         
 <div class="card widget">
@@ -451,19 +434,57 @@
                 分类
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/Android/">
+            <span class="level-start">
+                <span class="level-item">Android</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/JetPack/">
+            <span class="level-start">
+                <span class="level-item">JetPack</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Kotlin/">
+            <span class="level-start">
+                <span class="level-item">Kotlin</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/ReactNative/">
+            <span class="level-start">
+                <span class="level-item">ReactNative</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
 </div>
     
-        
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Anko/" style="font-size: 10px;">Anko</a> <a href="/tags/LiveData/" style="font-size: 10px;">LiveData</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/RxJava/" style="font-size: 10px;">RxJava</a> <a href="/tags/ViewPager/" style="font-size: 10px;">ViewPager</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a>
+    </div>
+</div>
     
     
         <div class="column-right-shadow is-hidden-widescreen ">
         
-            
-<div class="card widget">
+            <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
             最新文章
@@ -471,7 +492,7 @@
         
         <article class="media">
             
-            <a href="/2019/12/17/JetPack 简介/" class="media-left">
+            <a href="/2019/12/17/JetPack%20%E7%AE%80%E4%BB%8B/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/JetPack.jpeg" alt="JetPack 简介">
                 </p>
@@ -480,9 +501,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T08:01:35.734Z">2019-12-17</time></div>
-                    <a href="/2019/12/17/JetPack 简介/" class="has-link-black-ter is-size-6">JetPack 简介</a>
+                    <a href="/2019/12/17/JetPack%20%E7%AE%80%E4%BB%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JetPack 简介</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/JetPack/">JetPack</a>
                     </p>
                 </div>
             </div>
@@ -490,7 +511,7 @@
         
         <article class="media">
             
-            <a href="/2019/12/17/JetPack 之 LiveData/" class="media-left">
+            <a href="/2019/12/17/JetPack%20%E4%B9%8B%20LiveData/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/LiveData.png" alt="JetPack 之 LiveData">
                 </p>
@@ -499,9 +520,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T07:44:16.723Z">2019-12-17</time></div>
-                    <a href="/2019/12/17/JetPack 之 LiveData/" class="has-link-black-ter is-size-6">JetPack 之 LiveData</a>
+                    <a href="/2019/12/17/JetPack%20%E4%B9%8B%20LiveData/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JetPack 之 LiveData</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/JetPack/">JetPack</a>
                     </p>
                 </div>
             </div>
@@ -509,7 +530,7 @@
         
         <article class="media">
             
-            <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="media-left">
+            <a href="/2019/03/17/React%20Native%20%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/react3.gif" alt="React Native 组件生命周期学习总结">
                 </p>
@@ -518,9 +539,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-17T15:45:35.218Z">2019-03-17</time></div>
-                    <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="has-link-black-ter is-size-6">React Native 组件生命周期学习总结</a>
+                    <a href="/2019/03/17/React%20Native%20%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">React Native 组件生命周期学习总结</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ReactNative/">ReactNative</a>
                     </p>
                 </div>
             </div>
@@ -528,7 +549,7 @@
         
         <article class="media">
             
-            <a href="/2018/07/25/仿微信剪切视频时长View/" class="media-left">
+            <a href="/2018/07/25/%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%89%AA%E5%88%87%E8%A7%86%E9%A2%91%E6%97%B6%E9%95%BFView/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/thumbnail1.jpg" alt="仿微信剪切视频时长View">
                 </p>
@@ -537,9 +558,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-25T15:09:02.000Z">2018-07-25</time></div>
-                    <a href="/2018/07/25/仿微信剪切视频时长View/" class="has-link-black-ter is-size-6">仿微信剪切视频时长View</a>
+                    <a href="/2018/07/25/%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%89%AA%E5%88%87%E8%A7%86%E9%A2%91%E6%97%B6%E9%95%BFView/" class="title has-link-black-ter is-size-6 has-text-weight-normal">仿微信剪切视频时长View</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Android/">Android</a>
                     </p>
                 </div>
             </div>
@@ -547,7 +568,7 @@
         
         <article class="media">
             
-            <a href="/2018/06/05/使用观察者模式进行订单管理/" class="media-left">
+            <a href="/2018/06/05/%E4%BD%BF%E7%94%A8%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E8%BF%9B%E8%A1%8C%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/thumbnail3.jpg" alt="使用观察者模式进行订单管理">
                 </p>
@@ -556,9 +577,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-06-05T13:05:10.000Z">2018-06-05</time></div>
-                    <a href="/2018/06/05/使用观察者模式进行订单管理/" class="has-link-black-ter is-size-6">使用观察者模式进行订单管理</a>
+                    <a href="/2018/06/05/%E4%BD%BF%E7%94%A8%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E8%BF%9B%E8%A1%8C%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用观察者模式进行订单管理</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Android/">Android</a>
                     </p>
                 </div>
             </div>
@@ -566,7 +587,6 @@
         
     </div>
 </div>
-
         
             <div class="card widget">
     <div class="card-content">
@@ -665,6 +685,55 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Anko/">
+                        <span class="tag">Anko</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LiveData/">
+                        <span class="tag">LiveData</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJava/">
+                        <span class="tag">RxJava</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ViewPager/">
+                        <span class="tag">ViewPager</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="tag">总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -682,8 +751,7 @@
 
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
-        
-<div class="card widget">
+        <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
             最新文章
@@ -691,7 +759,7 @@
         
         <article class="media">
             
-            <a href="/2019/12/17/JetPack 简介/" class="media-left">
+            <a href="/2019/12/17/JetPack%20%E7%AE%80%E4%BB%8B/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/JetPack.jpeg" alt="JetPack 简介">
                 </p>
@@ -700,9 +768,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T08:01:35.734Z">2019-12-17</time></div>
-                    <a href="/2019/12/17/JetPack 简介/" class="has-link-black-ter is-size-6">JetPack 简介</a>
+                    <a href="/2019/12/17/JetPack%20%E7%AE%80%E4%BB%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JetPack 简介</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/JetPack/">JetPack</a>
                     </p>
                 </div>
             </div>
@@ -710,7 +778,7 @@
         
         <article class="media">
             
-            <a href="/2019/12/17/JetPack 之 LiveData/" class="media-left">
+            <a href="/2019/12/17/JetPack%20%E4%B9%8B%20LiveData/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/LiveData.png" alt="JetPack 之 LiveData">
                 </p>
@@ -719,9 +787,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T07:44:16.723Z">2019-12-17</time></div>
-                    <a href="/2019/12/17/JetPack 之 LiveData/" class="has-link-black-ter is-size-6">JetPack 之 LiveData</a>
+                    <a href="/2019/12/17/JetPack%20%E4%B9%8B%20LiveData/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JetPack 之 LiveData</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/JetPack/">JetPack</a>
                     </p>
                 </div>
             </div>
@@ -729,7 +797,7 @@
         
         <article class="media">
             
-            <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="media-left">
+            <a href="/2019/03/17/React%20Native%20%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/react3.gif" alt="React Native 组件生命周期学习总结">
                 </p>
@@ -738,9 +806,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-17T15:45:35.218Z">2019-03-17</time></div>
-                    <a href="/2019/03/17/React Native 组件生命周期学习总结/" class="has-link-black-ter is-size-6">React Native 组件生命周期学习总结</a>
+                    <a href="/2019/03/17/React%20Native%20%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">React Native 组件生命周期学习总结</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ReactNative/">ReactNative</a>
                     </p>
                 </div>
             </div>
@@ -748,7 +816,7 @@
         
         <article class="media">
             
-            <a href="/2018/07/25/仿微信剪切视频时长View/" class="media-left">
+            <a href="/2018/07/25/%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%89%AA%E5%88%87%E8%A7%86%E9%A2%91%E6%97%B6%E9%95%BFView/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/thumbnail1.jpg" alt="仿微信剪切视频时长View">
                 </p>
@@ -757,9 +825,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-25T15:09:02.000Z">2018-07-25</time></div>
-                    <a href="/2018/07/25/仿微信剪切视频时长View/" class="has-link-black-ter is-size-6">仿微信剪切视频时长View</a>
+                    <a href="/2018/07/25/%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%89%AA%E5%88%87%E8%A7%86%E9%A2%91%E6%97%B6%E9%95%BFView/" class="title has-link-black-ter is-size-6 has-text-weight-normal">仿微信剪切视频时长View</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Android/">Android</a>
                     </p>
                 </div>
             </div>
@@ -767,7 +835,7 @@
         
         <article class="media">
             
-            <a href="/2018/06/05/使用观察者模式进行订单管理/" class="media-left">
+            <a href="/2018/06/05/%E4%BD%BF%E7%94%A8%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E8%BF%9B%E8%A1%8C%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/thumbnail3.jpg" alt="使用观察者模式进行订单管理">
                 </p>
@@ -776,9 +844,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-06-05T13:05:10.000Z">2018-06-05</time></div>
-                    <a href="/2018/06/05/使用观察者模式进行订单管理/" class="has-link-black-ter is-size-6">使用观察者模式进行订单管理</a>
+                    <a href="/2018/06/05/%E4%BD%BF%E7%94%A8%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E8%BF%9B%E8%A1%8C%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用观察者模式进行订单管理</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Android/">Android</a>
                     </p>
                 </div>
             </div>
@@ -786,7 +854,6 @@
         
     </div>
 </div>
-
     
         <div class="card widget">
     <div class="card-content">
@@ -885,6 +952,55 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Anko/">
+                        <span class="tag">Anko</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LiveData/">
+                        <span class="tag">LiveData</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJava/">
+                        <span class="tag">RxJava</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ViewPager/">
+                        <span class="tag">ViewPager</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="tag">总结</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -903,20 +1019,19 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="关于 Kotlin 的一些小知识的总结" height="28">
+                    <img src="/images/logo.png" alt="关于 Kotlin 的一些小知识的总结" height="28">
                 
                 </a>
                 <p class="is-size-7">
                 &copy; 2019 青宁&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 </p>
             </div>
             <div class="level-end">
             
                 <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
                 
                 <p class="control">
                     <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
@@ -935,7 +1050,7 @@
                 </p>
                 
                 <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
                         
                         <i class="fab fa-github"></i>
                         
@@ -952,27 +1067,37 @@
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
 <script>moment.locale("zh-CN");</script>
 
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
 
     
     
-    
-    <script src="/js/animation.js"></script>
-    
+<script src="/js/animation.js"></script>
 
     
     
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
 
     
     
-
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update
             my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
@@ -987,10 +1112,8 @@
     });
 </script>
 
-
     
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     MathJax.Hub.Config({
@@ -1012,33 +1135,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
-
     
     
-
 <a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
 
-
-    
-    
-
-    
-    
-    
-    
-
     
     
     
     
     
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-    <script src="/js/clipboard.js" defer></script>
     
-
+    
+    
     
     
     
